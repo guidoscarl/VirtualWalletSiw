@@ -1,0 +1,6 @@
+Progressi fatti sul sito web:
+Re-indirizzamenti su sign-in(accedi) e signup(registrazione)
+classe sign-in realizzata
+classe signup realizzata
+
+Sending this to guido
