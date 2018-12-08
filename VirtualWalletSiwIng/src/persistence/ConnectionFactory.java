@@ -49,7 +49,7 @@ public class ConnectionFactory {
 		try {
 			Statement s = c.createStatement();
 			
-			s.execute("INSERT INTO public.\"Utente\"(\"ID\",\"Nome\",\"Cognome\") values('"+ID+"','"+nome+"','"+cognome+"');");
+			s.execute("INSERT INTO public.\"Utente\"(\"Nome\",\"Cognome\") values('"+nome+"','"+cognome+"');");
 			System.out.println("inserito");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

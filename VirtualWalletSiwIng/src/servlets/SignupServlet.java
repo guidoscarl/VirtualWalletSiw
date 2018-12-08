@@ -48,8 +48,10 @@ public class SignupServlet extends HttpServlet {
 		c.inserisciUtente(1, nome, cognome);
 		c.close();
 		PrintWriter out = response.getWriter();
+		response.sendRedirect("index.html");
 		response.setContentType("text/html");
 		out.println("<p>Benvenuto "+nome+" "+cognome+"</p>");
+		
 	}
 
 }
