@@ -33,16 +33,16 @@
         <section class="portfolio-block hire-me">
             <div class="container">
                 <div class="heading"><h2>Registrazione</h2></div>
-                <form style="background-color:white">
+                <form method = "post" action="SignupServlet" style="background-color:white">
                     <!-- Tenere per la registrazione di un nuovo account <div class="form-group"><label for="subject">Subject</label><select class="form-control" id="subject"><option value="" selected="">Choose Subject</option><option value="1">Subject 1</option><option value="2">Subject 2</option><option value="3">Subject 3</option></select></div> -->
                     <!-- Aggiungere identificativi???-->
-                    <div class="form-group"><label for="email">Email</label><input class="form-control" type="email" id="email"></div>
-                    <div class="form-group"><label for="email">Password</label><input class="form-control" type="email" id="email"></div>
+                    <div class="form-group"><label for="email">Email</label><input class="form-control" type="text" name="nome"></div>
+                    <div class="form-group"><label for="email">Password</label><input class="form-control" type="text" name="cognome"></div>
                     <div class="form-group"><label for="email">Conferma password</label><input class="form-control" type="email" id="email"></div>
             		<div class="form-group">
                 		<div class="form-row">
 		                    <div class="col-md-6"><label for="hire-date">Data di nascita</label><input class="form-control datepicker" type="text" id="hire-date" date-format="MM-DD-YYYY"></div>
-							<div class="col-md-6 button"><button class="btn btn-primary btn-block" type="button">Registrati</button></div>
+							<div class="col-md-6 button"><button type="submit" class="btn btn-primary btn-block">Registrati</button></div>
                 		</div>
             		</div>
             	</form>
