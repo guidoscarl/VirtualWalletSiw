@@ -1,8 +1,7 @@
-Progressi fatti sul sito web:
-Re-indirizzamenti su sign-in(accedi) e signup(registrazione)
-classe sign-in realizzata
-classe signup realizzata
-
-Sending this to guido
-
-test commit new project
+Classi:
+	home.html pronta (vedi altro progetto)
+	sign-in.html pronta (vedi altro progetto)
+	signup.html da iniziare su altro progetto
+	
+Servlet:
+	Il prof ha fatto la servlet tramite xml. Chiedere se va bene il nostro stesso approccio.
