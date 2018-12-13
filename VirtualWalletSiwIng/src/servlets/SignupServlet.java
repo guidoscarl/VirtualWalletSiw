@@ -31,7 +31,8 @@ public class SignupServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+//		response.getWriter().println("<html>OK</h1>");
+//		//Ha scritto qualcosa del genere
 	}
 
 	/**
