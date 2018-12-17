@@ -4306,7 +4306,7 @@ input[type="button"].btn-block {
 
 .navbar-dark .navbar-toggler {
   color: rgba(255, 255, 255, 0.5);
-  border-color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .navbar-dark .navbar-toggler-icon {
@@ -8931,8 +8931,8 @@ a.text-dark:hover, a.text-dark:focus {
   	padding-right:15px;
   	padding-left:15px;
   	margin-right:auto;
-  	margin-left:auto;
-    min-width: 992px !important;
+  	margin-left:auto
+    /* min-width: 992px !important; */
   }
   .navbar {
     display: none;
@@ -8954,6 +8954,11 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 /*CSS implementati*/
+
+.gradient{
+	background:linear-gradient(120deg,#7f70f5,#0ea0ff);
+	color:#fff
+}
 
 .logo{
 	font-size:1.5rem

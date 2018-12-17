@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+.myBody {
+	background-color: #6741D1;
+}
+
+.navbar-nav > li {
+	padding-left:0;
+	margin:0;
+}
+
+.gradient {
+	background:linear-gradient(120deg,#7f70f5,#0ea0ff);
+	color:#fff
+}
+
+.container h2 {
+	color:white;
+	text-align:center;
+	padding: 5px;
+}
+.portfolio-block {
+	padding: 100px 100px;
+}
+
+.portfolio-block form {
+	padding: 50px;
+	margin: auto;
+	border-radius:0.25rem;
+}
+
+.portfolio-block.block-intro{
+	text-align:center;
+}
+
+.portfolio-block.block-intro .avatar{
+	width:150px;
+	height:150px;
+	background-size:cover;
+	background-repeat:no-repeat;
+	margin:auto;
+	border-radius:100px;
+	margin-bottom:30px
+}
+
+.portfolio-block form {
+	max-width: 650px;
+}
+
+.portfolio-block.block-intro p{
+	color: white;
+	font-size:1.5em;
+	font-weight:300;
+	margin-bottom:30px;
+}
+
+.section-border {
+	border-bottom: 1px solid;
+	border-color: white;
+}
+
+.space-padding {
+	padding: 30px 50px 30px;
+}
+
+.navbar-nav a:hover {
+	opacity: 0.6;
+}
+
+.card.custom-card {
+	background-color:#0ea0ff;
+}
+
+.card-header.custom-card, .card-body.custom-card, .card-text.custom-card{
+	background-color:white;
+}
+
+.links, .social-icons {
+	text-align:center;	
+}
+
+.links a, .social-icons a{
+	color:white;
+}
+
+.links a:hover {
+	color:white;
+}
+
