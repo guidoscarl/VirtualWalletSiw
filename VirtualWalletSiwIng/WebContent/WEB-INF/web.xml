@@ -12,7 +12,7 @@
   
   <servlet>
   	<servlet-name>Registrati</servlet-name>
-  	<servlet-class>servlets.SignupRED</servlet-class>
+  	<servlet-class>servlets.SignupRED</servlet-class> 
   </servlet>
   <servlet-mapping>
   	<servlet-name>Registrati</servlet-name>
