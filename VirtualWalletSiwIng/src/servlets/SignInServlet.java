@@ -1,31 +1,30 @@
 package servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import Excepions.EmailAlreadyUsed;
+import Excepions.UsersNotFound;
 import models.Utente;
 import persistence.ConnectionFactory;
 import persistence.PostgresDAOFactory;
 import persistence.dao.UtenteDao;
 
 /**
- * Servlet implementation class SignupServlet
+ * Servlet implementation class SignInServlet
  */
-@WebServlet("/SignupServlet")
-public class SignupServlet extends HttpServlet {
+@WebServlet("/SignInServlet")
+public class SignInServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SignupServlet() {
+    public SignInServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,44 +34,43 @@ public class SignupServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		response.getWriter().println("<html>OK</h1>");
-//		//Ha scritto qualcosa del genere
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		String nome =request.getParameter("name");
-		String cognome=request.getParameter("surname");
+		Utente u = null;
+		
+		
 		String email=request.getParameter("email");
-		String pass=request.getParameter("password");
-		int saldo=0;
-		
-		
-		System.out.println(nome);
-		System.out.println(cognome);
-		
-		Utente u = new Utente(nome,cognome,email,pass,saldo);
+		String password=request.getParameter("password");
 		PostgresDAOFactory p = new PostgresDAOFactory();
 		UtenteDao dao=p.getUtenteDao();
+		HttpSession session=request.getSession();
 		try {
-		dao.save(u);
-		PrintWriter out = response.getWriter();
-		response.sendRedirect("index.html");
-		response.setContentType("text/html");
-		out.println("<p>Benvenuto "+nome+" "+cognome+"</p>");
-		}
-		catch(EmailAlreadyUsed e) {
-			System.out.println("email già usata");
-			request.getSession().setAttribute("esistente", true);
-			response.sendRedirect("sign-up.jsp");
+			u=dao.getByPrimaryKey(email, password);
+			session.setAttribute("nome", u.getNome());
+			session.setAttribute("cognome", u.getCognome());
+			System.out.println(u.getSaldo());
+			session.setAttribute("saldo", u.getSaldo());
+			
 			
 		}
+		catch(UsersNotFound e) {
+			System.out.println("utente non trovato");
+			session.setAttribute("usersNotFound", true);
+		}
 		
-			
+		System.out.println(u.getNome()+u.getCognome());
 		
+		
+		
+		
+		
+		
+		response.sendRedirect("account.jsp");
 		
 		
 		

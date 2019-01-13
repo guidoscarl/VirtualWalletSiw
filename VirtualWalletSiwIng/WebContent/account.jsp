@@ -21,13 +21,13 @@
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Disconnetti</a></li>
 		        </ul>
 			</div>
-	        <span>"nome", benvenuto!</span>
+	        <span><%out.print(session.getAttribute("nome")+" "+session.getAttribute("cognome")); %> benvenuto!</span>
 		</div>
 	</nav>
 	<section class="portfolio-block block-intro section-border">
 	    <div class="container">
 	        <div>
-	        	<p>Il tuo conto ammonta a: "$-:--."</p>
+	        	<p>Il tuo conto ammonta a: <%out.print(session.getAttribute("saldo")+" &#8364;"); %></p>
 	        <div class="avatar" style="background-image:url(&quot;Images/test.jpg&quot;);"></div>
 	        	<a class="btn btn-primary" role="button" href="#">Ricarica importo</a>
 	        </div>

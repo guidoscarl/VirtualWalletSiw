@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 
@@ -21,7 +23,7 @@
         	</button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="nav navbar-nav">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="home.html">Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="index.html">Home</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="projects-grid-cards.html">Progetto</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="cv.html">CV</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="sign-in.html">Accedi</a></li>
@@ -38,6 +40,10 @@
                 <div class="form-group"><label for="name">Nome</label><input class="form-control" type="text" name="name"></div>
                 <div class="form-group"><label for="surname">Cognome</label><input class="form-control" type="text" name="surname"></div>
                 <div class="form-group"><label for="email">Email</label><input class="form-control" type="email" name="email"></div>
+                <%if((boolean)session.getAttribute("esistente")==true){
+                	out.print("<p style=\"color:red;\"> Email già esistente<p>");
+                }
+                %>
                 <div class="form-group"><label for="password">Password</label><input class="form-control" type="password" name="password"></div>
                 <div class="form-group"><label for="password">Conferma password</label><input class="form-control" type="password" id="password"></div>
         		<div class="form-group"><label for="born-date">Data di nascita</label><input class="form-control" type="date" id="born-date"></div>
