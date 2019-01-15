@@ -44,7 +44,7 @@
 }
 
 .grid {
-	width:450px;
+	width:500px;
 	height:150px;
 	background-size:cover;
 	background-repeat:no-repeat;
@@ -103,3 +103,15 @@
 	color:white;
 }
 
+.profile-info {
+	text-align:left;
+}
+
+.col-sm-2.profile-info.gradient.myBorder span {
+	font-size:1.00em;
+}
+
+.myBorder {
+	border: 1px solid white;
+	padding:15px;
+}
