@@ -7,6 +7,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Excepions.UsersNotFound;
+import models.Utente;
+import persistence.PostgresDAOFactory;
+import persistence.dao.UtenteDao;
+
 /**
  * Servlet implementation class Transaction
  */
@@ -35,6 +40,24 @@ public class Transaction extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		PostgresDAOFactory p = new PostgresDAOFactory();
+		UtenteDao dao=p.getUtenteDao();
+		Utente mittente=new Utente("a","a",(String)request.getSession().getAttribute("email"),"a",(int)request.getSession().getAttribute("saldo"));
+		
+		try {
+			Utente destinatario=dao.getUtenteforTransaction((String)request.getParameter("email"));
+			dao.transaction(mittente, destinatario, Integer.parseInt(request.getParameter("importo")));
+			int oldSaldo=(int)request.getSession().getAttribute("saldo");
+			request.getSession().setAttribute("saldo", oldSaldo-Integer.parseInt(request.getParameter("importo")));
+		} catch (UsersNotFound e) {
+			// TODO Auto-generated catch block
+			System.out.println("utente destinatario non trovato");
+		}
+		
+		response.sendRedirect("account.jsp");
+		
+		
+		
 		
 	}
 

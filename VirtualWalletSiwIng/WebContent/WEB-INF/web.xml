@@ -26,4 +26,13 @@
     <servlet-name>Ricarica</servlet-name>
     <url-pattern>/recharge</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>Transazione</servlet-name>
+    <servlet-class>servlets.Transaction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Transazione</servlet-name>
+    <url-pattern>/transaction</url-pattern>
+  </servlet-mapping>
 </web-app>

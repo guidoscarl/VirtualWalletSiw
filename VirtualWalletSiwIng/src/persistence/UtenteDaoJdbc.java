@@ -126,5 +126,83 @@ public class UtenteDaoJdbc implements UtenteDao {
 		return u;
 	
 	}
+	@Override
+	public void transaction(Utente mittente, Utente destinatario, int importo) {
+		
+		Connection c=null;
+		try {
+			 c= data.getConnection();
+			 if(c!=null) {
+			PreparedStatement s;
+			String query="UPDATE public.\"Utente\"\r\n" + 
+					"	SET saldo=?\r\n" + 
+					"	WHERE email=?;";
+				s=c.prepareStatement(query);
+				s.setInt(1, mittente.getSaldo()-importo);
+				s.setString(2, mittente.getEmail()) ;
+				s.execute();
+			
+			
+				PreparedStatement stat;
+				String query2="UPDATE public.\"Utente\"\r\n" + 
+						"	SET saldo=?\r\n" + 
+						"	WHERE email=?;";
+					stat=c.prepareStatement(query2);
+					stat.setInt(1, destinatario.getSaldo()+importo);
+					stat.setString(2, destinatario.getEmail()) ;
+					stat.execute();
+			
+				
+			 }
+			 c.close();
+				
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println("errore");
+			try {
+				c.close();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+	}
+	@Override
+	public Utente getUtenteforTransaction(String email) throws UsersNotFound {
+		Utente u = null;
+		Connection c=null;
+		try {
+			 c= data.getConnection();
+			PreparedStatement s;
+			String query="SELECT * \r\n" + 
+					"	FROM public.\"Utente\" \r\n" + 
+					"	WHERE \"email\"=?;";
+				s=c.prepareStatement(query);
+				s.setString(1, email);
+				
+				ResultSet result=s.executeQuery();
+				
+				if(result.next()) {
+					u= new Utente(result.getString("nome"),result.getString("cognome"),result.getString("email"),result.getString("password"),result.getInt("saldo"));
+				}
+				/*else
+					c.close();
+					throw new UsersNotFound();*/
+			
+				c.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			try {
+				c.close();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			throw new UsersNotFound();
+			
+		
+	}
+		return u;
 
+	}
 }
