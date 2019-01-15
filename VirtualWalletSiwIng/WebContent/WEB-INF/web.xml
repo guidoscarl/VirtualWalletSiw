@@ -17,7 +17,6 @@
     <servlet-name>Registrati</servlet-name>
     <url-pattern>/sign-up</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>Ricarica</servlet-name>
     <servlet-class>servlets.Recharge</servlet-class>
@@ -26,7 +25,6 @@
     <servlet-name>Ricarica</servlet-name>
     <url-pattern>/recharge</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>Transazione</servlet-name>
     <servlet-class>servlets.Transaction</servlet-class>
@@ -34,5 +32,14 @@
   <servlet-mapping>
     <servlet-name>Transazione</servlet-name>
     <url-pattern>/transaction</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>Logout</servlet-name>
+    <servlet-class>servlets.Logout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Logout</servlet-name>
+    <url-pattern>/logout</url-pattern>
   </servlet-mapping>
 </web-app>
