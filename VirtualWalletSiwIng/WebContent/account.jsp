@@ -29,7 +29,7 @@
 	        <div>
 	        	<p>Il tuo conto ammonta a: <%out.print(session.getAttribute("saldo")+" &#8364;"); %></p>
 	        <div class="avatar" style="background-image:url(&quot;Images/test.jpg&quot;);"></div>
-	        	<a class="btn btn-primary" role="button" href="#">Ricarica importo</a>
+	        	<a class="btn btn-primary" role="button" href="ricarica.html">Ricarica importo</a>
 	        </div>
 	    </div>
 	</section>

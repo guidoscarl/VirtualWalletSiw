@@ -9,13 +9,21 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
   <servlet>
-  	<servlet-name>Registrati</servlet-name>
-  	<servlet-class>servlets.SignupRED</servlet-class> 
+    <servlet-name>Registrati</servlet-name>
+    <servlet-class>servlets.SignupRED</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>Registrati</servlet-name>
-  	<url-pattern>/sign-up</url-pattern>
+    <servlet-name>Registrati</servlet-name>
+    <url-pattern>/sign-up</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>Ricarica</servlet-name>
+    <servlet-class>servlets.Recharge</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Ricarica</servlet-name>
+    <url-pattern>/recharge</url-pattern>
   </servlet-mapping>
 </web-app>

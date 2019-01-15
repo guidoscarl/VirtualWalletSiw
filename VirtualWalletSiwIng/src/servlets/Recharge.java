@@ -6,25 +6,22 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import Excepions.UsersNotFound;
 import models.Utente;
-import persistence.ConnectionFactory;
 import persistence.PostgresDAOFactory;
 import persistence.dao.UtenteDao;
 
 /**
- * Servlet implementation class SignInServlet
+ * Servlet implementation class Recharge
  */
-@WebServlet("/SignInServlet")
-public class SignInServlet extends HttpServlet {
+@WebServlet("/Recharge")
+public class Recharge extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SignInServlet() {
+    public Recharge() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,38 +38,20 @@ public class SignInServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Utente u = null;
+		// TODO Auto-generated method stub
 		
-		
-		String email=request.getParameter("email");
-		String password=request.getParameter("password");
 		PostgresDAOFactory p = new PostgresDAOFactory();
 		UtenteDao dao=p.getUtenteDao();
+		String email = (String)request.getSession().getAttribute("email");
+		int oldSaldo=(int)request.getSession().getAttribute("saldo");
+		int importo=Integer.parseInt(request.getParameter("importo"));
+		System.out.println(email+" "+oldSaldo+" "+importo);
 		
-		HttpSession session=request.getSession();
-		try {
-			u=dao.getByPrimaryKey(email, password);
-			session.setAttribute("nome", u.getNome());
-			session.setAttribute("cognome", u.getCognome());
-			session.setAttribute("email", u.getEmail());
-			System.out.println(u.getSaldo());
-			session.setAttribute("saldo", u.getSaldo());
-			
-			
-		}
-		catch(UsersNotFound e) {
-			System.out.println("utente non trovato");
-			session.setAttribute("usersNotFound", true);
-		}
+		int newSaldo=oldSaldo+importo;
 		
-		System.out.println(u.getNome()+u.getCognome());
+		Utente u = new Utente("a","a",email,"a",newSaldo);
 		
-		
-		
-		
-		
-		
-		response.sendRedirect("account.jsp");
+		dao.update(u);
 		
 		
 		
