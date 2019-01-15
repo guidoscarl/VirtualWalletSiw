@@ -52,6 +52,8 @@ public class Recharge extends HttpServlet {
 		Utente u = new Utente("a","a",email,"a",newSaldo);
 		
 		dao.update(u);
+		request.getSession().setAttribute("saldo", newSaldo);
+		response.sendRedirect("account.jsp");
 		
 		
 		

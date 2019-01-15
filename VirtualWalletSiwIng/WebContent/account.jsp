@@ -17,21 +17,32 @@
 			<span class="navbar-brand">Virtual Wallet</span>
 			<div class="navbar-collapse" id="navcol-1">
 				<ul class="nav navbar-nav">
-			        <li class="nav-item" role="presentation"><a class="nav-link active" href="home.html">Home</a></li>
+			        <li class="nav-item" role="presentation"><a class="nav-link active" href="index.html">Home</a></li>
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Disconnetti</a></li>
 		        </ul>
 			</div>
-	        <span><%out.print(session.getAttribute("nome")+" "+session.getAttribute("cognome")); %> benvenuto!</span>
+	        <span><%out.print(session.getAttribute("nome")+" "+(session.getAttribute("cognome"))); %>, benvenuto!</span>
 		</div>
 	</nav>
 	<section class="portfolio-block block-intro section-border">
-	    <div class="container">
-	        <div>
-	        	<p>Il tuo conto ammonta a: <%out.print(session.getAttribute("saldo")+" &#8364;"); %></p>
-	        <div class="avatar" style="background-image:url(&quot;Images/test.jpg&quot;);"></div>
-	        	<a class="btn btn-primary" role="button" href="ricarica.html">Ricarica importo</a>
-	        </div>
-	    </div>
+		<div class="col-sm-12">
+			<div class="row">
+				<div class="col-sm-2 profile-info gradient myBorder">
+					<p>Info utente</p>
+					<span>Nome:<%out.print(session.getAttribute("nome")); %></span>
+					<span>Cognome:<%out.print(session.getAttribute("cognome")); %></span>
+					<span>E-mail:<%out.print(session.getAttribute("email")); %></span>
+				</div>
+	   	 		<div class="col-sm-10 gradient myBorder">
+	        		<p>Il tuo conto ammonta a:</p>
+	        		<!--"€-:--." -->
+	        		<div class="grid amount" style="background-image:url(&quot;Images/grid.png&quot;);">&#8364;<%out.print(session.getAttribute("saldo")); %></div>
+	        		<a class="btn btn-primary" role="button" href="storico.html">Visualizza Storico</a>
+	        		<a class="btn btn-primary" role="button" href="ricarica.html">Ricarica importo</a>
+	    	    	<a class="btn btn-primary" role="button" href="transazione.html">Effettua transazione</a>
+		    	</div>
+			</div>
+		</div>
 	</section>
 </body>
 </html>
