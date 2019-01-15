@@ -17,7 +17,7 @@
 			<span class="navbar-brand">Virtual Wallet</span>
 			<div class="navbar-collapse" id="navcol-1">
 				<ul class="nav navbar-nav">
-			        <li class="nav-item" role="presentation"><a class="nav-link active" href="index.html">Home</a></li>
+			        <li class="nav-item" role="presentation"><a class="nav-link active" href="index.jsp">Home</a></li>
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="logout">Disconnetti</a></li>
 		        </ul>
 			</div>

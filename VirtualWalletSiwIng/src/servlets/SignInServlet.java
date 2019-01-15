@@ -57,7 +57,7 @@ public class SignInServlet extends HttpServlet {
 			session.setAttribute("email", u.getEmail());
 			System.out.println(u.getSaldo());
 			session.setAttribute("saldo", u.getSaldo());
-			
+			session.setAttribute("logged", true);
 			
 		}
 		catch(UsersNotFound e) {
