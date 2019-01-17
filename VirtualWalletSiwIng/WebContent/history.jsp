@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,11 +42,14 @@
 							<div class="col-sm-2 colTableEmpty">COGNOME DESTINATARIO</div>
 							<div class="col-sm-4 colTableEmpty">E-MAIL DESTINATARIO</div>
 							<div class="col-sm-2 colTableEmpty">IMPORTO</div>
-							<div class="col-sm-2 colTableTransaction myBorder">dataa</div>
-							<div class="col-sm-2 colTableTransaction myBorder">nome</div>
-							<div class="col-sm-2 colTableTransaction myBorder">cognome</div>
-							<div class="col-sm-4 colTableTransaction myBorder">email@email.com</div>
-							<div class="col-sm-2 colTableTransaction myBorder" style="color:red">amount</div>
+							<c:forEach items="${transazioniM}" var="trans" >
+							<div class="col-sm-2 colTableTransaction myBorder">data</div>
+							<div class="col-sm-2 colTableTransaction myBorder">${trans.nomeDestinatario }</div>
+							<div class="col-sm-2 colTableTransaction myBorder">${trans.cognomeDestinatario }</div>
+							<div class="col-sm-4 colTableTransaction myBorder">${trans.email }</div>
+							<div class="col-sm-2 colTableTransaction myBorder" style="color:green;">${trans.importo }</div>
+								
+							</c:forEach>
 						</div>
 					</div>
 				</div>
@@ -58,11 +62,19 @@
 							<div class="col-sm-2 colTableEmpty">COGNOME MITTENTE</div>
 							<div class="col-sm-4 colTableEmpty">E-MAIL MITTENTE</div>
 							<div class="col-sm-2 colTableEmpty">IMPORTO</div>
+							<c:forEach items="${transazioniD}" var="trans" >
 							<div class="col-sm-2 colTableTransaction myBorder">data</div>
+							<div class="col-sm-2 colTableTransaction myBorder">${trans.nomeMittente }</div>
+							<div class="col-sm-2 colTableTransaction myBorder">${trans.cognomeMittente }</div>
+							<div class="col-sm-4 colTableTransaction myBorder">${trans.email }</div>
+							<div class="col-sm-2 colTableTransaction myBorder" style="color:green;">${trans.importo }</div>
+								
+							</c:forEach>
+							<!--<div class="col-sm-2 colTableTransaction myBorder">data</div>
 							<div class="col-sm-2 colTableTransaction myBorder">nome</div>
 							<div class="col-sm-2 colTableTransaction myBorder">cognome</div>
 							<div class="col-sm-4 colTableTransaction myBorder">email@email.com</div>
-							<div class="col-sm-2 colTableTransaction myBorder" style="color:green;">amount</div>
+							<div class="col-sm-2 colTableTransaction myBorder" style="color:green;">amount</div>-->
 						</div>
 					</div>
 				</div>

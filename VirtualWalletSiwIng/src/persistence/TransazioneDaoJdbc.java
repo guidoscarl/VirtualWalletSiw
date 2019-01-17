@@ -41,7 +41,7 @@ public class TransazioneDaoJdbc implements TransazioneDao {
 					UtenteDao u = DatabaseManager.getInstance().getDaoFactory().getUtenteDao();
 					Utente utM = u.getUtenteforTransaction(results.getString("mittente"));
 					Utente utD =u.getUtenteforTransaction(results.getString("destinatario"));
-					Transazione t =new Transazione(utM.getNome(),utM.getCognome(),utD.getNome(),utD.getCognome(),results.getInt("importo"));
+					Transazione t =new Transazione(utM.getNome(),utM.getCognome(),utD.getNome(),utD.getCognome(),results.getInt("importo"),utD.getEmail());
 					transazioni.add(t);
 				}
 			} catch (SQLException e) {
@@ -67,7 +67,7 @@ public class TransazioneDaoJdbc implements TransazioneDao {
 					UtenteDao u = DatabaseManager.getInstance().getDaoFactory().getUtenteDao();
 					Utente utM = u.getUtenteforTransaction(results.getString("mittente"));
 					Utente utD =u.getUtenteforTransaction(results.getString("destinatario"));
-					Transazione t =new Transazione(utM.getNome(),utM.getCognome(),utD.getNome(),utD.getCognome(),results.getInt("importo"));
+					Transazione t =new Transazione(utM.getNome(),utM.getCognome(),utD.getNome(),utD.getCognome(),results.getInt("importo"),utM.getEmail());
 					transazioni.add(t);
 				}
 			} catch (SQLException e) {

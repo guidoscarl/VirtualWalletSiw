@@ -29,7 +29,8 @@
 			<div class="row">
 				<div class="col-sm-2 profile-info gradient myBorder">
 					<p>Info utente</p>
-					<span>Nome:<%out.print(session.getAttribute("nome")); %></span>
+					<span>Nome:</span>
+					<p><%out.print(session.getAttribute("nome")); %></p>
 					<span>Cognome:<%out.print(session.getAttribute("cognome")); %></span>
 					<span>E-mail:<%out.print(session.getAttribute("email")); %></span>
 				</div>
@@ -37,7 +38,7 @@
 	        		<p>Il tuo conto ammonta a:</p>
 	        		<!--"€-:--." -->
 	        		<div class="grid amount" style="background-image:url(&quot;Images/grid.png&quot;);">&#8364;<%out.print(session.getAttribute("saldo")); %></div>
-	        		<a class="btn btn-primary" role="button" href="storico.html">Visualizza Storico</a>
+	        		<a class="btn btn-primary" role="button" href="viewHistory">Visualizza Storico</a>
 	        		<a class="btn btn-primary" role="button" href="ricarica.html">Ricarica importo</a>
 	    	    	<a class="btn btn-primary" role="button" href="transazione.html">Effettua transazione</a>
 		    	</div>

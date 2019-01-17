@@ -5,15 +5,23 @@ public class Transazione {
 	private String cognomeMittente;
 	private String nomeDestinatario;
 	private String cognomeDestinatario;
+	private String email;
 	private int importo;
 	public Transazione(String nomeMittente, String cognomeMittente, String nomeDestinatario, String cognomeDestinatario,
-			int importo) {
+			int importo,String email) {
 		
 		this.nomeMittente = nomeMittente;
 		this.cognomeMittente = cognomeMittente;
 		this.nomeDestinatario = nomeDestinatario;
 		this.cognomeDestinatario = cognomeDestinatario;
+		this.email=email;
 		this.importo = importo;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getNomeMittente() {
 		return nomeMittente;
