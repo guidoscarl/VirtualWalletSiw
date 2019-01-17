@@ -50,6 +50,7 @@ public class ViewHistory extends HttpServlet {
 		for(Transazione t:transazioniM) {
 			System.out.println(t.getNomeMittente()+"\n");
 		}
+		System.out.println("fatto");
 		
 		
 		
