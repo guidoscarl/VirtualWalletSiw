@@ -1,5 +1,9 @@
 package persistence;
 
+import java.util.ArrayList;
+
+import models.Transazione;
+import persistence.dao.TransazioneDao;
 import persistence.dao.UtenteDao;
 
 public class PostgresDAOFactory {
@@ -30,6 +34,12 @@ public class PostgresDAOFactory {
 	public UtenteDao getUtenteDao() {
 		return new UtenteDaoJdbc(dataSource);
 		
+	}
+	
+	public TransazioneDao getTransazioneDao() {
+		return new TransazioneDaoJdbc(dataSource); 
+			
+			
 	}
 
 }
