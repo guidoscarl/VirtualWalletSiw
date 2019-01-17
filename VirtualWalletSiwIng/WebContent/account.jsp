@@ -27,14 +27,16 @@
 	<section class="portfolio-block block-intro section-border">
 		<div class="col-sm-12">
 			<div class="row">
-				<div class="col-sm-2 profile-info gradient myBorder">
-					<p>Info utente</p>
+				<div class="col-sm-3 profile-info gradient myBorder">
+					<h1>Info utente</h1>
 					<span>Nome:</span>
 					<p><%out.print(session.getAttribute("nome")); %></p>
-					<span>Cognome:<%out.print(session.getAttribute("cognome")); %></span>
-					<span>E-mail:<%out.print(session.getAttribute("email")); %></span>
+					<span>Cognome:</span>
+					<p><%out.print(session.getAttribute("cognome")); %></p>
+					<span>E-mail:</span>
+					<p style="font-size:1.00vw;"><%out.print(session.getAttribute("email")); %></p>
 				</div>
-	   	 		<div class="col-sm-10 gradient myBorder">
+	   	 		<div class="col-sm-9 gradient myBorder">
 	        		<p>Il tuo conto ammonta a:</p>
 	        		<!--"€-:--." -->
 	        		<div class="grid amount" style="background-image:url(&quot;Images/grid.png&quot;);">&#8364;<%out.print(session.getAttribute("saldo")); %></div>

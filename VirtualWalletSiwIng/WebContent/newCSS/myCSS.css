@@ -35,7 +35,7 @@
 	padding: 100px 100px;
 }
 
-.container.gradient.myBorder> p {
+.container.gradient.myBorder > p {
 	color:white;
 	text-align:left;
 	font-size:2.5em;
@@ -81,7 +81,7 @@
 	max-width: 650px;
 }
 
-.portfolio-block.block-intro p{
+.portfolio-block.block-intro > p{
 	color: white;
 	font-size:1.5em;
 	font-weight:300;
@@ -125,8 +125,13 @@
 	text-align:left;
 }
 
-.col-sm-2.profile-info.gradient.myBorder span {
-	font-size:1.00em;
+.col-sm-3.profile-info.gradient.myBorder h1 {
+	font-size:1.75em;
+}
+
+.col-sm-3.profile-info.gradient.myBorder > p {
+	margin-bottom:0px;
+	font-size:1.25em;
 }
 
 .myBorder {
