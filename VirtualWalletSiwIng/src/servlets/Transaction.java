@@ -47,8 +47,10 @@ public class Transaction extends HttpServlet {
 		try {
 			Utente destinatario=dao.getUtenteforTransaction((String)request.getParameter("email"));
 			dao.transaction(mittente, destinatario, Integer.parseInt(request.getParameter("importo")));
+			
 			int oldSaldo=(int)request.getSession().getAttribute("saldo");
 			request.getSession().setAttribute("saldo", oldSaldo-Integer.parseInt(request.getParameter("importo")));
+			
 		} catch (UsersNotFound e) {
 			// TODO Auto-generated catch block
 			System.out.println("utente destinatario non trovato");

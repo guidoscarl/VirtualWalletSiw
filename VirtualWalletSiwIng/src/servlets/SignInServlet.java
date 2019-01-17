@@ -58,6 +58,7 @@ public class SignInServlet extends HttpServlet {
 			System.out.println(u.getSaldo());
 			session.setAttribute("saldo", u.getSaldo());
 			session.setAttribute("logged", true);
+			response.sendRedirect("account.jsp");
 			
 		}
 		catch(UsersNotFound e) {
@@ -72,7 +73,7 @@ public class SignInServlet extends HttpServlet {
 		
 		
 		
-		response.sendRedirect("account.jsp");
+		
 		
 		
 		

@@ -151,6 +151,22 @@ public class UtenteDaoJdbc implements UtenteDao {
 					stat.setInt(1, destinatario.getSaldo()+importo);
 					stat.setString(2, destinatario.getEmail()) ;
 					stat.execute();
+					
+				String query3="INSERT INTO public.transazione(\r\n" + 
+						"	mittente, destinatario, importo)\r\n" + 
+						"	VALUES (?, ?, ?);";
+				
+				PreparedStatement save;
+				
+				save=c.prepareStatement(query3);
+				
+				save.setString(1,mittente.getEmail());
+				save.setString(2, destinatario.getEmail());
+				save.setInt(3, importo);
+				
+				save.execute();
+				
+				
 			
 				
 			 }
