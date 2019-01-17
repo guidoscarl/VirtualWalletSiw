@@ -10,8 +10,9 @@ import javax.servlet.http.HttpSession;
 
 import Excepions.UsersNotFound;
 import models.Utente;
-import persistence.ConnectionFactory;
+import persistence.DatabaseManager;
 import persistence.PostgresDAOFactory;
+import persistence.UtenteDaoJdbc;
 import persistence.dao.UtenteDao;
 
 /**
@@ -46,9 +47,8 @@ public class SignInServlet extends HttpServlet {
 		
 		String email=request.getParameter("email");
 		String password=request.getParameter("password");
-		PostgresDAOFactory p = new PostgresDAOFactory();
-		UtenteDao dao=p.getUtenteDao();
 		
+		UtenteDao dao =DatabaseManager.getInstance().getDaoFactory().getUtenteDao();
 		HttpSession session=request.getSession();
 		try {
 			u=dao.getByPrimaryKey(email, password);

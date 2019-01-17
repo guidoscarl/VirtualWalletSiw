@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import Excepions.EmailAlreadyUsed;
 import models.Utente;
-import persistence.ConnectionFactory;
 import persistence.PostgresDAOFactory;
 import persistence.dao.UtenteDao;
 
@@ -55,6 +54,7 @@ public class SignupServlet extends HttpServlet {
 		System.out.println(cognome);
 		
 		Utente u = new Utente(nome,cognome,email,pass,saldo);
+		
 		PostgresDAOFactory p = new PostgresDAOFactory();
 		UtenteDao dao=p.getUtenteDao();
 		try {

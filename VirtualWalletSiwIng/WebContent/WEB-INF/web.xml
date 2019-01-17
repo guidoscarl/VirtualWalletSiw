@@ -33,7 +33,6 @@
     <servlet-name>Transazione</servlet-name>
     <url-pattern>/transaction</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>Logout</servlet-name>
     <servlet-class>servlets.Logout</servlet-class>
@@ -41,5 +40,14 @@
   <servlet-mapping>
     <servlet-name>Logout</servlet-name>
     <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ViewHistory</servlet-name>
+    <servlet-class>servlets.ViewHistory</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewHistory</servlet-name>
+    <url-pattern>/viewHistory</url-pattern>
   </servlet-mapping>
 </web-app>
