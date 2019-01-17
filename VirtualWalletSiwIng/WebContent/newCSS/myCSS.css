@@ -19,10 +19,28 @@
 	text-align:center;
 	padding: 5px;
 }
+
+.colTableEmpty {
+	color:white;
+	text-align:center;
+	font-size:0.75em;
+}
+
+.colTableTransaction {
+	text-align:left;
+	font-size:0.75em;
+}
+
 .portfolio-block {
 	padding: 100px 100px;
 }
 
+.container.gradient.myBorder> p {
+	color:white;
+	text-align:left;
+	font-size:2.5em;
+	font-weight:300;
+}
 .portfolio-block form {
 	padding: 50px;
 	margin: auto;
