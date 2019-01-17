@@ -41,7 +41,7 @@
 							<div class="col-sm-2 colTableEmpty">COGNOME DESTINATARIO</div>
 							<div class="col-sm-4 colTableEmpty">E-MAIL DESTINATARIO</div>
 							<div class="col-sm-2 colTableEmpty">IMPORTO</div>
-							<div class="col-sm-2 colTableTransaction myBorder">data</div>
+							<div class="col-sm-2 colTableTransaction myBorder">dataa</div>
 							<div class="col-sm-2 colTableTransaction myBorder">nome</div>
 							<div class="col-sm-2 colTableTransaction myBorder">cognome</div>
 							<div class="col-sm-4 colTableTransaction myBorder">email@email.com</div>
