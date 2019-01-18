@@ -21,30 +21,28 @@
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="logout">Disconnetti</a></li>
 		        </ul>
 			</div>
-	        <span><%out.print(session.getAttribute("nome")+" "+(session.getAttribute("cognome"))); %>, benvenuto!</span>
+	        <a class="links" href="account.jsp"><%out.print(session.getAttribute("nome")+" "+(session.getAttribute("cognome"))); %>, benvenuto!</a>
 		</div>
 	</nav>
 	<section class="portfolio-block block-intro section-border">
-		<div class="col-sm-12">
-			<div class="row">
-				<div class="col-sm-3 profile-info gradient myBorder">
-					<h1>Info utente</h1>
-					<span>Nome:</span>
-					<p><%out.print(session.getAttribute("nome")); %></p>
-					<span>Cognome:</span>
-					<p><%out.print(session.getAttribute("cognome")); %></p>
-					<span>E-mail:</span>
-					<p style="font-size:1.00vw;"><%out.print(session.getAttribute("email")); %></p>
-				</div>
-	   	 		<div class="col-sm-9 gradient myBorder">
-	        		<p>Il tuo conto ammonta a:</p>
-	        		<!--"€-:--." -->
-	        		<div class="grid amount" style="background-image:url(&quot;Images/grid.png&quot;);">&#8364;<%out.print(session.getAttribute("saldo")); %></div>
-	        		<a class="btn btn-primary" role="button" href="viewHistory">Visualizza Storico</a>
-	        		<a class="btn btn-primary" role="button" href="ricarica.html">Ricarica importo</a>
-	    	    	<a class="btn btn-primary" role="button" href="transazione.html">Effettua transazione</a>
-		    	</div>
+		<div class="row">
+			<div class="col-sm-3 profile-info gradient myBorder">
+				<h1>Info utente</h1>
+				<span>Nome:</span>
+				<p><%out.print(session.getAttribute("nome")); %></p>
+				<span>Cognome:</span>
+				<p><%out.print(session.getAttribute("cognome")); %></p>
+				<span>E-mail:</span>
+				<p style="font-size:1.00vw;"><%out.print(session.getAttribute("email")); %></p>
 			</div>
+	   	 	<div class="col-sm-9 gradient myBorder">
+        		<p>Il tuo conto ammonta a:</p>
+	       		<!--"€-:--." -->
+	       		<div class="grid amount" style="background-image:url(&quot;Images/grid.png&quot;);">&#8364;<%out.print(session.getAttribute("saldo")); %></div>
+	       		<a class="btn btn-primary" role="button" href="viewHistory">Visualizza Storico</a>
+	       		<a class="btn btn-primary" role="button" href="ricarica.html">Ricarica importo</a>
+	        	<a class="btn btn-primary" role="button" href="transazione.html">Effettua transazione</a>
+		    </div>
 		</div>
 	</section>
 </body>

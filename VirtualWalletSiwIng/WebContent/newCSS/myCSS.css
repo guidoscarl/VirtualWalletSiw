@@ -111,10 +111,17 @@
 
 .links, .social-icons {
 	text-align:center;	
+	color:white;
 }
 
 .links a, .social-icons a{
 	color:white;
+}
+
+.links:hover {
+	color:white;
+	text-decoration:none;
+	opacity:0.6;
 }
 
 .links a:hover {
