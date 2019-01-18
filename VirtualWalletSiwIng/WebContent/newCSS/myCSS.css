@@ -32,7 +32,8 @@
 }
 
 .portfolio-block {
-	padding: 100px 100px;
+	padding: 100px;
+	text-align:center;
 }
 
 .container.gradient.myBorder > p {
@@ -41,17 +42,8 @@
 	font-size:2.5em;
 	font-weight:300;
 }
-.portfolio-block form {
-	padding: 50px;
-	margin: auto;
-	border-radius:0.25rem;
-}
 
-.portfolio-block.block-intro{
-	text-align:center;
-}
-
-.portfolio-block.block-intro .avatar{
+.avatar{
 	width:150px;
 	height:150px;
 	background-size:cover;
@@ -78,10 +70,14 @@
 }
 
 .portfolio-block form {
+	text-align:left;
 	max-width: 650px;
+	padding: 50px;
+	margin: auto;
+	border-radius:0.25rem;
 }
 
-.portfolio-block.block-intro > p{
+.portfolio-block p{
 	color: white;
 	font-size:1.5em;
 	font-weight:300;

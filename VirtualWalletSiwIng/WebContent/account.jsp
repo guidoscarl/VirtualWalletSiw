@@ -24,7 +24,7 @@
 	        <a class="links" href="account.jsp"><%out.print(session.getAttribute("nome")+" "+(session.getAttribute("cognome"))); %>, benvenuto!</a>
 		</div>
 	</nav>
-	<section class="portfolio-block block-intro section-border">
+	<section class="portfolio-block section-border">
 		<div class="row">
 			<div class="col-sm-3 profile-info gradient myBorder">
 				<h1>Info utente</h1>

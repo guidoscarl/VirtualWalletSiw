@@ -28,7 +28,7 @@
             <form style="background-color:white" method="post" action="recharge" >
                 <!-- Tenere per la registrazione di un nuovo account <div class="form-group"><label for="subject">Subject</label><select class="form-control" id="subject"><option value="" selected="">Choose Subject</option><option value="1">Subject 1</option><option value="2">Subject 2</option><option value="3">Subject 3</option></select></div> -->
                 <!-- Aggiungere identificativi???-->
-                <p><i>Inserisci nella form qui sotto la tua e-mail e la tua password per verificare i tuoi dati e l'importo da ricaricare</i></p>
+                <p style="color:black"><i>Inserisci nella form qui sotto la tua e-mail e la tua password per verificare i tuoi dati e l'importo da ricaricare</i></p>
                 <div class="form-group"><label for="email">Email</label><input class="form-control" type="email" name="email"></div>
                 <div class="form-group"><label for="password">Password</label><input class="form-control" type="password" name="password"></div>
                 <div class="form-group"><label for="name">Importo</label><input class="form-control" type="text" name="importo"></div>
