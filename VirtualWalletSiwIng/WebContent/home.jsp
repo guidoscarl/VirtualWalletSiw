@@ -29,6 +29,8 @@
                     <% 
                     if(session.getAttribute("logged")==null)
                     	out.print("<li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link active\" href=\"sign-in.html\">Login</a></li>");
+                    else
+                    	out.print("<li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link active\" href=\"logout\">Disconnetti</a></li>");
                     %>
                 </ul>
             </div>
