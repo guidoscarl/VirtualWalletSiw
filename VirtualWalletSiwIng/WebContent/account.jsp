@@ -17,7 +17,7 @@
 			<span class="navbar-brand">Virtual Wallet</span>
 			<div class="navbar-collapse" id="navcol-1">
 				<ul class="nav navbar-nav">
-			        <li class="nav-item" role="presentation"><a class="nav-link active" href="index.jsp">Home</a></li>
+			        <li class="nav-item" role="presentation"><a class="nav-link active" href="home.jsp">Home</a></li>
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="logout">Disconnetti</a></li>
 		        </ul>
 			</div>
@@ -40,8 +40,8 @@
 	       		<!--"€-:--." -->
 	       		<div class="grid amount" style="background-image:url(&quot;Images/grid.png&quot;);">&#8364;<%out.print(session.getAttribute("saldo")); %></div>
 	       		<a class="btn btn-primary" role="button" href="viewHistory">Visualizza Storico</a>
-	       		<a class="btn btn-primary" role="button" href="ricarica.html">Ricarica importo</a>
-	        	<a class="btn btn-primary" role="button" href="transazione.html">Effettua transazione</a>
+	       		<a class="btn btn-primary" role="button" href="recharge.jsp">Ricarica importo</a>
+	        	<a class="btn btn-primary" role="button" href="transaction.jsp">Effettua transazione</a>
 		    </div>
 		</div>
 	</section>

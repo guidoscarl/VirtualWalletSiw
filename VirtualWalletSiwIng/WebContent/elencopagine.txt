@@ -1,0 +1,9 @@
+Elenco della pagine effettive del progetto
+
+home.jsp
+sign-in.html
+sign-up.jsp
+account.jsp
+transaction.jsp
+recharge.jsp
+history.jsp
