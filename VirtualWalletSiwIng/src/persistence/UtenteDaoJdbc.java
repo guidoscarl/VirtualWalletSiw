@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 import Excepions.EmailAlreadyUsed;
 import Excepions.UsersNotFound;
@@ -153,16 +156,20 @@ public class UtenteDaoJdbc implements UtenteDao {
 					stat.execute();
 					
 				String query3="INSERT INTO public.transazione(\r\n" + 
-						"	mittente, destinatario, importo)\r\n" + 
-						"	VALUES (?, ?, ?);";
+						"	mittente, destinatario, importo, data)\r\n" + 
+						"	VALUES (?, ?, ?, ?);";
 				
 				PreparedStatement save;
+				 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");  
+				   LocalDateTime now = LocalDateTime.now();
+				   
 				
 				save=c.prepareStatement(query3);
 				
 				save.setString(1,mittente.getEmail());
 				save.setString(2, destinatario.getEmail());
 				save.setInt(3, importo);
+				save.setString(4, dtf.format(now));
 				
 				save.execute();
 				
@@ -220,5 +227,41 @@ public class UtenteDaoJdbc implements UtenteDao {
 	}
 		return u;
 
+	}
+	@Override
+	public boolean existUtente(String email) {
+		Connection c =null;
+		boolean exist=true;
+		try {
+			c=data.getConnection();
+			PreparedStatement s;
+			String query="SELECT * \r\n" + 
+					"	FROM public.\"Utente\" \r\n" + 
+					"	WHERE \"email\"=?;";
+				s=c.prepareStatement(query);
+				s.setString(1, email);
+				
+				ResultSet result=s.executeQuery();
+				c.close();
+				if(result.next()) {
+					exist=true;
+				}
+				else {
+					exist=false;
+				}
+			
+		}
+		catch(SQLException e) {
+			try {
+				c.close();
+				
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
+		}
+		
+		return exist;
 	}
 }

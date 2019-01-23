@@ -29,7 +29,7 @@ public class SignupRED extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getSession().setAttribute("esistente", false);
+		
 		RequestDispatcher rd = request.getRequestDispatcher("sign-up.jsp");
 		rd.forward(request, response);
 		

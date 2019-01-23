@@ -10,6 +10,7 @@ public interface UtenteDao {
 	void update(Utente u);
 	void transaction(Utente mittente,Utente destinatario,int importo);
 	Utente getUtenteforTransaction(String email) throws UsersNotFound;
+	boolean existUtente(String email);
 	
 	
 }

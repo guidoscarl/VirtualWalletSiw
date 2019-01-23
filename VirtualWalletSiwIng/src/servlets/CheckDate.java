@@ -7,22 +7,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Excepions.UsersNotFound;
-import models.Utente;
-import persistence.PostgresDAOFactory;
+import persistence.DatabaseManager;
 import persistence.dao.UtenteDao;
 
 /**
- * Servlet implementation class Transaction
+ * Servlet implementation class CheckDate
  */
-@WebServlet("/Transaction")
-public class Transaction extends HttpServlet {
+@WebServlet("/CheckDate")
+public class CheckDate extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Transaction() {
+    public CheckDate() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -39,29 +37,13 @@ public class Transaction extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		PostgresDAOFactory p = new PostgresDAOFactory();
-		UtenteDao dao=p.getUtenteDao();
-		Utente mittente=new Utente("a","a",(String)request.getSession().getAttribute("email"),"a",(int)request.getSession().getAttribute("saldo"));
+		String email =request.getParameter("em");
+		System.out.println(email);
 		
-		try {
-			Utente destinatario=dao.getUtenteforTransaction((String)request.getParameter("email"));
-			dao.transaction(mittente, destinatario, Integer.parseInt(request.getParameter("importo")));
-			
-			int oldSaldo=(int)request.getSession().getAttribute("saldo");
-			request.getSession().setAttribute("saldo", oldSaldo-Integer.parseInt(request.getParameter("importo")));
-			
-		} catch (UsersNotFound e) {
-			// TODO Auto-generated catch block
-			System.out.println("utente destinatario non trovato");
+		UtenteDao ut = DatabaseManager.getInstance().getDaoFactory().getUtenteDao();
+		if(ut.existUtente(email)) {
+			response.getOutputStream().print("exist");
 		}
-		
-		response.sendRedirect("account.jsp");
-		
-		
-		
-		
-		
 	}
 
 }

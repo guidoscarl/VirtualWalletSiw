@@ -41,7 +41,6 @@
     <servlet-name>Logout</servlet-name>
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>ViewHistory</servlet-name>
     <servlet-class>servlets.ViewHistory</servlet-class>
@@ -49,5 +48,22 @@
   <servlet-mapping>
     <servlet-name>ViewHistory</servlet-name>
     <url-pattern>/viewHistory</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>doSignup</servlet-name>
+    <servlet-class>servlets.SignupServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>doSignup</servlet-name>
+    <url-pattern>/doSignup</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>checkDate</servlet-name>
+    <servlet-class>servlets.CheckDate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>checkDate</servlet-name>
+    <url-pattern>/checkDate</url-pattern>
   </servlet-mapping>
 </web-app>

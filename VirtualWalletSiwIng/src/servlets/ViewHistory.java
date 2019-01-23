@@ -45,7 +45,7 @@ public class ViewHistory extends HttpServlet {
 		for(Transazione t:transazioniM) {
 			System.out.println(t.getNomeMittente()+"\n");
 		}
-		System.out.println("fatto");
+		//System.out.println("fatto");
 		RequestDispatcher rd = request.getRequestDispatcher("history.jsp");
 		rd.forward(request, response);
 	}

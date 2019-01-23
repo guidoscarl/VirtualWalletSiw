@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="bootstrap-4.1.0-dist/css/bootstrap.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="bootstrap-4.1.0-dist/fonts/ionicons.min.css">
+    <script src="js/checkEmail.js"></script>
 </head>
 
 <body class="myBody">
@@ -39,15 +40,12 @@
                 <!-- Aggiungere identificativi???-->
                 <div class="form-group"><label for="name">Nome</label><input class="form-control" type="text" name="name"></div>
                 <div class="form-group"><label for="surname">Cognome</label><input class="form-control" type="text" name="surname"></div>
-                <div class="form-group"><label for="email">Email</label><input class="form-control" type="email" name="email"></div>
-                <%if((boolean)session.getAttribute("esistente")==true){
-                	out.print("<p style=\"color:red;\"> Email già esistente<p>");
-                }
-                %>
+                <div class="form-group"><label for="email" >Email</label><input class="form-control" type="email" name="email" id="email" oninput="checkEmail();"></div>
+                <p  class="controlClass" style="color:red;" id="control"><p>);
                 <div class="form-group"><label for="password">Password</label><input class="form-control" type="password" name="password"></div>
                 <div class="form-group"><label for="password">Conferma password</label><input class="form-control" type="password" id="password"></div>
         		<div class="form-group"><label for="born-date">Data di nascita</label><input class="form-control" type="date" id="born-date"></div>
-				<div class="button"><button type="submit" class="btn btn-primary btn-block" type="button">Registrati</button></div>
+				<div class="button"><button type="submit" class="btn btn-primary btn-block" type="button" id="button">Registrati</button></div>
         	</form>
         </div>
     </section>

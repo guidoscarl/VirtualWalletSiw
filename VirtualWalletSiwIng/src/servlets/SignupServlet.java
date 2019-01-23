@@ -1,6 +1,8 @@
 package servlets;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
@@ -11,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import Excepions.EmailAlreadyUsed;
 import models.Utente;
+import persistence.DatabaseManager;
 import persistence.PostgresDAOFactory;
 import persistence.dao.UtenteDao;
 
@@ -33,9 +36,13 @@ public class SignupServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-//		response.getWriter().println("<html>OK</h1>");
-//		//Ha scritto qualcosa del genere
+		String email =request.getParameter("em");
+		
+		UtenteDao ut = DatabaseManager.getInstance().getDaoFactory().getUtenteDao();
+		if(ut.existUtente(email)) {
+			response.getOutputStream().print("exist");
+		}
+		
 	}
 
 	/**
