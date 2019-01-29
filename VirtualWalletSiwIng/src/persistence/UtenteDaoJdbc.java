@@ -92,7 +92,7 @@ public class UtenteDaoJdbc implements UtenteDao {
 		}
 	}
 	@Override
-	public Utente getByPrimaryKey(String email, String pass) throws UsersNotFound {
+	public Utente getByPrimaryKey(String email, String pass) {
 		Utente u = null;
 		Connection c=null;
 		try {
@@ -106,7 +106,8 @@ public class UtenteDaoJdbc implements UtenteDao {
 				s.setString(2, pass) ;
 				ResultSet result=s.executeQuery();
 				
-				if(result.next()) {
+				
+				if(result.next()){
 					u= new Utente(result.getString("nome"),result.getString("cognome"),result.getString("email"),result.getString("password"),result.getInt("saldo"));
 				}
 				/*else
@@ -122,7 +123,7 @@ public class UtenteDaoJdbc implements UtenteDao {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			throw new UsersNotFound();
+			
 			
 			
 		}

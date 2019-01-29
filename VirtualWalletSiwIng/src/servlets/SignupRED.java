@@ -6,6 +6,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import persistence.DatabaseManager;
+import persistence.dao.UtenteDao;
+
 import javax.servlet.RequestDispatcher;
 
 
@@ -30,9 +34,7 @@ public class SignupRED extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		RequestDispatcher rd = request.getRequestDispatcher("sign-up.jsp");
-		rd.forward(request, response);
-		
+		response.sendRedirect("sign-up.jsp");
 	}
 
 	/**

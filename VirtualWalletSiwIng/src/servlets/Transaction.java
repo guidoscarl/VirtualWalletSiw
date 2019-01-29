@@ -50,13 +50,14 @@ public class Transaction extends HttpServlet {
 			
 			int oldSaldo=(int)request.getSession().getAttribute("saldo");
 			request.getSession().setAttribute("saldo", oldSaldo-Integer.parseInt(request.getParameter("importo")));
+			response.sendRedirect("confirm.html");
 			
 		} catch (UsersNotFound e) {
 			// TODO Auto-generated catch block
 			System.out.println("utente destinatario non trovato");
 		}
 		
-		response.sendRedirect("account.jsp");
+		
 		
 		
 		

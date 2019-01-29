@@ -1,3 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="utf-8"%>
+
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" 
+prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +13,7 @@
     <link rel="stylesheet" href="bootstrap-4.1.0-dist/css/bootstrap.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="bootstrap-4.1.0-dist/fonts/ionicons.min.css">
+    <script src="js/checkImport.js"></script>
 </head>
 <body class="myBody">
 	<nav class="navbar navbar-dark navbar-expand-sm fixed-top gradient">
@@ -19,7 +25,7 @@
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="logout">Disconnetti</a></li>
 		        </ul>
 			</div>
-	        <a class="links" href="account.jsp"><%out.print(session.getAttribute("nome")+" "+(session.getAttribute("cognome"))); %>, benvenuto!</a>
+	        <a class="links" href="account.jsp"><c:out value="${nome} ${cognome }">No name</c:out>, benvenuto!</a>
 		</div>
 	</nav>
 	<section class="portfolio-block">
@@ -31,11 +37,16 @@
                 <p style="color:black"><i>Inserisci nella form qui sotto il nome, il cognome e l'e-mail dell'utente destinatario e l'importo con il quale effettuare la transazione.</i></p>
                 <div class="form-group"><label for="name">Nome</label><input class="form-control" type="text" name="name"></div>
                 <div class="form-group"><label for="surname">Cognome</label><input class="form-control" type="text" name="surname"></div>
-                <div class="form-group"><label for="email">Email</label><input class="form-control" type="email" name="email"></div>
-                <div class="form-group"><label for="password">Importo</label><input class="form-control" type="text" name="importo"></div>
-				<div class="button"><button type="submit" class="btn btn-primary btn-block" type="button">Effettua transazione</button></div>
+                <div class="form-group"><label for="email">Email</label><input class="form-control" type="email" name="email" onInput="checkEmail();"></div>
+                <div class="form-group"><label for="importo">Importo</label><input class="form-control" type="text" name="importo" id="import" oninput="checkImport();" saldo="${saldo }">
+                <p style="color:red; visibility:hidden;" id="error" >Saldo non sufficiente</p>
+                <button type="button" class="btn btn-primary btn-block" type="button" style="visibility:hidden" onclick="doRecharge();" id="buttonRC" >Effettua ricarica</button>
+                </div>
+				<div class="button"><button class="btn btn-primary btn-block" type="button" id="buttonTR">Effettua transazione</button></div>
         	</form>
         </div>
     </section>
+    <script src="bootstrap-4.1.0-dist/js/jquery.min.js"></script>
+    <script src="bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>
 </body>
 </html>

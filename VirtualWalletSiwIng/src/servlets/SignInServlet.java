@@ -34,40 +34,68 @@ public class SignInServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+System.out.println("entrato nella servlet");
+		
+		String password=request.getParameter("pas");
+		String email=request.getParameter("em");
+		
+		
+		System.out.println(email+" "+password);
+		
+		UtenteDao dao =DatabaseManager.getInstance().getDaoFactory().getUtenteDao();
+		System.out.println("utente dao creato");
+		//HttpSession session=request.getSession();
+		System.out.println("ricevuta la sessione");
+		response.getOutputStream().print(email);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Utente u = null;
 		
+		System.out.println(" servlet ok post");
 		
-		String email=request.getParameter("email");
 		String password=request.getParameter("password");
+		String email=request.getParameter("email");
+		 
+		
+		System.out.println(email+" "+password);
 		
 		UtenteDao dao =DatabaseManager.getInstance().getDaoFactory().getUtenteDao();
+		System.out.println("utente dao creato");
 		HttpSession session=request.getSession();
-		try {
-			u=dao.getByPrimaryKey(email, password);
+		System.out.println("ricevuta la sessione");
+		
+			Utente u =dao.getByPrimaryKey(email, password);
+			String txt;
+			 if(u==null) {
+			           txt="no";
+			           response.getWriter().append(txt);
+			           
+			        }
+			else {
+			//response.getOutputStream().print(email+"post");
 			session.setAttribute("nome", u.getNome());
 			session.setAttribute("cognome", u.getCognome());
 			session.setAttribute("email", u.getEmail());
 			System.out.println(u.getSaldo());
 			session.setAttribute("saldo", u.getSaldo());
 			session.setAttribute("logged", true);
-			response.sendRedirect("account.jsp");
+			//response.sendRedirect("account.jsp");
 			
-		}
-		catch(UsersNotFound e) {
-			System.out.println("utente non trovato");
-			session.setAttribute("usersNotFound", true);
-		}
+			txt="ok";
+			response.getWriter().append(txt);
+			
+			}
+			 
+			
+			
 		
-		System.out.println(u.getNome()+u.getCognome());
+			
 		
+		
+		    
 		
 		
 		

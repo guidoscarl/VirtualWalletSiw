@@ -66,4 +66,14 @@
     <servlet-name>checkDate</servlet-name>
     <url-pattern>/checkDate</url-pattern>
   </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>signin</servlet-name>
+    <servlet-class>servlets.SignInServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>signin</servlet-name>
+    <url-pattern>/signin</url-pattern>
+  </servlet-mapping>
 </web-app>
