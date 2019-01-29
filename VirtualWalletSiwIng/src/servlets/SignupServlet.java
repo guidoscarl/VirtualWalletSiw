@@ -67,7 +67,7 @@ public class SignupServlet extends HttpServlet {
 		try {
 		dao.save(u);
 		PrintWriter out = response.getWriter();
-		response.sendRedirect("index.html");
+		response.sendRedirect("home.jsp");
 		response.setContentType("text/html");
 		out.println("<p>Benvenuto "+nome+" "+cognome+"</p>");
 		}

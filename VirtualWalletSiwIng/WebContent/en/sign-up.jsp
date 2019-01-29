@@ -6,12 +6,12 @@
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual Wallet - Registrazione</title>
-	<link rel="stylesheet" href="newCSS/myCSS.css">
-    <link rel="stylesheet" href="bootstrap-4.1.0-dist/css/bootstrap.css">
+    <title>Virtual Wallet - Sign up</title>
+	<link rel="stylesheet" href="../newCSS/myCSS.css">
+    <link rel="stylesheet" href="../bootstrap-4.1.0-dist/css/bootstrap.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
-    <link rel="stylesheet" href="bootstrap-4.1.0-dist/fonts/ionicons.min.css">
-    <script src="js/checkEmail.js"></script>
+    <link rel="stylesheet" href="../bootstrap-4.1.0-dist/fonts/ionicons.min.css">
+    <script src="../js/checkEmail.js"></script>
 </head>
 
 <body class="myBody">
@@ -19,34 +19,34 @@
         <div class="container">
         	<span class="navbar-brand">Virtual Wallet</span>
         	<button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
-        		<span style="color:white;">Naviga nel sito!</span>
+        		<span style="color:white;">Browse the site!</span>
         		<!-- <span class="navbar-toggler-icon"></span> -->
         	</button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="nav navbar-nav">
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="home.jsp">Home</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="projects-grid-cards.html">Progetto</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="projects-grid-cards.html">Project</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="cv.html">CV</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="sign-in.html">Accedi</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="en/sign-up.jsp">Cambia in italiano</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="sign-in.html">Login</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="../sign-up.jsp">Cambia in italiano</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <section class="portfolio-block">
         <div class="container">
-            <div class="heading"><h2>Registrazione</h2></div>
-            <form style="background-color:white" method="post" action="SignupServlet">
+            <div class="heading"><h2>Create your account</h2></div>
+            <form style="background-color:white" method="post" action="../SignupServlet">
                 <!-- Tenere per la registrazione di un nuovo account <div class="form-group"><label for="subject">Subject</label><select class="form-control" id="subject"><option value="" selected="">Choose Subject</option><option value="1">Subject 1</option><option value="2">Subject 2</option><option value="3">Subject 3</option></select></div> -->
                 <!-- Aggiungere identificativi???-->
-                <div class="form-group"><label for="name">Nome</label><input class="form-control" type="text" name="name"></div>
-                <div class="form-group"><label for="surname">Cognome</label><input class="form-control" type="text" name="surname"></div>
+                <div class="form-group"><label for="name">Name</label><input class="form-control" type="text" name="name"></div>
+                <div class="form-group"><label for="surname">Surname</label><input class="form-control" type="text" name="surname"></div>
                 <div class="form-group"><label for="email" >Email</label><input class="form-control" type="email" name="email" id="email" oninput="checkEmail();"></div>
                 <p  class="controlClass" style="color:red;" id="control"><p>);
                 <div class="form-group"><label for="password">Password</label><input class="form-control" type="password" name="password"></div>
-                <div class="form-group"><label for="password">Conferma password</label><input class="form-control" type="password" id="password"></div>
-        		<div class="form-group"><label for="born-date">Data di nascita</label><input class="form-control" type="date" id="born-date"></div>
-				<div class="button"><button type="submit" class="btn btn-primary btn-block" type="button" id="button">Registrati</button></div>
+                <div class="form-group"><label for="password">Confirm password</label><input class="form-control" type="password" id="password"></div>
+        		<div class="form-group"><label for="born-date">Birth date</label><input class="form-control" type="date" id="born-date"></div>
+				<div class="button"><button type="submit" class="btn btn-primary btn-block" type="button" id="button">Subscribe</button></div>
         	</form>
         </div>
     </section>
@@ -65,8 +65,8 @@
             </div>
         </div>
     </footer>
-	<script src="bootstrap-4.1.0-dist/js/jquery.min.js"></script>
-    <script src="bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>
+	<script src="../bootstrap-4.1.0-dist/js/jquery.min.js"></script>
+    <script src="../bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>

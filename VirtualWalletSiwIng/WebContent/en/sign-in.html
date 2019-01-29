@@ -4,11 +4,11 @@
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual Wallet - Accedi</title>
-	<link rel="stylesheet" href="newCSS/myCSS.css">
-    <link rel="stylesheet" href="bootstrap-4.1.0-dist/css/bootstrap.css">
+    <title>Virtual Wallet - Login</title>
+	<link rel="stylesheet" href="../newCSS/myCSS.css">
+    <link rel="stylesheet" href="../bootstrap-4.1.0-dist/css/bootstrap.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
-    <link rel="stylesheet" href="bootstrap-4.1.0-dist/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../bootstrap-4.1.0-dist/fonts/ionicons.min.css">
 </head>
 
 <body class="myBody">
@@ -16,31 +16,31 @@
         <div class="container">
         	<span class="navbar-brand">Virtual Wallet</span>
         	<button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
-        		<span style="color:white;">Naviga nel sito!</span>
+        		<span style="color:white;">Browse the site!</span>
         		<!-- <span class="navbar-toggler-icon"></span> -->
         	</button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav">
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="home.jsp">Home</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="projects-grid-cards.html">Progetto</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="projects-grid-cards.html">Project</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="cv.html">CV</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="en/sign-in.html">Switch to English</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="../sign-in.html">Cambia in italiano</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <section class="portfolio-block">
         <div class="container">
-            <div class="heading"><h2>Accedi</h2></div>
-            <form style="background-color:white" method="post" action="SignInServlet">
+            <div class="heading"><h2>Login</h2></div>
+            <form style="background-color:white" method="post" action="../SignInServlet">
                 <!-- Tenere per la registrazione di un nuovo account <div class="form-group"><label for="subject">Subject</label><select class="form-control" id="subject"><option value="" selected="">Choose Subject</option><option value="1">Subject 1</option><option value="2">Subject 2</option><option value="3">Subject 3</option></select></div> -->
                 <div class="form-group"><label for="email">Email</label><input class="form-control" type="email" name = "email" placeholder="User Name"></div>
                 <div class="form-group"><label for="password">Password</label><input class="form-control" type="password" name = "password" placeholder="Password"></div>
         		<div class="form-group">
             		<div class="form-row">
 <!--                     <div class="col-md-6"><label for="hire-date">Date</label><input class="form-control datepicker" type="text" id="hire-date" date-format="MM-DD-YYYY"></div> -->
-            			<div class="col-md-6"><button type="submit" class="btn btn-primary btn-block">Accedi</button></div>
-						<div class="col-md-6"><a class="btn btn-primary btn-block" role="button" href="signup.html">Non hai un account? Registrati!</a></div>
+            			<div class="col-md-6"><button type="submit" class="btn btn-primary btn-block">Login</button></div>
+						<div class="col-md-6"><a class="btn btn-primary btn-block" role="button" href="sign-up.jsp">You not subscribed? Sign up now!</a></div>
             		</div>
         		</div>
         	</form>
@@ -61,8 +61,8 @@
             </div>
         </div>
     </footer>
-	<script src="../bootstrap-4.1.0-dist/js/jquery.min.js"></script>
-    <script src="../bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>
+	<script src="bootstrap-4.1.0-dist/js/jquery.min.js"></script>
+    <script src="bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>

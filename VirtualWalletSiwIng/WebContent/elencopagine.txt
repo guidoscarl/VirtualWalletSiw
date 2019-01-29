@@ -7,3 +7,4 @@ account.jsp
 transaction.jsp
 recharge.jsp
 history.jsp
+confirm.html
