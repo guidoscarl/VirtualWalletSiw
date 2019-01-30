@@ -39,14 +39,17 @@
             <form style="background-color:white" method="post" action="SignupServlet">
                 <!-- Tenere per la registrazione di un nuovo account <div class="form-group"><label for="subject">Subject</label><select class="form-control" id="subject"><option value="" selected="">Choose Subject</option><option value="1">Subject 1</option><option value="2">Subject 2</option><option value="3">Subject 3</option></select></div> -->
                 <!-- Aggiungere identificativi???-->
-                <div class="form-group"><label for="name">Nome</label><input class="form-control" type="text" name="name"></div>
-                <div class="form-group"><label for="surname">Cognome</label><input class="form-control" type="text" name="surname"></div>
-                <div class="form-group"><label for="email" >Email</label><input class="form-control" type="email" name="email" id="email" oninput="checkEmail();"></div>
-                <p  class="controlClass" style="color:red;" id="control"><p>);
-                <div class="form-group"><label for="password">Password</label><input class="form-control" type="password" name="password"></div>
-                <div class="form-group"><label for="password">Conferma password</label><input class="form-control" type="password" id="password"></div>
+                <div class="form-group"><label for="name">Nome</label><input class="form-control" type="text" name="name" id="name"></div>
+                <div class="form-group"><label for="surname">Cognome</label><input class="form-control" type="text" name="surname" id="surname"></div>
+                <div class="form-group"><label for="email" >Email</label><input class="form-control" type="email" name="email" id="email"></div>
+                
+                <div class="form-group"><label for="password">Password</label><input class="form-control" type="password" name="password" id="password"></div>
+                <div class="form-group"><label for="password">Conferma password</label><input class="form-control" type="password" id="passwordConf" oninput="checkPassword();">
+                	<p id="controlPass" style="visibility:hidden;color:red;font-size:1.30vw;">La password non corrisponde.</p>
+                </div>
         		<div class="form-group"><label for="born-date">Data di nascita</label><input class="form-control" type="date" id="born-date"></div>
-				<div class="button"><button type="submit" class="btn btn-primary btn-block" type="button" id="button">Registrati</button></div>
+        		<div class="form-group"><p  class="controlClass" style="color:red; font-size:1.30vw;visibility:hidden;" id="control"><p>);</div>
+				<div class="button"><button class="btn btn-primary btn-block" type="button" id="button" onclick="signUp();">Registrati</button></div>
         	</form>
         </div>
     </section>

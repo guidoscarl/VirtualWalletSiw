@@ -50,6 +50,7 @@ public class SignupServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		System.out.println("signup servlet");
 		String nome =request.getParameter("name");
 		String cognome=request.getParameter("surname");
 		String email=request.getParameter("email");
@@ -67,14 +68,15 @@ public class SignupServlet extends HttpServlet {
 		try {
 		dao.save(u);
 		PrintWriter out = response.getWriter();
-		response.sendRedirect("home.jsp");
-		response.setContentType("text/html");
-		out.println("<p>Benvenuto "+nome+" "+cognome+"</p>");
+		//response.sendRedirect("home.jsp");
+		//response.setContentType("text/html");
+		out.append("ok");
 		}
 		catch(EmailAlreadyUsed e) {
 			System.out.println("email già usata");
-			request.getSession().setAttribute("esistente", true);
-			response.sendRedirect("sign-up.jsp");
+			//request.getSession().setAttribute("esistente", true);
+			//response.sendRedirect("sign-up.jsp");
+			response.getWriter().append("Email già in uso.");
 			
 		}
 		

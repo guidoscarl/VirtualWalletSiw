@@ -1,35 +1,50 @@
-function checkEmail(){
+
+function signUp(){
+	alert("signup");
+	var emaill =$("#email").val();
+	var passwordd =$("#password").val();
+	var namee=$("#name").val();
+	var surnamee=$("#surname").val();
 	
 	
-	var email=$("#email").val();
-	$("#button").removeAttr("disabled");
-	
-	if(email==""){
-		
-		$("#button").attr("disabled","disabled");
-		$("#control").text("Inserisci un indirizzo e-mail valido");
+	if(emaill=="" || passwordd=="" || namee=="" || surnamee==""){
+		$("#control").text("Campi obbligatori.");
 		$("#control").css("visibility","visible");
-		
 	}
+	
 	else{
-		$("#control").css("visibility","hidden");
+	
 	$.ajax({
-		type: "POST",
-		url: "checkDate",
-		data:{em:email},
+		method:"post",
+		url: "SignupServlet",
+		datatype:"JSON",
+		data:{email:emaill,password:passwordd,name:namee,surname:surnamee},
 		success: function(data){
 			
-			if(data=="exist"){
-				$("#control").text("Indirizzo email gia' presente nel sistema");
-				$("#control").css("visibility","visible");
-				$("#button").attr("disabled","disabled");
-			}
-			else{
-				$("#button").removeAttr("disabled");
-				$("#control").css("visibility","hidden");
-			}
+			if(data=="ok")
+				$(location).attr("href","home.jsp");
 			
+			else{
+				
+				$("#control").text("Indirizzo email gia' presente nel sistema.");
+				$("#control").css("visibility","visible");
+			}
+				
 		}
 	});
 	}
+}
+
+function checkPassword(){
+	var pass=$("#password").val();
+	var passConf=$("#passwordConf").val();
+	if(pass!=passConf){
+		$("#controlPass").css("visibility","visible");
+		$("#button").attr("disabled","disabled");
+	}
+	else{
+		
+			$("#controlPass").css("visibility","hidden");
+			$("#button").removeAttr("disabled");
+		}
 }
