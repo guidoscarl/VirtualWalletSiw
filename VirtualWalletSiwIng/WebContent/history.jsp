@@ -33,7 +33,7 @@
 	<section class="portfolio-block">
 		<div class="row gradient">
 			<div class="col-md-6 myBorder">
-				<p class="section-border" style="color:white; text-align:left; font-size:1.5em;">Effettuate</p>
+				<p class="section-border" style="color:white; font-size:1.5em;">Effettuate</p>
 				<div class="row">
 					<div class="col-sm-2 colTableEmpty">DATA</div>
 					<div class="col-sm-2 colTableEmpty">NOME DESTINATARIO</div>

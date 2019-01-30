@@ -19,7 +19,7 @@
 			<div class="navbar-collapse" id="navcol-1">
 				<ul class="nav navbar-nav">
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="home.jsp">Home</a></li>
-			        <li class="nav-item" role="presentation"><a class="nav-link active" href="logout">Logout</a></li>
+			        <li class="nav-item" role="presentation"><a class="nav-link active" href="../logout">Logout</a></li>
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="../history.jsp">Cambia in italiano</a></li>
 		        </ul>
 			</div>
@@ -28,13 +28,13 @@
 	</nav>
 	<section class="portfolio-block section-border">
 		<div class="container gradient myBorder">
-			<p>Storico transazioni di <%out.print(session.getAttribute("nome")+" "+(session.getAttribute("cognome"))); %></p>		
+			<p>Transaction history of <%out.print(session.getAttribute("nome")+" "+(session.getAttribute("cognome"))); %></p>		
 		</div>
 	</section>
 	<section class="portfolio-block">
 		<div class="row gradient">
 			<div class="col-md-6 myBorder">
-				<p class="section-border" style="color:white; text-align:left; font-size:1.5em;">Send</p>
+				<p class="section-border" style="color:white; font-size:1.5em;">Send</p>
 				<div class="row">
 					<div class="col-sm-2 colTableEmpty">DATE</div>
 					<div class="col-sm-2 colTableEmpty">RECEIVER NAME</div>
