@@ -17,9 +17,10 @@
 				<ul class="nav navbar-nav">
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="home.jsp">Home</a></li>
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="logout">Logout</a></li>
+			        <li class="nav-item" role="presentation"><a class="nav-link active" href="../recharge.jsp">Cambia in italiano</a></li>
 		        </ul>
 			</div>
-	        <a class="links" href="account.jsp"><%out.print(session.getAttribute("nome")+" "+(session.getAttribute("cognome"))); %>, benvenuto!</a>
+	        <a class="links" href="account.jsp"><%out.print(session.getAttribute("nome")+" "+(session.getAttribute("cognome"))); %>, welcome!</a>
 		</div>
 	</nav>
 	<section class="portfolio-block">
@@ -28,7 +29,7 @@
             <form style="background-color:white" method="post" action="recharge" >
                 <!-- Tenere per la registrazione di un nuovo account <div class="form-group"><label for="subject">Subject</label><select class="form-control" id="subject"><option value="" selected="">Choose Subject</option><option value="1">Subject 1</option><option value="2">Subject 2</option><option value="3">Subject 3</option></select></div> -->
                 <!-- Aggiungere identificativi???-->
-                <p style="color:black"><i>Inserisci nella form qui sotto la tua e-mail e la tua password per verificare i tuoi dati e l'importo da ricaricare</i></p>
+                <p style="color:black"><i>Enter in the form below your e-mail and your password to verify your data and the amount to recharge.</i></p>
                 <div class="form-group"><label for="email">Email</label><input class="form-control" type="email" name="email"></div>
                 <div class="form-group"><label for="password">Password</label><input class="form-control" type="password" name="password"></div>
                 <div class="form-group"><label for="name">Amount</label><input class="form-control" type="text" name="importo"></div>

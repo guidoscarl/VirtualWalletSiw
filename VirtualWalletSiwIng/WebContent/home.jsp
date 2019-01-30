@@ -43,9 +43,9 @@
 	        <div>
 	        	<%
                 		if(session.getAttribute("logged")==null)
-                			out.print("<p id=\"firstP\">Il portafoglio virtuale <strong>Unical Wallet</strong> permetterà senza problemi acquisti e transazioni tra utenti e siti web che approvano il nostro progetto! </p><a class=\"btn btn-primary\" role=\"button\" href=\"sign-up\">Iscriviti</a>");
+                			out.print("<p id=\"firstP\">Il portafoglio virtuale <strong>Unical Wallet</strong> permetterà senza problemi acquisti e transazioni tra utenti e siti web che approvano il nostro progetto! </p><a class=\"btn btn-primary\" style=\"border-radius:50px\" role=\"button\" href=\"sign-up\">Iscriviti</a>");
                 		else
-                			out.print("<p id=\"firstP\">Il portafoglio virtuale <strong>Unical Wallet</strong> permetterà senza problemi acquisti e transazioni tra utenti e siti web che approvano il nostro progetto! </p><a class=\"btn btn-primary\" role=\"button\" href=\"account.jsp\">Il mio profilo</a>");
+                			out.print("<p id=\"firstP\">Il portafoglio virtuale <strong>Unical Wallet</strong> permetterà senza problemi acquisti e transazioni tra utenti e siti web che approvano il nostro progetto! </p><a class=\"btn btn-primary\" style=\"border-radius:50px\" role=\"button\" href=\"account.jsp\">Il mio profilo</a>");
 				%>
 	        </div>
 	    </div>

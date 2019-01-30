@@ -40,7 +40,7 @@
         		<p>Your bill amount to:</p>
 	       		<!--"€-:--." -->
 	       		<div class="grid amount" style="background-image:url(&quot;../Images/grid.png&quot;);">&#8364;<%out.print(session.getAttribute("saldo")); %></div>
-	       		<a class="btn btn-primary" role="button" href="viewHistory">Show history</a>
+	       		<a class="btn btn-primary" role="button" href="../viewHistory">Show history</a>
 	       		<a class="btn btn-primary" role="button" href="recharge.jsp">Make recharge</a>
 	        	<a class="btn btn-primary" role="button" href="transaction.jsp">Make transaction</a>
 		    </div>

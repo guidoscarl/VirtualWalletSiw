@@ -6,11 +6,11 @@
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Storico</title>
-	<link rel="stylesheet" href="newCSS/myCSS.css">
-    <link rel="stylesheet" href="bootstrap-4.1.0-dist/css/bootstrap.css">
+    <title>User Profile - History</title>
+	<link rel="stylesheet" href="../newCSS/myCSS.css">
+    <link rel="stylesheet" href="../bootstrap-4.1.0-dist/css/bootstrap.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
-    <link rel="stylesheet" href="bootstrap-4.1.0-dist/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../bootstrap-4.1.0-dist/fonts/ionicons.min.css">
 </head>
 <body class="myBody">
 	<nav class="navbar navbar-dark navbar-expand-sm fixed-top gradient">
@@ -19,10 +19,11 @@
 			<div class="navbar-collapse" id="navcol-1">
 				<ul class="nav navbar-nav">
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="home.jsp">Home</a></li>
-			        <li class="nav-item" role="presentation"><a class="nav-link active" href="logout">Disconnetti</a></li>
+			        <li class="nav-item" role="presentation"><a class="nav-link active" href="logout">Logout</a></li>
+			        <li class="nav-item" role="presentation"><a class="nav-link active" href="../history.jsp">Cambia in italiano</a></li>
 		        </ul>
 			</div>
-	        <a class="links" href="account.jsp"><%out.print(session.getAttribute("nome")+" "+(session.getAttribute("cognome"))); %>, benvenuto!</a>
+	        <a class="links" href="account.jsp"><%out.print(session.getAttribute("nome")+" "+(session.getAttribute("cognome"))); %>, welcome!</a>
 		</div>
 	</nav>
 	<section class="portfolio-block section-border">
@@ -33,13 +34,13 @@
 	<section class="portfolio-block">
 		<div class="row gradient">
 			<div class="col-md-6 myBorder">
-				<p class="section-border" style="color:white; text-align:left; font-size:1.5em;">Effettuate</p>
+				<p class="section-border" style="color:white; text-align:left; font-size:1.5em;">Send</p>
 				<div class="row">
-					<div class="col-sm-2 colTableEmpty">DATA</div>
-					<div class="col-sm-2 colTableEmpty">NOME DESTINATARIO</div>
-					<div class="col-sm-2 colTableEmpty">COGNOME DESTINATARIO</div>
-					<div class="col-sm-4 colTableEmpty">E-MAIL DESTINATARIO</div>
-					<div class="col-sm-2 colTableEmpty">IMPORTO</div>
+					<div class="col-sm-2 colTableEmpty">DATE</div>
+					<div class="col-sm-2 colTableEmpty">RECEIVER NAME</div>
+					<div class="col-sm-2 colTableEmpty">RECEIVER SURNAME</div>
+					<div class="col-sm-4 colTableEmpty">RECEIVER E-MAIL</div>
+					<div class="col-sm-2 colTableEmpty">AMOUNT</div>
 					<c:forEach items="${transazioniM}" var="trans" >
 					<div class="col-sm-2 colTableTransaction myBorder">data</div>
 					<div class="col-sm-2 colTableTransaction myBorder">${trans.nomeDestinatario }</div>
@@ -50,13 +51,13 @@
 				</div>
 			</div>
 			<div class="col-md-6 myBorder">
-				<p class="section-border" style="color:white; text-align:left; font-size:1.5em;">Ricevute</p>
+				<p class="section-border" style="color:white; text-align:left; font-size:1.5em;">Received</p>
 				<div class="row">
-					<div class="col-sm-2 colTableEmpty">DATA</div>
-					<div class="col-sm-2 colTableEmpty">NOME MITTENTE</div>
-					<div class="col-sm-2 colTableEmpty">COGNOME MITTENTE</div>
-					<div class="col-sm-4 colTableEmpty">E-MAIL MITTENTE</div>
-					<div class="col-sm-2 colTableEmpty">IMPORTO</div>
+					<div class="col-sm-2 colTableEmpty">DATE</div>
+					<div class="col-sm-2 colTableEmpty">SENDER NAME</div>
+					<div class="col-sm-2 colTableEmpty">SENDER SURNAME</div>
+					<div class="col-sm-4 colTableEmpty">SENDER E-MAIL</div>
+					<div class="col-sm-2 colTableEmpty">AMOUNT</div>
 					<c:forEach items="${transazioniD}" var="trans" >
 					<div class="col-sm-2 colTableTransaction myBorder">data</div>
 					<div class="col-sm-2 colTableTransaction myBorder">${trans.nomeMittente }</div>

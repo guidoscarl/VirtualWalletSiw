@@ -43,9 +43,9 @@
 	        <div>
 	        	<%
                 		if(session.getAttribute("logged")==null)
-                			out.print("<p id=\"firstP\">The virtual wallet <strong>Virtual Wallet</strong> lets without any problem shopping and transactions between users and web site that approve our service! </p><a class=\"btn btn-primary\" role=\"button\" href=\"sign-up.jsp\">Subscribe</a>");
+                			out.print("<p id=\"firstP\">The virtual wallet <strong>Virtual Wallet</strong> lets without any problem shopping and transactions between users and web site that approve our service! </p><a class=\"btn btn-primary\" style=\"border-radius:50px\" role=\"button\" href=\"sign-up.jsp\">Subscribe</a>");
                 		else
-                			out.print("<p id=\"firstP\">The virtual wallet <strong>Virtual Wallet</strong> lets without any problem shopping and transactions between users and web site that approve our service! </p><a class=\"btn btn-primary\" role=\"button\" href=\"account.jsp\">My profile</a>");
+                			out.print("<p id=\"firstP\">The virtual wallet <strong>Virtual Wallet</strong> lets without any problem shopping and transactions between users and web site that approve our service! </p><a class=\"btn btn-primary\" style=\"border-radius:50px\" role=\"button\" href=\"account.jsp\">My profile</a>");
 				%>
 	        </div>
 	    </div>
