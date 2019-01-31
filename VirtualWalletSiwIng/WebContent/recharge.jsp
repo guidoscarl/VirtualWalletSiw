@@ -1,9 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="utf-8"%>
+
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" 
+prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROFILO UTENTE</title>
+    <title>Profilo utente - Ricarica</title>
 	<link rel="stylesheet" href="newCSS/myCSS.css">
     <link rel="stylesheet" href="bootstrap-4.1.0-dist/css/bootstrap.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
@@ -17,9 +22,10 @@
 				<ul class="nav navbar-nav">
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="home.jsp">Home</a></li>
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="logout">Disconnetti</a></li>
+			        <li class="nav-item" role="presentation"><a class="nav-link active" href="en/recharge.jsp">Switch to English</a></li>
 		        </ul>
 			</div>
-	        <a class="links" href="account.jsp"><%out.print(session.getAttribute("nome")+" "+(session.getAttribute("cognome"))); %>, benvenuto!</a>
+			<a class="links" href="account.jsp"><c:out value="${nome} ${cognome }">No name</c:out>, benvenuto!</a>
 		</div>
 	</nav>
 	<section class="portfolio-block">

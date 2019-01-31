@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
@@ -23,7 +23,7 @@
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="../history.jsp">Cambia in italiano</a></li>
 		        </ul>
 			</div>
-	        <a class="links" href="account.jsp"><%out.print(session.getAttribute("nome")+" "+(session.getAttribute("cognome"))); %>, welcome!</a>
+			<a class="links" href="account.jsp"><c:out value="${nome} ${cognome }">No name</c:out>, benvenuto!</a>
 		</div>
 	</nav>
 	<section class="portfolio-block section-border">
@@ -35,42 +35,45 @@
 		<div class="row gradient">
 			<div class="col-md-6 myBorder">
 				<p class="section-border" style="color:white; font-size:1.5em;">Send</p>
-				<div class="row">
-					<div class="col-sm-2 colTableEmpty">DATE</div>
-					<div class="col-sm-2 colTableEmpty">RECEIVER NAME</div>
-					<div class="col-sm-2 colTableEmpty">RECEIVER SURNAME</div>
-					<div class="col-sm-4 colTableEmpty">RECEIVER E-MAIL</div>
-					<div class="col-sm-2 colTableEmpty">AMOUNT</div>
+				<table>
+					<tr>
+						<th class="col-xs-2 colTableEmpty">DATE</th>
+						<th class="col-xs-2 colTableEmpty">RECEIVER NAME</th>
+						<th class="col-xs-2 colTableEmpty">RECEIVER SURNAME</th>
+						<th class="col-xs-4 colTableEmpty">RECEIVER E-MAIL</th>
+						<th class="col-xs-2 colTableEmpty">AMOUNT</th>
+					</tr>
 					<c:forEach items="${transazioniM}" var="trans" >
-					<div class="col-sm-2 colTableTransaction myBorder">data</div>
-					<div class="col-sm-2 colTableTransaction myBorder">${trans.nomeDestinatario }</div>
-					<div class="col-sm-2 colTableTransaction myBorder">${trans.cognomeDestinatario }</div>
-					<div class="col-sm-4 colTableTransaction myBorder">${trans.email }</div>
-					<div class="col-sm-2 colTableTransaction myBorder" style="color:green;">${trans.importo }</div>
+						<tr>
+							<td class="colTableTransaction myBorder">data</td>
+							<td class="colTableTransaction myBorder">${trans.nomeDestinatario }</td>
+							<td class="colTableTransaction myBorder">${trans.cognomeDestinatario }</td>
+							<td class="colTableTransaction myBorder">${trans.email }</td>
+							<td class="colTableTransaction myBorder" style="color:red">-${trans.importo}€</td>
+						</tr>
 					</c:forEach>
-				</div>
+				</table>
 			</div>
 			<div class="col-md-6 myBorder">
-				<p class="section-border" style="color:white; text-align:left; font-size:1.5em;">Received</p>
-				<div class="row">
-					<div class="col-sm-2 colTableEmpty">DATE</div>
-					<div class="col-sm-2 colTableEmpty">SENDER NAME</div>
-					<div class="col-sm-2 colTableEmpty">SENDER SURNAME</div>
-					<div class="col-sm-4 colTableEmpty">SENDER E-MAIL</div>
-					<div class="col-sm-2 colTableEmpty">AMOUNT</div>
+				<p class="section-border" style="color:white; font-size:1.5em;">Receiver</p>
+				<table>
+					<tr>
+						<th class="col-xs-2 colTableEmpty">DATE</th>
+						<th class="col-xs-2 colTableEmpty">SENDER NAME</th>
+						<th class="col-xs-2 colTableEmpty">SENDER SURNAME</th>
+						<th class="col-xs-4 colTableEmpty">SENDER E-MAIL</th>
+						<th class="col-xs-2 colTableEmpty">AMOUNT</th>
+					</tr>
 					<c:forEach items="${transazioniD}" var="trans" >
-					<div class="col-sm-2 colTableTransaction myBorder">data</div>
-					<div class="col-sm-2 colTableTransaction myBorder">${trans.nomeMittente }</div>
-					<div class="col-sm-2 colTableTransaction myBorder">${trans.cognomeMittente }</div>
-					<div class="col-sm-4 colTableTransaction myBorder">${trans.email }</div>
-					<div class="col-sm-2 colTableTransaction myBorder" style="color:green;">${trans.importo }</div>
+						<tr>
+							<td class="colTableTransaction myBorder">data</td>
+							<td class="colTableTransaction myBorder">${trans.nomeMittente}</td>
+							<td class="colTableTransaction myBorder">${trans.cognomeMittente}</td>
+							<td class="colTableTransaction myBorder">${trans.email }</td>
+							<td class="colTableTransaction myBorder" style="color:green">+${trans.importo}€</td>
+						</tr>
 					</c:forEach>
-							<!--<div class="col-sm-2 colTableTransaction myBorder">data</div>
-							<div class="col-sm-2 colTableTransaction myBorder">nome</div>
-							<div class="col-sm-2 colTableTransaction myBorder">cognome</div>
-							<div class="col-sm-4 colTableTransaction myBorder">email@email.com</div>
-							<div class="col-sm-2 colTableTransaction myBorder" style="color:green;">amount</div>-->
-				</div>
+				</table>
 			</div>
 		</div>
 	</section>

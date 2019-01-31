@@ -1,3 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="utf-8"%>
+
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" 
+prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,20 +22,19 @@
 			<div class="navbar-collapse" id="navcol-1">
 				<ul class="nav navbar-nav">
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="home.jsp">Home</a></li>
-			        <li class="nav-item" role="presentation"><a class="nav-link active" href="logout">Logout</a></li>
+			        <li class="nav-item" role="presentation"><a class="nav-link active" href="../logout">Logout</a></li>
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="../transaction.jsp">Cambia in italiano</a></li>
 		        </ul>
 			</div>
-	        <a class="links" href="account.jsp"><%out.print(session.getAttribute("nome")+" "+(session.getAttribute("cognome"))); %>, welcome!</a>
+	        <a class="links" href="account.jsp"><c:out value="${nome} ${cognome }">No name</c:out>, welcome!</a>
 		</div>
 	</nav>
 	<section class="portfolio-block">
         <div class="container">
             <div class="heading"><h2>Transaction</h2></div>
             <form style="background-color:white" method="post" action="transaction">
-                <!-- Tenere per la registrazione di un nuovo account <div class="form-group"><label for="subject">Subject</label><select class="form-control" id="subject"><option value="" selected="">Choose Subject</option><option value="1">Subject 1</option><option value="2">Subject 2</option><option value="3">Subject 3</option></select></div> -->
                 <!-- Aggiungere identificativi???-->
-                <p style="color:black"><i>Inserisci nella form qui sotto il nome, il cognome e l'e-mail dell'utente destinatario e l'importo con il quale effettuare la transazione.</i></p>
+                <p style="color:black"><i>Enter in the form below the name, the surname and the e-mail of the receiver user and the amount which make transaction.</i></p>
                 <div class="form-group"><label for="name">Name</label><input class="form-control" type="text" name="name" id="nome"></div>
                 <div class="form-group"><label for="surname">Surname</label><input class="form-control" type="text" name="surname" id="cognome"></div>
                 <div class="form-group"><label for="email">Email</label><input class="form-control" type="email" name="email" id="email" onInput="checkEmail();" ></div>

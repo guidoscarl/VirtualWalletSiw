@@ -18,7 +18,7 @@
 			<div class="navbar-collapse" id="navcol-1">
 				<ul class="nav navbar-nav">
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="home.jsp">Home</a></li>
-			        <li class="nav-item" role="presentation"><a class="nav-link active" href="logout">Logout</a></li>
+			        <li class="nav-item" role="presentation"><a class="nav-link active" href="../logout">Logout</a></li>
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="../account.jsp">Cambia in italiano</a></li>
 		        </ul>
 			</div>
