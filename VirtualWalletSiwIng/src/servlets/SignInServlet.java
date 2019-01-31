@@ -79,6 +79,7 @@ System.out.println("entrato nella servlet");
 			session.setAttribute("nome", u.getNome());
 			session.setAttribute("cognome", u.getCognome());
 			session.setAttribute("email", u.getEmail());
+			session.setAttribute("password", u.getPass());
 			System.out.println(u.getSaldo());
 			session.setAttribute("saldo", u.getSaldo());
 			session.setAttribute("logged", true);

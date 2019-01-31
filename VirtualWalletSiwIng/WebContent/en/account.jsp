@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="../bootstrap-4.1.0-dist/css/bootstrap.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="../bootstrap-4.1.0-dist/fonts/ionicons.min.css">
+    <script src="../js/loader.js"></script>
+    
 </head>
 <body class="myBody">
 	<nav class="navbar navbar-dark navbar-expand-sm fixed-top gradient">
@@ -40,11 +42,15 @@
         		<p>Your bill amount to:</p>
 	       		<!--"€-:--." -->
 	       		<div class="grid amount" style="background-image:url(&quot;../Images/grid.png&quot;);">&#8364;<%out.print(session.getAttribute("saldo")); %></div>
-	       		<a class="btn btn-primary" role="button" href="../viewHistory">Show history</a>
+	       		<a class="btn btn-primary" role="button" href="viewHistory">Show history</a>
 	       		<a class="btn btn-primary" role="button" href="recharge.jsp">Make recharge</a>
 	        	<a class="btn btn-primary" role="button" href="transaction.jsp">Make transaction</a>
 		    </div>
 		</div>
+				<div class="lds-dual-ring" id="loader" style="visibility:hidden"></div>
+		
 	</section>
+	<script src="../bootstrap-4.1.0-dist/js/jquery.min.js"></script>
+    <script src="../bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>
 </body>
 </html>

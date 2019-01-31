@@ -76,6 +76,7 @@ public class UtenteDaoJdbc implements UtenteDao {
 				s=c.prepareStatement(query);
 				s.setInt(1, u.getSaldo());
 				s.setString(2, u.getEmail()) ;
+				
 				s.execute();
 			 }
 			 c.close();

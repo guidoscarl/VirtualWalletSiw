@@ -25,6 +25,10 @@
     <servlet-name>Ricarica</servlet-name>
     <url-pattern>/recharge</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Ricarica</servlet-name>
+    <url-pattern>/en/recharge</url-pattern>
+  </servlet-mapping>
   <servlet>
     <servlet-name>Transazione</servlet-name>
     <servlet-class>servlets.Transaction</servlet-class>
@@ -52,6 +56,11 @@
   <servlet-mapping>
     <servlet-name>ViewHistory</servlet-name>
     <url-pattern>/viewHistory</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ViewHistory</servlet-name>
+    <url-pattern>/en/viewHistory</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>doSignup</servlet-name>

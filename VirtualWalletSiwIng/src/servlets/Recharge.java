@@ -39,11 +39,12 @@ public class Recharge extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		System.out.println("Servlet ricarica...");
 		PostgresDAOFactory p = new PostgresDAOFactory();
 		UtenteDao dao=p.getUtenteDao();
-		String email = (String)request.getSession().getAttribute("email");
-		int oldSaldo=(int)request.getSession().getAttribute("saldo");
+		
+		String email = request.getParameter("email");
+		int oldSaldo=Integer.parseInt(request.getParameter("saldo"));
 		int importo=Integer.parseInt(request.getParameter("importo"));
 		System.out.println(email+" "+oldSaldo+" "+importo);
 		
@@ -53,7 +54,7 @@ public class Recharge extends HttpServlet {
 		
 		dao.update(u);
 		request.getSession().setAttribute("saldo", newSaldo);
-		response.sendRedirect("account.jsp");
+		response.getWriter().append("ok");
 		
 		
 		
