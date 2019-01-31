@@ -25,6 +25,7 @@ public class TransazioneDaoJdbc implements TransazioneDao {
 	public ArrayList<Transazione> getByEmail(String email, int type) {
 		
 		ArrayList<Transazione> transazioni=new ArrayList<Transazione>();
+		Connection c=null;
 		switch (type) {
 		case MITTENTE:
 			
@@ -32,7 +33,7 @@ public class TransazioneDaoJdbc implements TransazioneDao {
 					"	FROM public.transazione\r\n" + 
 					"	WHERE mittente=?;";
 			try {
-				Connection c=data.getConnection();
+				c=data.getConnection();
 				PreparedStatement statement = c.prepareStatement(query);
 				statement.setString(1, email);
 				ResultSet results = statement.executeQuery();
@@ -45,11 +46,21 @@ public class TransazioneDaoJdbc implements TransazioneDao {
 					transazioni.add(t);
 				}
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				
+				try {
+					c.close();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			} catch (UsersNotFound e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				try {
+					c.close();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 			
 			break;
@@ -58,7 +69,7 @@ public class TransazioneDaoJdbc implements TransazioneDao {
 					"	FROM public.transazione\r\n" + 
 					"	WHERE destinatario=?;";
 			try {
-				Connection c=data.getConnection();
+				c=data.getConnection();
 				PreparedStatement statement = c.prepareStatement(query2);
 				statement.setString(1, email);
 				ResultSet results = statement.executeQuery();
@@ -72,10 +83,20 @@ public class TransazioneDaoJdbc implements TransazioneDao {
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				try {
+					c.close();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			} catch (UsersNotFound e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				try {
+					c.close();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 			
 			break;

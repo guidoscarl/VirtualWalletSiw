@@ -22,10 +22,17 @@ function signUp(){
 		success: function(data){
 			
 			if(data=="ok"){
-				alert("La registrazione è andata buon fine.");
-				$(location).attr("href","home.jsp");
+				$.confirm({
+				    title: 'Fatto',
+				    content: 'Registrazione effettuata correttamente',
+				    buttons: {
+				        home: function () {
+				        	$(location).attr("href","home.jsp");
+				        },
+				    }
+				});
 			}
-			
+				
 			else{
 				
 				$("#control").text("Indirizzo email gia' presente nel sistema.");

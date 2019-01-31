@@ -1,6 +1,5 @@
 function login(){
 	
-	alert("oklogin");
 	var emaill =$("#email").val();
 	var passwordd =$("#password").val();
 	
