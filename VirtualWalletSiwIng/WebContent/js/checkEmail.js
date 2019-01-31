@@ -1,6 +1,6 @@
 
 function signUp(){
-	alert("signup");
+	
 	var emaill =$("#email").val();
 	var passwordd =$("#password").val();
 	var namee=$("#name").val();
@@ -21,8 +21,10 @@ function signUp(){
 		data:{email:emaill,password:passwordd,name:namee,surname:surnamee},
 		success: function(data){
 			
-			if(data=="ok")
+			if(data=="ok"){
+				alert("La registrazione è andata buon fine.");
 				$(location).attr("href","home.jsp");
+			}
 			
 			else{
 				

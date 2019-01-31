@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../bootstrap-4.1.0-dist/css/bootstrap.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="../bootstrap-4.1.0-dist/fonts/ionicons.min.css">
+    <script src="../js/checkImport.js"></script>
 </head>
 <body class="myBody">
 	<nav class="navbar navbar-dark navbar-expand-sm fixed-top gradient">
@@ -29,14 +30,19 @@
             <form style="background-color:white" method="post" action="transaction">
                 <!-- Tenere per la registrazione di un nuovo account <div class="form-group"><label for="subject">Subject</label><select class="form-control" id="subject"><option value="" selected="">Choose Subject</option><option value="1">Subject 1</option><option value="2">Subject 2</option><option value="3">Subject 3</option></select></div> -->
                 <!-- Aggiungere identificativi???-->
-                <p style="color:black"><i>Enter in the form below your name, your surname and the e-mail of the receiver user and the amount which want receive your transaction.</i></p>
-                <div class="form-group"><label for="name">Name</label><input class="form-control" type="text" name="name"></div>
-                <div class="form-group"><label for="surname">Surname</label><input class="form-control" type="text" name="surname"></div>
-                <div class="form-group"><label for="email">Email</label><input class="form-control" type="email" name="email"></div>
-                <div class="form-group"><label for="password">Amount</label><input class="form-control" type="text" name="importo"></div>
-				<div class="button"><button type="submit" class="btn btn-primary btn-block" type="button">Make transaction</button></div>
+                <p style="color:black"><i>Inserisci nella form qui sotto il nome, il cognome e l'e-mail dell'utente destinatario e l'importo con il quale effettuare la transazione.</i></p>
+                <div class="form-group"><label for="name">Name</label><input class="form-control" type="text" name="name" id="nome"></div>
+                <div class="form-group"><label for="surname">Surname</label><input class="form-control" type="text" name="surname" id="cognome"></div>
+                <div class="form-group"><label for="email">Email</label><input class="form-control" type="email" name="email" id="email" onInput="checkEmail();" ></div>
+                <div class="form-group"><label for="importo">Import</label><input class="form-control" type="text" name="importo" id="import" oninput="checkImport();" saldo="${saldo }">
+                <p style="color:red; visibility:hidden;" id="error" >Balance not sufficient.</p>
+                <button type="button" class="btn btn-primary btn-block" type="button" style="visibility:hidden" onclick="doRecharge();" id="buttonRC" >Make Recharge</button>
+                </div>
+				<div class="button"><button class="btn btn-primary btn-block" type="button" id="buttonTR" onclick="doTransaction();">Make transaction</button></div>
         	</form>
         </div>
     </section>
+    <script src="../bootstrap-4.1.0-dist/js/jquery.min.js"></script>
+    <script src="../bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>
 </body>
 </html>
