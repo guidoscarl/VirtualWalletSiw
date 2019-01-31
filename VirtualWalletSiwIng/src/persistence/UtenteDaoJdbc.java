@@ -206,7 +206,10 @@ public class UtenteDaoJdbc implements UtenteDao {
 				
 				ResultSet result=s.executeQuery();
 				
-				if(result.next()) {
+				if(!result.next()) {
+					throw new UsersNotFound();
+				}
+				else {
 					u= new Utente(result.getString("nome"),result.getString("cognome"),result.getString("email"),result.getString("password"),result.getInt("saldo"));
 				}
 				/*else

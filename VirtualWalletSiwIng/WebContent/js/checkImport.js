@@ -1,4 +1,5 @@
 function checkImport(){
+	
 	var importo=$("#import").val();
 	var saldo=$("#import").attr("saldo");
 	
@@ -20,6 +21,33 @@ function doRecharge(){
 	
 }
 
-function checkEmail(){
+function doTransaction(){
 	
+	var importoo=$("#import").val();
+	var emaill=$("#email").val();
+	var nome=$("#nome").val();
+	var cognome=$("#cognome").val();
+	
+	if(importoo=="" || emaill=="" || nome=="" || cognome==""){
+		$("#error").css("visibility","visible");
+		$("#error").text("Campi obbligatori.");
+	}
+	else{
+	
+	$.ajax({
+		method:"post",
+		url:"transaction",
+		datatype:"JSON",
+		data:{email:emaill,importo:importoo},
+		success:function(data){
+			if(data=="confirm"){
+				$(location).attr("href","confirm.html");
+			}
+			else if(data=="failed"){
+				$("#error").text("Indirizzo email destinatario non esistente.");
+				$("#error").css("visibility","visible");
+			}
+		}
+	});
+	}
 }

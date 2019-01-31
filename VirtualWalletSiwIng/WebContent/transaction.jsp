@@ -35,14 +35,14 @@ prefix="c" %>
                 <!-- Tenere per la registrazione di un nuovo account <div class="form-group"><label for="subject">Subject</label><select class="form-control" id="subject"><option value="" selected="">Choose Subject</option><option value="1">Subject 1</option><option value="2">Subject 2</option><option value="3">Subject 3</option></select></div> -->
                 <!-- Aggiungere identificativi???-->
                 <p style="color:black"><i>Inserisci nella form qui sotto il nome, il cognome e l'e-mail dell'utente destinatario e l'importo con il quale effettuare la transazione.</i></p>
-                <div class="form-group"><label for="name">Nome</label><input class="form-control" type="text" name="name"></div>
-                <div class="form-group"><label for="surname">Cognome</label><input class="form-control" type="text" name="surname"></div>
-                <div class="form-group"><label for="email">Email</label><input class="form-control" type="email" name="email" onInput="checkEmail();"></div>
+                <div class="form-group"><label for="name">Nome</label><input class="form-control" type="text" name="name" id="nome"></div>
+                <div class="form-group"><label for="surname">Cognome</label><input class="form-control" type="text" name="surname" id="cognome"></div>
+                <div class="form-group"><label for="email">Email</label><input class="form-control" type="email" name="email" id="email" onInput="checkEmail();" ></div>
                 <div class="form-group"><label for="importo">Importo</label><input class="form-control" type="text" name="importo" id="import" oninput="checkImport();" saldo="${saldo }">
                 <p style="color:red; visibility:hidden;" id="error" >Saldo non sufficiente</p>
                 <button type="button" class="btn btn-primary btn-block" type="button" style="visibility:hidden" onclick="doRecharge();" id="buttonRC" >Effettua ricarica</button>
                 </div>
-				<div class="button"><button class="btn btn-primary btn-block" type="button" id="buttonTR">Effettua transazione</button></div>
+				<div class="button"><button class="btn btn-primary btn-block" type="button" id="buttonTR" onclick="doTransaction();">Effettua transazione</button></div>
         	</form>
         </div>
     </section>
