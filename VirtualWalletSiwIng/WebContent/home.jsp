@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="bootstrap-4.1.0-dist/css/bootstrap.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="bootstrap-4.1.0-dist/fonts/ionicons.min.css">
+    <script src="bootstrap-4.1.0-dist/js/jquery.min.js"></script>
+    <script src="bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>
+    <script src="js/contactUs.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 </head>
 
 <body class="myBody">
@@ -24,8 +29,6 @@
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav">
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="home.jsp">Home</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="projects-grid-cards.html">Progetto</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="cv.html">CV</a></li>
                     <% 
                     if(session.getAttribute("logged")==null)
                     	out.print("<li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link active\" href=\"sign-in.html\">Accedi</a></li>");
@@ -43,9 +46,9 @@
 	        <div>
 	        	<%
                 		if(session.getAttribute("logged")==null)
-                			out.print("<p id=\"firstP\">Il portafoglio virtuale <strong>Unical Wallet</strong> permetterà senza problemi acquisti e transazioni tra utenti e siti web che approvano il nostro progetto! </p><a class=\"btn btn-primary\" style=\"border-radius:50px\" role=\"button\" href=\"sign-up\">Iscriviti</a>");
+                			out.print("<p id=\"firstP\">Il portafoglio virtuale <strong>Virtual Wallet</strong> permetterà senza problemi acquisti e transazioni tra utenti e siti web che approvano il nostro progetto! </p><a class=\"btn btn-primary\" style=\"border-radius:50px\" role=\"button\" href=\"sign-up\">Iscriviti</a>");
                 		else
-                			out.print("<p id=\"firstP\">Il portafoglio virtuale <strong>Unical Wallet</strong> permetterà senza problemi acquisti e transazioni tra utenti e siti web che approvano il nostro progetto! </p><a class=\"btn btn-primary\" style=\"border-radius:50px\" role=\"button\" href=\"account.jsp\">Il mio profilo</a>");
+                			out.print("<p id=\"firstP\">Il portafoglio virtuale <strong>Virtual Wallet</strong> permetterà senza problemi acquisti e transazioni tra utenti e siti web che approvano il nostro progetto! </p><a class=\"btn btn-primary\" style=\"border-radius:50px\" role=\"button\" href=\"account.jsp\">Il mio profilo</a>");
 				%>
 	        </div>
 	    </div>
@@ -112,20 +115,10 @@
     <footer class="page-footer gradient">
         <div class="container space-padding">
             <div class="links">
-            	<a href="#">About us</a>
-            	<a href="#">Contact us</a>
-            	<a href="#">Project</a>
-            </div>
-            
-            <div class="social-icons">
-            	<a href="#"><i class="icon ion-social-facebook"></i></a>
-            	<a href="#"><i class="icon ion-social-instagram-outline"></i></a>
-            	<a href="#"><i class="icon ion-social-twitter"></i></a>
+            	<a href="#" onclick="contactUs();">Contact us</a>
             </div>
         </div>
     </footer>
-    <script src="bootstrap-4.1.0-dist/js/jquery.min.js"></script>
-    <script src="bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>

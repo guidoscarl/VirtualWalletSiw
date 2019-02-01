@@ -44,6 +44,51 @@ function signUp(){
 	}
 }
 
+function signUpEn(){
+	
+	var emaill =$("#email").val();
+	var passwordd =$("#password").val();
+	var namee=$("#name").val();
+	var surnamee=$("#surname").val();
+	
+	
+	if(emaill=="" || passwordd=="" || namee=="" || surnamee==""){
+		$("#control").text("Required fields.");
+		$("#control").css("visibility","visible");
+	}
+	
+	else{
+	
+	$.ajax({
+		method:"post",
+		url: "SignupServlet",
+		datatype:"JSON",
+		data:{email:emaill,password:passwordd,name:namee,surname:surnamee},
+		success: function(data){
+			
+			if(data=="ok"){
+				$.confirm({
+				    title: 'Done',
+				    content: 'You are succefully registered',
+				    buttons: {
+				        home: function () {
+				        	$(location).attr("href","home.jsp");
+				        },
+				    }
+				});
+			}
+				
+			else{
+				
+				$("#control").text("This e-mail andress already exist.");
+				$("#control").css("visibility","visible");
+			}
+				
+		}
+	});
+	}
+}
+
 function checkPassword(){
 	var pass=$("#password").val();
 	var passConf=$("#passwordConf").val();

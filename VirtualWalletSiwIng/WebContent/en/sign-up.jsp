@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="../bootstrap-4.1.0-dist/fonts/ionicons.min.css">
     <script src="../js/checkEmail.js"></script>
+    <script src="../js/contactUs.js"></script>
+    <script src="../bootstrap-4.1.0-dist/js/jquery.min.js"></script>
+    <script src="../bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 </head>
 
 <body class="myBody">
@@ -25,8 +30,6 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="nav navbar-nav">
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="home.jsp">Home</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="projects-grid-cards.html">Project</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="cv.html">CV</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="sign-in.html">Login</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="../sign-up.jsp">Cambia in italiano</a></li>
                 </ul>
@@ -44,29 +47,21 @@
                 <div class="form-group"><label for="email" >Email</label><input class="form-control" type="email" name="email" id="email" oninput="checkEmail();"></div>
                 <p  class="controlClass" style="color:red;" id="control"><p>);
                 <div class="form-group"><label for="password">Password</label><input class="form-control" type="password" name="password"></div>
-                <div class="form-group"><label for="password">Confirm password</label><input class="form-control" type="password" id="password"></div>
+                <div class="form-group"><label for="password">Confirm password</label><input class="form-control" type="password" id="passwordConf" oninput="checkPassword();">
+                	<p id="controlPass" style="visibility:hidden;color:red;font-size:1.30vw;">Password don't match.</p>
+                </div>
         		<div class="form-group"><label for="born-date">Birth date</label><input class="form-control" type="date" id="born-date"></div>
-				<div class="button"><button type="submit" class="btn btn-primary btn-block" type="button" id="button">Subscribe</button></div>
+				<div class="form-group"><p  class="controlClass" style="color:red; font-size:1.30vw;visibility:hidden;" id="control"><p>);</div>
+				<div class="button"><button class="btn btn-primary btn-block" type="button" id="button" onclick="signUpEn();">Sign up</button></div>
         	</form>
         </div>
     </section>
     <footer class="page-footer gradient">
         <div class="container space-padding">
             <div class="links">
-            	<a href="#">About us</a>
-            	<a href="#">Contact us</a>
-            	<a href="#">Project</a>
-            </div>
-            
-            <div class="social-icons">
-            	<a href="#"><i class="icon ion-social-facebook"></i></a>
-            	<a href="#"><i class="icon ion-social-instagram-outline"></i></a>
-            	<a href="#"><i class="icon ion-social-twitter"></i></a>
+            	<a href="#" onclick="contactUs();">Contact us</a>
             </div>
         </div>
     </footer>
-	<script src="../bootstrap-4.1.0-dist/js/jquery.min.js"></script>
-    <script src="../bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>
 </body>
-
 </html>
