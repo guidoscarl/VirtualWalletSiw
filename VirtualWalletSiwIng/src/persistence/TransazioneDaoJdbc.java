@@ -29,7 +29,7 @@ public class TransazioneDaoJdbc implements TransazioneDao {
 		switch (type) {
 		case MITTENTE:
 			
-			String query="SELECT mittente, destinatario, importo\r\n" + 
+			String query="SELECT mittente, destinatario, importo, data\r\n" + 
 					"	FROM public.transazione\r\n" + 
 					"	WHERE mittente=?;";
 			try {
@@ -42,11 +42,12 @@ public class TransazioneDaoJdbc implements TransazioneDao {
 					UtenteDao u = DatabaseManager.getInstance().getDaoFactory().getUtenteDao();
 					Utente utM = u.getUtenteforTransaction(results.getString("mittente"));
 					Utente utD =u.getUtenteforTransaction(results.getString("destinatario"));
-					Transazione t =new Transazione(utM.getNome(),utM.getCognome(),utD.getNome(),utD.getCognome(),results.getInt("importo"),utD.getEmail());
+					Transazione t =new Transazione(utM.getNome(),utM.getCognome(),utD.getNome(),utD.getCognome(),results.getInt("importo"),utD.getEmail(),results.getString("data"));
 					transazioni.add(t);
 				}
 			} catch (SQLException e) {
 				
+				e.printStackTrace();
 				try {
 					c.close();
 				} catch (SQLException e1) {
@@ -78,7 +79,7 @@ public class TransazioneDaoJdbc implements TransazioneDao {
 					UtenteDao u = DatabaseManager.getInstance().getDaoFactory().getUtenteDao();
 					Utente utM = u.getUtenteforTransaction(results.getString("mittente"));
 					Utente utD =u.getUtenteforTransaction(results.getString("destinatario"));
-					Transazione t =new Transazione(utM.getNome(),utM.getCognome(),utD.getNome(),utD.getCognome(),results.getInt("importo"),utM.getEmail());
+					Transazione t =new Transazione(utM.getNome(),utM.getCognome(),utD.getNome(),utD.getCognome(),results.getInt("importo"),utM.getEmail(),results.getString("data"));
 					transazioni.add(t);
 				}
 			} catch (SQLException e) {

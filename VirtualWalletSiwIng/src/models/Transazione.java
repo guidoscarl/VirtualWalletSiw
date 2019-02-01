@@ -6,9 +6,10 @@ public class Transazione {
 	private String nomeDestinatario;
 	private String cognomeDestinatario;
 	private String email;
+	private String data;
 	private int importo;
 	public Transazione(String nomeMittente, String cognomeMittente, String nomeDestinatario, String cognomeDestinatario,
-			int importo,String email) {
+			int importo,String email,String data) {
 		
 		this.nomeMittente = nomeMittente;
 		this.cognomeMittente = cognomeMittente;
@@ -16,6 +17,14 @@ public class Transazione {
 		this.cognomeDestinatario = cognomeDestinatario;
 		this.email=email;
 		this.importo = importo;
+		this.data=data;
+		
+	}
+	public String getData() {
+		return data;
+	}
+	public void setData(String data) {
+		this.data = data;
 	}
 	public String getEmail() {
 		return email;
