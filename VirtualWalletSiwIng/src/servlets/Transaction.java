@@ -40,8 +40,10 @@ public class Transaction extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("entrato in transazione...");
-		System.out.println(request.getParameter("email"));
-		System.out.println(request.getParameter("importo"));
+		if(request.getAttribute("rest")==null) {
+		System.out.println("not rest");
+		System.out.println((String)request.getParameter("email"));
+		System.out.println((String)request.getParameter("importo"));
 
 		PostgresDAOFactory p = new PostgresDAOFactory();
 		UtenteDao dao=p.getUtenteDao();
@@ -59,13 +61,40 @@ public class Transaction extends HttpServlet {
 			System.out.println("utente non trovato");
 			response.getWriter().append("failed");
 		}
+		}
+		else {
+		
+		
+		String email=(String)request.getAttribute("email");
+		int importo=Integer.parseInt((String.valueOf(request.getAttribute("importo"))));
+		String mittenteEm =(String)request.getAttribute("mittente");
+		int saldo=Integer.parseInt((String.valueOf(request.getAttribute("saldo"))));
+		
+		System.out.println(email+" " + mittenteEm +" "+saldo+" "+ importo);
+		PostgresDAOFactory p = new PostgresDAOFactory();
+		UtenteDao dao=p.getUtenteDao();
+		Utente mittente=new Utente("a","a",mittenteEm,"a",saldo);
+		
+		try {
+			Utente destinatario=dao.getUtenteforTransaction(email);
+			dao.transaction(mittente, destinatario, importo);
+			
+			
+			//request.getSession().setAttribute("saldo", oldSaldo-Integer.parseInt(request.getParameter("importo")));
+			//response.sendRedirect("confirm.html");
+			response.getWriter().append("confirm");
+		} catch (UsersNotFound e) {
+			System.out.println("utente non trovato");
+			response.getWriter().append("failed");
+		
+		}
 		
 		
 		
 		
 		
 		
-		
+		}	
 	}
 
 }

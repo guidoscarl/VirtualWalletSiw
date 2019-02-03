@@ -11,12 +11,15 @@ function login(){
 		data:{email:emaill,password:passwordd},
 		success: function(data){
 			
-			if(data=="ok")
-				$(location).attr("href","account.jsp");
-			
-			else if(data=="no"){
-				$("#error").css("visibility","visible");
-			}
+			 if(data=="no"){
+					$("#error").css("visibility","visible");
+					
+				}
+				 
+			 else{
+						$(location).attr("href","account.jsp");
+						
+					}
 				
 		}
 	});

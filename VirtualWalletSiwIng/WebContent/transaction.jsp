@@ -37,7 +37,18 @@ prefix="c" %>
                 <p style="color:black"><i>Inserisci nella form qui sotto il nome, il cognome e l'e-mail dell'utente destinatario e l'importo con il quale effettuare la transazione.</i></p>
                 <div class="form-group"><label for="name">Nome</label><input class="form-control" type="text" name="name" id="nome"></div>
                 <div class="form-group"><label for="surname">Cognome</label><input class="form-control" type="text" name="surname" id="cognome"></div>
-                <div class="form-group"><label for="email">Email</label><input class="form-control" type="email" name="email" id="email" onInput="checkEmail();" ></div>
+                <c:choose>
+                	<c:when test="${emailFlamingo != null}">
+   						 <div class="form-group"><label for="email">Email</label><input class="form-control" type="email" name="email" id="email" value="${emailFlamingo }" disabled="disabled" ></div>
+  					</c:when>
+  					
+  					<c:when test="${emailFlamingo == null}">
+   						 <div class="form-group"><label for="email">Email</label><input class="form-control" type="email" name="email" id="email" value="sessionnontrovata" ></div>
+  					</c:when>
+                
+                
+                
+                </c:choose>
                 <div class="form-group"><label for="importo">Importo</label><input class="form-control" type="text" name="importo" id="import" oninput="checkImport();" saldo="${saldo }">
                 <p style="color:red; visibility:hidden;" id="error" >Saldo non sufficiente</p>
                 <button type="button" class="btn btn-primary btn-block" type="button" style="visibility:hidden" onclick="doRecharge();" id="buttonRC" >Effettua ricarica</button>

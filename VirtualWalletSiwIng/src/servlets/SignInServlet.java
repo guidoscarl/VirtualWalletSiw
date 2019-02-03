@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.JSONObject;
+
 import Excepions.UsersNotFound;
 import models.Utente;
 import persistence.DatabaseManager;
@@ -82,10 +84,14 @@ System.out.println("entrato nella servlet");
 			session.setAttribute("password", u.getPass());
 			System.out.println(u.getSaldo());
 			session.setAttribute("saldo", u.getSaldo());
+			request.setAttribute("saldo",u.getSaldo());
 			session.setAttribute("logged", true);
+			JSONObject g = new JSONObject();
+			g.append("saldo", u.getSaldo());
+			g.append("email", u.getEmail());
 			//response.sendRedirect("account.jsp");
 			
-			txt="ok";
+			txt=g.toString();
 			response.getWriter().append(txt);
 			
 			}
