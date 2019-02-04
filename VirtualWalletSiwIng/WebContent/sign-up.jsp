@@ -51,7 +51,7 @@
                 	<p id="controlPass" style="visibility:hidden;color:red;font-size:1.30vw;">La password non corrisponde.</p>
                 </div>
         		<div class="form-group"><label for="born-date">Data di nascita</label><input class="form-control" type="date" id="born-date"></div>
-        		<div class="form-group"><p  class="controlClass" style="color:red; font-size:1.30vw;visibility:hidden;" id="control"><p>);</div>
+        		<div class="form-group"><p  class="controlClass" style="color:red; font-size:1.30vw;visibility:hidden;" id="control"></p></div>
 				<div class="button"><button class="btn btn-primary btn-block" type="button" id="button" onclick="signUp();">Registrati</button></div>
         	</form>
         </div>

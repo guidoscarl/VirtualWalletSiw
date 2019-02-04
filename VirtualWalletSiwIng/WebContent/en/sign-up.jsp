@@ -45,14 +45,15 @@
                 <div class="form-group"><label for="name">Name</label><input class="form-control" type="text" name="name"></div>
                 <div class="form-group"><label for="surname">Surname</label><input class="form-control" type="text" name="surname"></div>
                 <div class="form-group"><label for="email" >Email</label><input class="form-control" type="email" name="email" id="email" oninput="checkEmail();"></div>
-                <p  class="controlClass" style="color:red;" id="control"><p>);
-                <div class="form-group"><label for="password">Password</label><input class="form-control" type="password" name="password"></div>
+            
+                <div class="form-group"><label for="password">Password</label><input class="form-control" type="password" name="password" id="password"></div>
                 <div class="form-group"><label for="password">Confirm password</label><input class="form-control" type="password" id="passwordConf" oninput="checkPassword();">
                 	<p id="controlPass" style="visibility:hidden;color:red;font-size:1.30vw;">Password don't match.</p>
                 </div>
         		<div class="form-group"><label for="born-date">Birth date</label><input class="form-control" type="date" id="born-date"></div>
-				<div class="form-group"><p  class="controlClass" style="color:red; font-size:1.30vw;visibility:hidden;" id="control"><p>);</div>
-				<div class="button"><button class="btn btn-primary btn-block" type="button" id="button" onclick="signUpEn();">Sign up</button></div>
+				<div class="form-group"><p  class="controlClass" style="color:red; font-size:1.30vw;visibility:hidden;" id="control"></p></div>
+				
+				<div class="button"><button class="btn btn-primary btn-block" type="button" id="button" onclick="signUp();">Sign up</button></div>
         	</form>
         </div>
     </section>

@@ -16,7 +16,7 @@ function signUp(){
 	
 	$.ajax({
 		method:"post",
-		url: "SignupServlet",
+		url: "doSignup",
 		datatype:"JSON",
 		data:{email:emaill,password:passwordd,name:namee,surname:surnamee},
 		success: function(data){
@@ -61,7 +61,7 @@ function signUpEn(){
 	
 	$.ajax({
 		method:"post",
-		url: "SignupServlet",
+		url: "doSignup",
 		datatype:"JSON",
 		data:{email:emaill,password:passwordd,name:namee,surname:surnamee},
 		success: function(data){

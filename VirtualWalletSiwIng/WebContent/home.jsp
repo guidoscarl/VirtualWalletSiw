@@ -96,7 +96,7 @@
 	                        <div class="card-header"><h3>Totale sicurezza!</h3></div>
 	                        <div class="card-body">
 	<!-- 	                           	<h3 class="card-title">Totale sicurezza!</h3> -->
-	                        	<p class="card-text">È tutto in totale sicurezza! Solo tu potrai accedere al tuo proprio portafoglio.</p>
+	                        	<p class="card-text">È tutto in totale sicurezza! Solo tu potrai accedere al tuo portafoglio.</p>
 	                        </div>
 	                  	</div>
 	                </div>

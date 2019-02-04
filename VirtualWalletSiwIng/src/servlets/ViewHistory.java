@@ -38,13 +38,11 @@ public class ViewHistory extends HttpServlet {
 		TransazioneDao transazioneDao=DatabaseManager.getInstance().getDaoFactory().getTransazioneDao();
 		ArrayList<Transazione> transazioniM = transazioneDao.getByEmail((String)request.getSession().getAttribute("email"), TransazioneDao.MITTENTE);
 		ArrayList<Transazione> transazioniD = transazioneDao.getByEmail((String)request.getSession().getAttribute("email"), TransazioneDao.DESTINATARIO);
+		
 		request.setAttribute("transazioniM", transazioniM);
 		request.setAttribute("transazioniD", transazioniD);
 		
 		
-		for(Transazione t:transazioniM) {
-			System.out.println(t.getData()+"\n");
-		}
 		//System.out.println("fatto");
 		RequestDispatcher rd = request.getRequestDispatcher("history.jsp");
 		rd.forward(request, response);

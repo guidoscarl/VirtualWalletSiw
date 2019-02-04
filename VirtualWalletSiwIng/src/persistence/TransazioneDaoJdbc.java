@@ -66,12 +66,13 @@ public class TransazioneDaoJdbc implements TransazioneDao {
 			
 			break;
 		case DESTINATARIO:
-			String query2="SELECT mittente, destinatario, importo\r\n" + 
+			String query2="SELECT mittente, destinatario, importo, data\r\n" + 
 					"	FROM public.transazione\r\n" + 
-					"	WHERE destinatario=?;";
+					"	WHERE destinatario=?";
 			try {
 				c=data.getConnection();
 				PreparedStatement statement = c.prepareStatement(query2);
+				System.out.println("email: "+email);
 				statement.setString(1, email);
 				ResultSet results = statement.executeQuery();
 				c.close();

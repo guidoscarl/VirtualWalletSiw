@@ -43,7 +43,7 @@ prefix="c" %>
   					</c:when>
   					
   					<c:when test="${emailFlamingo == null}">
-   						 <div class="form-group"><label for="email">Email</label><input class="form-control" type="email" name="email" id="email" value="sessionnontrovata" ></div>
+   						 <div class="form-group"><label for="email">Email</label><input class="form-control" type="email" name="email" id="email"  ></div>
   					</c:when>
                 
                 

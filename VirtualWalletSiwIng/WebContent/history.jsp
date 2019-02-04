@@ -69,7 +69,7 @@
 					</tr>
 					<c:forEach items="${transazioniD}" var="trans" >
 						<tr>
-							<td class="colTableTransaction myBorder">data</td>
+							<td class="colTableTransaction myBorder">${trans.data }</td>
 							<td class="colTableTransaction myBorder">${trans.nomeMittente}</td>
 							<td class="colTableTransaction myBorder">${trans.cognomeMittente}</td>
 							<td class="colTableTransaction myBorder">${trans.email }</td>
