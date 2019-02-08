@@ -4,9 +4,10 @@
 	background-color: #6741D1;
 }
 
-.navbar-nav > li {
-	padding-left:0;
-	margin:0;
+@media (min-width: 360px) {
+  .container {
+    max-width: 337px;
+  }
 }
 
 .gradient {
@@ -32,16 +33,16 @@
 }
 
 .portfolio-block {
-	padding: 100px;
+	padding: 3.33%;
 	text-align:center;
 }
 
-.container.gradient.myBorder > p {
+/*.container.gradient.myBorder > p {
 	color:white;
 	text-align:left;
 	font-size:2.5em;
 	font-weight:300;
-}
+}*/
 
 .avatar{
 	width:150px;
@@ -49,8 +50,9 @@
 	background-size:cover;
 	background-repeat:no-repeat;
 	margin:auto;
-	border-radius:100px;
-	margin-bottom:30px
+	border-radius:100%;
+	margin-bottom:3.33%;
+	margin-top:3.33%
 }
 
 .grid {

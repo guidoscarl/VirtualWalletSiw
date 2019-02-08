@@ -19,7 +19,7 @@
 </head>
 
 <body class="myBody">
-    <nav class="navbar navbar-dark navbar-expand-sm fixed-top gradient">
+    <nav class="navbar navbar-dark navbar-expand-sm gradient">
         <div class="container">
         	<span class="navbar-brand">Virtual Wallet</span>
         	<button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
@@ -56,9 +56,9 @@
 	<section class="section-border">
 	    <div class="container">
 	        <div class="row space-padding">
-	            <div class="col-md-6 col-lg-4"><img class="img-fluid image" src="Images/exchange.jpg"></div>
-	            <div class="col-md-6 col-lg-4"><img class="img-fluid image" src="Images/transaction.jpg"></div>
-	            <div class="col-md-6 col-lg-4"><img class="img-fluid image" src="Images/chart.jpg"></div>
+	            <div class="col-lg-4"><img class="img-fluid image" src="Images/exchange.jpg"></div>
+	            <div class="col-lg-4"><img class="img-fluid image" src="Images/transaction.jpg"></div>
+	            <div class="col-lg-4"><img class="img-fluid image" src="Images/chart.jpg"></div>
 	        </div>
 	    </div>
 	</section>
