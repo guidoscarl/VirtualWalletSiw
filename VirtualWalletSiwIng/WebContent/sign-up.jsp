@@ -20,7 +20,7 @@
 </head>
 
 <body class="myBody">
-    <nav class="navbar navbar-dark navbar-expand-sm fixed-top gradient">
+    <nav class="navbar navbar-dark navbar-expand-sm gradient">
         <div class="container">
         	<span class="navbar-brand">Virtual Wallet</span>
         	<button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
@@ -38,7 +38,7 @@
     </nav>
     <section class="portfolio-block">
         <div class="container">
-            <div class="heading"><h2>Registrazione</h2></div>
+            <h2>Registrazione</h2>
             <form style="background-color:white" method="post" action="SignupServlet">
                 <!-- Tenere per la registrazione di un nuovo account <div class="form-group"><label for="subject">Subject</label><select class="form-control" id="subject"><option value="" selected="">Choose Subject</option><option value="1">Subject 1</option><option value="2">Subject 2</option><option value="3">Subject 3</option></select></div> -->
                 <!-- Aggiungere identificativi???-->
@@ -56,7 +56,7 @@
         	</form>
         </div>
     </section>
-    <footer class="page-footer gradient">
+    <footer class="gradient">
         <div class="container space-padding">
             <div class="links">
             	<a href="#" onclick="contactUs();">Contact us</a>

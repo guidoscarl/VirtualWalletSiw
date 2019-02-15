@@ -44,11 +44,12 @@
 	    <div class="container myBorder">
 	        <div class="avatar" style="background-image:url(&quot;Images/test.jpg&quot;);"></div>
 	        <div>
+	        	<p>Il portafoglio virtuale <strong>Virtual Wallet</strong> permetterà senza problemi acquisti e transazioni tra utenti e siti web che approvano il nostro progetto! </p>
 	        	<%
                 		if(session.getAttribute("logged")==null)
-                			out.print("<p id=\"firstP\">Il portafoglio virtuale <strong>Virtual Wallet</strong> permetterà senza problemi acquisti e transazioni tra utenti e siti web che approvano il nostro progetto! </p><a class=\"btn btn-primary\" style=\"border-radius:50px\" role=\"button\" href=\"sign-up\">Iscriviti</a>");
+                			out.print("<a class=\"btn btn-primary\" style=\"border-radius:50px\" role=\"button\" href=\"sign-up\">Iscriviti</a>");
                 		else
-                			out.print("<p id=\"firstP\">Il portafoglio virtuale <strong>Virtual Wallet</strong> permetterà senza problemi acquisti e transazioni tra utenti e siti web che approvano il nostro progetto! </p><a class=\"btn btn-primary\" style=\"border-radius:50px\" role=\"button\" href=\"account.jsp\">Il mio profilo</a>");
+                			out.print("<a class=\"btn btn-primary\" style=\"border-radius:50px\" role=\"button\" href=\"account.jsp\">Il mio profilo</a>");
 				%>
 	        </div>
 	    </div>
@@ -112,7 +113,7 @@
             </div>
         </div>
     </section>
-    <footer class="page-footer gradient">
+    <footer class="gradient">
         <div class="container space-padding">
             <div class="links">
             	<a href="#" onclick="contactUs();">Contact us</a>
