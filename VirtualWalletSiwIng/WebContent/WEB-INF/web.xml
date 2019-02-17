@@ -57,7 +57,6 @@
     <servlet-name>ViewHistory</servlet-name>
     <url-pattern>/viewHistory</url-pattern>
   </servlet-mapping>
-  
   <servlet-mapping>
     <servlet-name>ViewHistory</servlet-name>
     <url-pattern>/en/viewHistory</url-pattern>
@@ -74,7 +73,6 @@
     <servlet-name>doSignup</servlet-name>
     <url-pattern>/en/doSignup</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>checkDate</servlet-name>
     <servlet-class>servlets.CheckDate</servlet-class>
@@ -83,8 +81,6 @@
     <servlet-name>checkDate</servlet-name>
     <url-pattern>/checkDate</url-pattern>
   </servlet-mapping>
-  
-  
   <servlet>
     <servlet-name>signin</servlet-name>
     <servlet-class>servlets.SignInServlet</servlet-class>
@@ -93,10 +89,27 @@
     <servlet-name>signin</servlet-name>
     <url-pattern>/signin</url-pattern>
   </servlet-mapping>
-  
   <servlet-mapping>
     <servlet-name>signin</servlet-name>
     <url-pattern>/en/signin</url-pattern>
   </servlet-mapping>
- 
+  <servlet>
+    <servlet-name>viewProfile</servlet-name>
+    <servlet-class>servlets.viewProfile</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>viewProfile</servlet-name>
+    <url-pattern>/viewaccount</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>searchUsers</servlet-name>
+    <servlet-class>servlets.SearchUsers</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>searchUsers</servlet-name>
+    <url-pattern>/search</url-pattern>
+  </servlet-mapping>
+  
+  
 </web-app>

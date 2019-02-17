@@ -107,6 +107,9 @@ public class TransazioneDaoJdbc implements TransazioneDao {
 		}
 		
 		return transazioni;
+		
+		
+		
 	}
 
 }

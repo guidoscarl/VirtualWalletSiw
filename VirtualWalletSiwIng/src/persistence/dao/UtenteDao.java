@@ -1,5 +1,7 @@
 package persistence.dao;
 
+import java.util.ArrayList;
+
 import Excepions.EmailAlreadyUsed;
 import Excepions.UsersNotFound;
 import models.Utente;
@@ -11,6 +13,7 @@ public interface UtenteDao {
 	void transaction(Utente mittente,Utente destinatario,int importo);
 	Utente getUtenteforTransaction(String email) throws UsersNotFound;
 	boolean existUtente(String email);
+	ArrayList<Utente> getAllUsers();
 	
 	
 }

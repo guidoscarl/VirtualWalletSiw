@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Date;
 
 import Excepions.EmailAlreadyUsed;
@@ -276,4 +277,43 @@ public class UtenteDaoJdbc implements UtenteDao {
 		
 		return exist;
 	}
+	@Override
+	public ArrayList<Utente> getAllUsers() {
+		// TODO Auto-generated method stub
+		Connection c=null;
+		ArrayList<Utente>users=new ArrayList<Utente>();
+		try {
+			c=data.getConnection();
+			String query="SELECT email, nome, cognome, password, saldo\r\n" + 
+					"	FROM public.\"Utente\";";
+			PreparedStatement statmnt=c.prepareStatement(query);
+			ResultSet results=statmnt.executeQuery();
+			while(results.next()) {
+				String email=results.getString("email");
+				String nome=results.getString("nome");
+				String cognome=results.getString("cognome");
+				users.add(new Utente(nome,cognome,email,"",0));
+			}
+		}
+		catch (Exception e){
+			try {
+				c.close();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+		finally {
+			try {
+				c.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return users;
+	}
+	
+		
+	
 }
