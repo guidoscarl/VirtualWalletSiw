@@ -35,6 +35,16 @@
 	text-align:center;
 }
 
+.searchBar button{
+	float:right;
+	cursor:pointer
+}
+
+.searchBar {
+	float:right;
+	margin-right:1%;
+}
+
 /*.container.gradient.myBorder > p {
 	color:white;
 	text-align:left;
@@ -54,8 +64,10 @@
 }
 
 .grid {
-	width:500px;
-	height:150px;
+	max-width:500px;
+	width:100%;
+	max-height:150px;
+	height:100%;
 	background-size:cover;
 	background-repeat:no-repeat;
 	margin:auto;
@@ -66,7 +78,7 @@
 	color:white;
 	font-size:3.5em;
 	font-weight:300;
-	padding-top:25px;
+	padding-bottom:3.33%;
 }
 
 .portfolio-block form {
@@ -139,6 +151,11 @@
 .myBorder {
 	border: 1px solid white;
 	padding:15px;
+}
+
+.results {
+	background-color:white;
+	border-radius:10px;
 }
 
 .lds-dual-ring {

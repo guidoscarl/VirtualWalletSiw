@@ -5,7 +5,7 @@
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profilo Utente</title>
+    <title>Ricerca di Virtual Wallet</title>
 	<link rel="stylesheet" href="newCSS/myCSS.css">
     <link rel="stylesheet" href="bootstrap-4.1.0-dist/css/bootstrap.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
@@ -34,40 +34,14 @@
 	        <a class="links" href="account.jsp"><%out.print(session.getAttribute("nome")+" "+(session.getAttribute("cognome"))); %>, benvenuto!</a>
 		</div>
 	</nav>
-	<section class="portfolio-block section-border">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-3 profile-info gradient myBorder">
-					<h1>Info utente</h1>
-					<span>Nome:</span>
-					<p><%out.print(session.getAttribute("nome")); %></p>
-					<span>Cognome:</span>
-					<p><%out.print(session.getAttribute("cognome")); %></p>
-					<span>E-mail:</span>
-					<p style="font-size:1.00vw;"><%out.print(session.getAttribute("email")); %></p>
-				</div>
-	   	 		<div class="col-sm-9 gradient myBorder">
-        			<p>Il tuo conto ammonta a:</p>
-		       		<div class="amount">&#8364;<%out.print(session.getAttribute("saldo")); %></div>
-	       			<a class="btn btn-primary" role="button" href="viewHistory" onclick="activeLoader();">Visualizza Storico</a>
-	       			<a class="btn btn-primary" role="button" href="recharge.jsp">Ricarica importo</a>
-	        		<a class="btn btn-primary" role="button" href="transaction.jsp">Effettua transazione</a>
-			    </div>
-		    </div>
-		</div>
-		<div class="lds-dual-ring" id="loader" style="visibility:hidden"></div>
-	</section>
-	<section class="portfolio-block section-border">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">amici</div>
-				<div class="col-sm-4">inviate</div>
-				<div class="col-sm-4">ricevute</div>
-			</div>
-		</div>
-	</section>
-	<script src="bootstrap-4.1.0-dist/js/jquery.min.js"></script>
-    <script src="bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>
-	
+	 <section class="portfolio-block">
+        <div class="container results">
+            <p style="border-bottom: 1px solid; border-color: #d1d1d1; color:black"><strong>Risultati</strong></p>
+            <!-- Da inserire con le servlet per la ricerca di utenti -->
+            <div style="border-bottom: 1px solid; border-color: #d1d1d1;"><a>first user found</a></div>
+            <div style="border-bottom: 1px solid; border-color: #d1d1d1;"><a>second user found</a></div>
+            <div style="border-bottom: 1px solid; border-color: #d1d1d1;"><a>another user found</a></div>
+        </div>
+    </section>
 </body>
 </html>

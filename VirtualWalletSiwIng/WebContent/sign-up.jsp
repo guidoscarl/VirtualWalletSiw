@@ -25,9 +25,8 @@
         	<span class="navbar-brand">Virtual Wallet</span>
         	<button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
         		<span style="color:white;">Naviga nel sito!</span>
-        		<!-- <span class="navbar-toggler-icon"></span> -->
         	</button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav">
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="home.jsp">Home</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="sign-in.html">Accedi</a></li>
