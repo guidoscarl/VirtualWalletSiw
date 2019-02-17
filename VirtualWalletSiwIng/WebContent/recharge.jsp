@@ -16,9 +16,12 @@ prefix="c" %>
     <script src="js/recharge.js"></script>
 </head>
 <body class="myBody">
-	<nav class="navbar navbar-dark navbar-expand-sm fixed-top gradient">
+	<nav class="navbar navbar-dark navbar-expand-sm gradient">
 		<div class="container">
 			<span class="navbar-brand">Virtual Wallet</span>
+			<button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
+        		<span style="color:white;">Naviga nel sito!</span>
+        	</button>
 			<div class="navbar-collapse" id="navcol-1">
 				<ul class="nav navbar-nav">
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="home.jsp">Home</a></li>

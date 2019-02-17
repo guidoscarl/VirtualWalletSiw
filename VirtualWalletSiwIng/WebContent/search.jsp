@@ -28,7 +28,7 @@
 		        </ul>
 			</div>
 			<div class="searchBar">
-				<input type="text" placeholder="Search..">
+				<input type="text" placeholder="Cerca utenti">
 				<button type="submit"><i class="fa fa-search"></i></button>
 			</div>
 	        <a class="links" href="account.jsp"><%out.print(session.getAttribute("nome")+" "+(session.getAttribute("cognome"))); %>, benvenuto!</a>
@@ -38,9 +38,9 @@
         <div class="container results">
             <p style="border-bottom: 1px solid; border-color: #d1d1d1; color:black"><strong>Risultati</strong></p>
             <!-- Da inserire con le servlet per la ricerca di utenti -->
-            <div style="border-bottom: 1px solid; border-color: #d1d1d1;"><a>first user found</a></div>
-            <div style="border-bottom: 1px solid; border-color: #d1d1d1;"><a>second user found</a></div>
-            <div style="border-bottom: 1px solid; border-color: #d1d1d1;"><a>another user found</a></div>
+            <div style="border-top: 1px solid; border-color: #d1d1d1;"><a>first user found</a></div>
+            <div style="border-top: 1px solid; border-color: #d1d1d1;"><a>second user found</a></div>
+            <div style="border-top: 1px solid; border-color: #d1d1d1;"><a>another user found</a></div>
         </div>
     </section>
 </body>

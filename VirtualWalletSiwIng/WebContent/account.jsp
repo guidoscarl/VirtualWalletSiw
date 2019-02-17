@@ -28,7 +28,7 @@
 		        </ul>
 			</div>
 			<div class="searchBar">
-				<input type="text" placeholder="Search..">
+				<input type="text" placeholder="Cerca utenti">
 				<button type="submit"><i class="fa fa-search"></i></button>
 			</div>
 	        <a class="links" href="account.jsp"><%out.print(session.getAttribute("nome")+" "+(session.getAttribute("cognome"))); %>, benvenuto!</a>
@@ -58,11 +58,39 @@
 		<div class="lds-dual-ring" id="loader" style="visibility:hidden"></div>
 	</section>
 	<section class="portfolio-block section-border">
+		<p>Il tuo social network</p>
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-4">amici</div>
-				<div class="col-sm-4">inviate</div>
-				<div class="col-sm-4">ricevute</div>
+				<div class="friendList">
+					<p style="color:black"><strong>Amici</strong></p>
+					<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;"><a>first friend</a></div>
+            		<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;"><a>second friend</a></div>
+            		<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;"><a>another friend</a></div>
+				</div>
+				<div class="friendList">
+					<p style="color:black"><strong>Ricevute</strong></p>
+					<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;">
+						<a>first friend</a>
+						<button class="friendButton" style="background-image:url(&quot;Images/accept.png&quot;);"></button>
+						<button class="friendButton" style="background-image:url(&quot;Images/deny.png&quot;);"></button>
+					</div>
+					<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;">
+						<a>second friend</a>
+						<button class="friendButton" style="background-image:url(&quot;Images/accept.png&quot;);"></button>
+						<button class="friendButton" style="background-image:url(&quot;Images/deny.png&quot;);"></button>
+					</div>
+					<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;">
+						<a>another friend</a>
+						<button class="friendButton" style="background-image:url(&quot;Images/accept.png&quot;);"></button>
+						<button class="friendButton" style="background-image:url(&quot;Images/deny.png&quot;);"></button>
+					</div>
+				</div>
+				<div class="friendList">
+					<p style="color:black"><strong>Inviate</strong></p>
+					<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;"><a>first friend</a></div>
+            		<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;"><a>second friend</a></div>
+            		<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;"><a>another friend</a></div>
+				</div>
 			</div>
 		</div>
 	</section>

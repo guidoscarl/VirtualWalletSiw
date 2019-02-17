@@ -181,6 +181,31 @@
 	visibility:hidden;
 }
 
+.friendList {
+	max-width:340px;
+	width:100%;
+	background-color:white;
+	border-radius:10px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:10px;
+}
+
+.friend {
+	border-top: 1px solid; 
+	border-color: #d1d1d1;
+	text-align:left;
+	padding-left:15px;
+}
+
+button.friendButton {
+	height:32px;
+	width:32px;
+	border-radius:10px;
+	border:none;
+	margin-top:1%;
+}
+
 @keyframes lds-dual-ring {
   0% {
     transform: rotate(0deg);
