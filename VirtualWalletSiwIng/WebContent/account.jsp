@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="bootstrap-4.1.0-dist/fonts/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="js/loader.js"></script>
+    <script src="js/search.js"></script>
 </head>
 <body class="myBody">
 	<nav class="navbar navbar-dark navbar-expand-sm gradient">
@@ -28,12 +29,13 @@
 		        </ul>
 			</div>
 			<div class="searchBar">
-				<input type="text" placeholder="Cerca utenti">
+				<input id="myInput" type="text" placeholder="Cerca utenti" oninput="search();">
 				<button type="submit"><i class="fa fa-search"></i></button>
 			</div>
 	        <a class="links" href="account.jsp"><%out.print(session.getAttribute("nome")+" "+(session.getAttribute("cognome"))); %>, benvenuto!</a>
 		</div>
 	</nav>
+	<ul class="list-group" id="myList" style="overflow:hidden; overflow-y:scroll;height:200px; "></ul>
 	<section class="portfolio-block section-border">
 		<div class="container">
 			<div class="row">
