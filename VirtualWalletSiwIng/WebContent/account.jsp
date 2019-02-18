@@ -35,7 +35,7 @@
 	        <a class="links" href="account.jsp"><%out.print(session.getAttribute("nome")+" "+(session.getAttribute("cognome"))); %>, benvenuto!</a>
 		</div>
 	</nav>
-	<ul class="list-group" id="myList" style="overflow:hidden; overflow-y:scroll;height:200px; "></ul>
+	<ul class="list-group" id="myList"></ul>
 	<section class="portfolio-block section-border">
 		<div class="container">
 			<div class="row">
@@ -65,9 +65,18 @@
 			<div class="row">
 				<div class="friendList">
 					<p style="color:black"><strong>Amici</strong></p>
-					<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;"><a>first friend</a></div>
-            		<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;"><a>second friend</a></div>
-            		<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;"><a>another friend</a></div>
+					<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;">
+						<a>first friend</a>
+						<button><i class="ion ion-cash" style="color:green"></i></button>
+					</div>
+            		<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;">
+            			<a>second friend</a>
+						<button><i class="ion ion-cash" style="color:green"></i></button>
+					</div>
+            		<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;">
+            			<a>another friend</a>
+						<button><i class="ion ion-cash" style="color:green"></i></button>
+					</div>
 				</div>
 				<div class="friendList">
 					<p style="color:black"><strong>Ricevute</strong></p>
@@ -89,9 +98,18 @@
 				</div>
 				<div class="friendList">
 					<p style="color:black"><strong>Inviate</strong></p>
-					<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;"><a>first friend</a></div>
-            		<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;"><a>second friend</a></div>
-            		<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;"><a>another friend</a></div>
+					<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;">
+						<a>first friend</a>
+						<button><i class="ion ion-close-circled" style="color:red"></i></button>
+					</div>
+            		<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;">
+            			<a>second friend</a>
+            			<button><i class="ion ion-close-circled" style="color:red"></i></button>
+            		</div>
+            		<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;">
+            			<a>another friend</a>
+            			<button><i class="ion ion-close-circled" style="color:red"></i></button>
+            		</div>
 				</div>
 			</div>
 		</div>
