@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="bootstrap-4.1.0-dist/fonts/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="js/loader.js"></script>
+    <script src="js/contactUs.js"></script>
 </head>
 <body class="myBody">
 	<nav class="navbar navbar-dark navbar-expand-sm gradient">
@@ -33,7 +34,7 @@
 				<input type="text" placeholder="Cerca utenti">
 				<button type="submit"><i class="fa fa-search"></i></button>
 			</div>
-	        <a class="links" href="account.jsp"><%out.print(session.getAttribute("nome")+" "+(session.getAttribute("cognome"))); %>, benvenuto!</a>
+			<a class="links" href="signin"><c:out value="${nome} ${cognome}">No name</c:out>, benvenuto!</a>
 		</div>
 	</nav>
 	<section class="portfolio-block section-border">
@@ -42,9 +43,7 @@
 				<div class="col-sm-3 profile-info gradient myBorder">
 					<h1>Profilo di</h1>
 					<span>Nome:</span>
-					<p>
-						<c:out value="${nome}">No name</c:out>
-					</p>
+					<p><c:out value="${nome}">No name</c:out></p>
 					<span>Cognome:</span>
 					<p><c:out value="${cognome}">No name</c:out></p>
 				</div>
@@ -56,6 +55,13 @@
 		</div>
 		<div class="lds-dual-ring" id="loader" style="visibility:hidden"></div>
 	</section>
+	<footer class="gradient">
+        <div class="container space-padding">
+            <div class="links">
+            	<a style="cursor:pointer" onclick="contactUs();">Contact us</a>
+            </div>
+        </div>
+    </footer>
 	<script src="bootstrap-4.1.0-dist/js/jquery.min.js"></script>
     <script src="bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>
 </body>

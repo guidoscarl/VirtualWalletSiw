@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="bootstrap-4.1.0-dist/fonts/ionicons.min.css">
     <script src="js/loader.js"></script>
+    <script src="js/contactUs.js"></script>
 </head>
 <body class="myBody">
 	<nav class="navbar navbar-dark navbar-expand-sm gradient">
@@ -27,14 +28,14 @@
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="en/viewHistory" onclick="activeLoader();">Switch to English</a></li>
 		        </ul>
 			</div>
-			<a class="links" href="account.jsp"><c:out value="${nome} ${cognome }">No name</c:out>, benvenuto!</a>
+			<a class="links" href="signin"><c:out value="${nome} ${cognome }">No name</c:out>, benvenuto!</a>
 		</div>
 		<div class="lds-dual-ring" id="loader"  style="visibility:hidden" ></div>
 		
 	</nav>
 	<section class="portfolio-block section-border">
 		<div class="container gradient myBorder">
-			<p>Storico transazioni di <%out.print(session.getAttribute("nome")+" "+(session.getAttribute("cognome"))); %></p>		
+			<p>Storico transazioni di <c:out value="${nome} ${cognome}">No name</c:out></p>		
 		</div>
 	</section>
 	<section class="portfolio-block">
@@ -83,6 +84,13 @@
 			</div>
 		</div>
 	</section>
+	<footer class="gradient">
+        <div class="container space-padding">
+            <div class="links">
+            	<a style="cursor:pointer" onclick="contactUs();">Contact us</a>
+            </div>
+        </div>
+    </footer>
 	<script src="bootstrap-4.1.0-dist/js/jquery.min.js"></script>
     <script src="bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>
 

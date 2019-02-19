@@ -49,7 +49,7 @@
                 		if(session.getAttribute("logged")==null)
                 			out.print("<a class=\"btn btn-primary\" style=\"border-radius:50px\" role=\"button\" href=\"sign-up\">Iscriviti</a>");
                 		else
-                			out.print("<a class=\"btn btn-primary\" style=\"border-radius:50px\" role=\"button\" href=\"account.jsp\">Il mio profilo</a>");
+                			out.print("<a class=\"btn btn-primary\" style=\"border-radius:50px\" role=\"button\" href=\"signin\">Il mio profilo</a>");
 				%>
 	        </div>
 	    </div>
@@ -116,7 +116,7 @@
     <footer class="gradient">
         <div class="container space-padding">
             <div class="links">
-            	<a href="#" onclick="contactUs();">Contact us</a>
+            	<a onclick="contactUs();">Contact us</a>
             </div>
         </div>
     </footer>

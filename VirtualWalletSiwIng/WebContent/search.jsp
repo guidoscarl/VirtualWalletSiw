@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="utf-8"%>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="bootstrap-4.1.0-dist/fonts/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="js/loader.js"></script>
+    <script src="js/contactUs.js"></script>
 </head>
 <body class="myBody">
 	<nav class="navbar navbar-dark navbar-expand-sm gradient">
@@ -31,10 +33,10 @@
 				<input type="text" placeholder="Cerca utenti">
 				<button type="submit"><i class="fa fa-search"></i></button>
 			</div>
-	        <a class="links" href="account.jsp"><%out.print(session.getAttribute("nome")+" "+(session.getAttribute("cognome"))); %>, benvenuto!</a>
+			<a class="links" href="signin"><c:out value="${nome} ${cognome}">No name</c:out>, benvenuto!</a>
 		</div>
 	</nav>
-	 <section class="portfolio-block">
+	<section class="portfolio-block">
         <div class="container results">
             <p style="border-bottom: 1px solid; border-color: #d1d1d1; color:black"><strong>Risultati</strong></p>
             <!-- Da inserire con le servlet per la ricerca di utenti -->
@@ -43,5 +45,12 @@
             <div style="border-top: 1px solid; border-color: #d1d1d1;"><a>another user found</a></div>
         </div>
     </section>
+    <footer class="gradient">
+        <div class="container space-padding">
+            <div class="links">
+            	<a style="cursor:pointer" onclick="contactUs();">Contact us</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

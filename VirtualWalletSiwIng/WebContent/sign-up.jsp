@@ -58,7 +58,7 @@
     <footer class="gradient">
         <div class="container space-padding">
             <div class="links">
-            	<a href="#" onclick="contactUs();">Contact us</a>
+            	<a onclick="contactUs();">Contact us</a>
             </div>
         </div>
     </footer>

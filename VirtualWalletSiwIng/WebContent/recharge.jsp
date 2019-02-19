@@ -14,6 +14,7 @@ prefix="c" %>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="bootstrap-4.1.0-dist/fonts/ionicons.min.css">
     <script src="js/recharge.js"></script>
+    <script src="js/contactUs.js"></script>
 </head>
 <body class="myBody">
 	<nav class="navbar navbar-dark navbar-expand-sm gradient">
@@ -29,7 +30,7 @@ prefix="c" %>
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="en/recharge.jsp">Switch to English</a></li>
 		        </ul>
 			</div>
-			<a class="links" href="account.jsp"><c:out value="${nome} ${cognome }">No name</c:out>, benvenuto!</a>
+			<a class="links" href="signin"><c:out value="${nome} ${cognome }">No name</c:out>, benvenuto!</a>
 		</div>
 	</nav>
 	<section class="portfolio-block">
@@ -49,6 +50,13 @@ prefix="c" %>
         	</form>
         </div>
     </section>
+    <footer class="gradient">
+        <div class="container space-padding">
+            <div class="links">
+            	<a style="cursor:pointer" onclick="contactUs();">Contact us</a>
+            </div>
+        </div>
+    </footer>
     <script src="bootstrap-4.1.0-dist/js/jquery.min.js"></script>
     <script src="bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>
 </body>

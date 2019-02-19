@@ -20,6 +20,7 @@
     <script src="js/loader.js"></script>
     <script src="js/search.js"></script>
     <script src="js/amicizie.js"></script>
+    <script src="js/contactUs.js"></script>
 </head>
 <body class="myBody">
 	<nav class="navbar navbar-dark navbar-expand-sm gradient">
@@ -39,7 +40,7 @@
 				<input id="myInput" type="text" placeholder="Cerca utenti" oninput="search();">
 				<button type="submit"><i class="fa fa-search"></i></button>
 			</div>
-	        <a class="links" href="account.jsp"><%out.print(session.getAttribute("nome")+" "+(session.getAttribute("cognome"))); %>, benvenuto!</a>
+	        <a class="links" href="signin"><c:out value="${nome} ${cognome}">No name</c:out>, benvenuto!</a>
 		</div>
 	</nav>
 	<ul class="list-group" id="myList"></ul>
@@ -49,15 +50,15 @@
 				<div class="col-sm-3 profile-info gradient myBorder">
 					<h1>Info utente</h1>
 					<span>Nome:</span>
-					<p><%out.print(session.getAttribute("nome")); %></p>
+					<p><c:out value="${nome}">Null</c:out></p>
 					<span>Cognome:</span>
-					<p><%out.print(session.getAttribute("cognome")); %></p>
+					<p><c:out value="${cognome}">Null</c:out></p>
 					<span>E-mail:</span>
-					<p style="font-size:1.00vw;"><%out.print(session.getAttribute("email")); %></p>
+					<p style="font-size:1.00vw;"><c:out value="${email}">Null</c:out></p>
 				</div>
 	   	 		<div class="col-sm-9 gradient myBorder">
         			<p>Il tuo conto ammonta a:</p>
-		       		<div class="amount">&#8364;<%out.print(session.getAttribute("saldo")); %></div>
+		       		<div class="amount">&#8364;<c:out value="${saldo}">Nessun saldo disponibile</c:out></div>
 	       			<a class="btn btn-primary" role="button" href="viewHistory" onclick="activeLoader();">Visualizza Storico</a>
 	       			<a class="btn btn-primary" role="button" href="recharge.jsp">Ricarica importo</a>
 	        		<a class="btn btn-primary" role="button" href="transaction.jsp">Effettua transazione</a>
@@ -107,7 +108,12 @@
 			</div>
 		</div>
 	</section>
-	
-	
+	<footer class="gradient">
+        <div class="container space-padding">
+            <div class="links">
+            	<a style="cursor:pointer" onclick="contactUs();">Contact us</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
