@@ -1,6 +1,9 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,10 +14,12 @@ import javax.servlet.http.HttpSession;
 import org.json.JSONObject;
 
 import Excepions.UsersNotFound;
+import models.Friendship;
 import models.Utente;
 import persistence.DatabaseManager;
 import persistence.PostgresDAOFactory;
 import persistence.UtenteDaoJdbc;
+import persistence.dao.AmiciziaDao;
 import persistence.dao.UtenteDao;
 
 /**
@@ -36,19 +41,21 @@ public class SignInServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-System.out.println("entrato nella servlet");
 		
-		String password=request.getParameter("pas");
-		String email=request.getParameter("em");
+		AmiciziaDao am = DatabaseManager.getInstance().getDaoFactory().getAmiciziaDao();
+		String email = (String)request.getSession().getAttribute("email");
+		ArrayList<Friendship> received = am.getRequest(email);
+		ArrayList<Friendship> sended = am.getSended(email);
+
+		request.setAttribute("received", received);
+		request.setAttribute("sended", sended);
 		
+		for(Friendship f:sended) {
+			System.out.println(f.getEmailReceiver());
+		}
+		RequestDispatcher rd = request.getRequestDispatcher("account.jsp");
+		rd.forward(request, response);
 		
-		System.out.println(email+" "+password);
-		
-		UtenteDao dao =DatabaseManager.getInstance().getDaoFactory().getUtenteDao();
-		System.out.println("utente dao creato");
-		//HttpSession session=request.getSession();
-		System.out.println("ricevuta la sessione");
-		response.getOutputStream().print(email);
 	}
 
 	/**

@@ -101,7 +101,6 @@
     <servlet-name>viewProfile</servlet-name>
     <url-pattern>/viewaccount</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>searchUsers</servlet-name>
     <servlet-class>servlets.SearchUsers</servlet-class>
@@ -110,6 +109,31 @@
     <servlet-name>searchUsers</servlet-name>
     <url-pattern>/search</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>sendRequest</servlet-name>
+    <servlet-class>servlets.SendRequest</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>sendRequest</servlet-name>
+    <url-pattern>/send</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>acceptRequest</servlet-name>
+    <servlet-class>servlets.Accept</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>acceptRequest</servlet-name>
+    <url-pattern>/accetta</url-pattern>
+  </servlet-mapping>
   
   
+  
+  <servlet>
+    <servlet-name>rifiutaRichiesta</servlet-name>
+    <servlet-class>servlets.Reject</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>rifiutaRichiesta</servlet-name>
+    <url-pattern>/rifiuta</url-pattern>
+  </servlet-mapping>
 </web-app>

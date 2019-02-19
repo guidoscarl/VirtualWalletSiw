@@ -1,11 +1,18 @@
 package servlets;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import Excepions.UsersNotFound;
+import javafx.util.Pair;
+import models.Utente;
+import persistence.DatabaseManager;
 
 /**
  * Servlet implementation class viewProfile
@@ -27,8 +34,26 @@ public class viewProfile extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("servletView");
-		System.out.println(request.getParameter("email"));
+		
+		try {
+			String first = (String)request.getSession().getAttribute("email");
+			String second = request.getParameter("email");
+			Utente u = DatabaseManager.getInstance().getDaoFactory().getUtenteDao().getUtenteforTransaction(second);
+			request.setAttribute("nome", u.getNome());
+			request.setAttribute("cognome", u.getCognome());
+			request.setAttribute("email", u.getEmail());
+			Pair<Integer,String> check = DatabaseManager.getInstance().getDaoFactory().getAmiciziaDao().checkRelation(first, second);
+			System.out.println("stato.."+check.getValue());
+			System.out.println("numero.."+check.getKey());
+			
+			request.setAttribute("check", check.getKey());
+		} catch (UsersNotFound e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		RequestDispatcher rd = request.getRequestDispatcher("user.jsp");
+		rd.forward(request, response);
+
 		
 		
 	}

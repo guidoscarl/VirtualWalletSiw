@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="utf-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,17 +42,21 @@
 				<div class="col-sm-3 profile-info gradient myBorder">
 					<h1>Profilo di</h1>
 					<span>Nome:</span>
-					<p><%out.print(session.getAttribute("nome")); %></p>
+					<p>
+						<c:out value="${nome}">No name</c:out>
+					</p>
 					<span>Cognome:</span>
-					<p><%out.print(session.getAttribute("cognome")); %></p>
+					<p><c:out value="${cognome}">No name</c:out></p>
 				</div>
 	   	 		<div class="col-sm-9 gradient myBorder">
-	       			<a class="btn btn-primary" role="button" href="viewHistory" onclick="activeLoader();">Aggiungi agli amici</a>
+	       			<a class="btn btn-primary" role="button" href="send?receiver=${email }">Aggiungi agli amici</a>
 	        		<a class="btn btn-primary" role="button" href="transaction.jsp">Effettua transazione</a>
 			    </div>
 		    </div>
 		</div>
 		<div class="lds-dual-ring" id="loader" style="visibility:hidden"></div>
 	</section>
+	<script src="bootstrap-4.1.0-dist/js/jquery.min.js"></script>
+    <script src="bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>
 </body>
 </html>
