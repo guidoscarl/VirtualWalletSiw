@@ -1,6 +1,6 @@
 function search(){
 	var searchedd=$("#myInput").val();
-	if(searched !=""){
+	if(searchedd !=""){
 	var list=$("#myList");
 	//alert(list.html());
 	
