@@ -1,8 +1,6 @@
 function search(){
 	var searchedd=$("#myInput").val();
-	if(searchedd !=""){
 	var list=$("#myList");
-	//alert(list.html());
 	
 	$.ajax({
 		type: "POST",
@@ -13,6 +11,4 @@ function search(){
 			 list.html(data);
 		 }
 	});
-}
-	
 }
