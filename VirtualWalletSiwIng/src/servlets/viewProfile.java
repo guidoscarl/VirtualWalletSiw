@@ -41,12 +41,13 @@ public class viewProfile extends HttpServlet {
 			Utente u = DatabaseManager.getInstance().getDaoFactory().getUtenteDao().getUtenteforTransaction(second);
 			request.setAttribute("nome", u.getNome());
 			request.setAttribute("cognome", u.getCognome());
-			request.setAttribute("email", u.getEmail());
+			request.setAttribute("emailUs", second);
 			Pair<Integer,String> check = DatabaseManager.getInstance().getDaoFactory().getAmiciziaDao().checkRelation(first, second);
 			System.out.println("stato.."+check.getValue());
+			request.setAttribute("status",check.getValue());
 			System.out.println("numero.."+check.getKey());
 			
-			request.setAttribute("check", check.getKey());
+			request.setAttribute("number", check.getKey());
 		} catch (UsersNotFound e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

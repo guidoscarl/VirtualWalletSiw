@@ -11,10 +11,15 @@
 	<link rel="stylesheet" href="newCSS/myCSS.css">
     <link rel="stylesheet" href="bootstrap-4.1.0-dist/css/bootstrap.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <script src="bootstrap-4.1.0-dist/js/jquery.min.js"></script>
+    <script src="bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="bootstrap-4.1.0-dist/fonts/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
     <script src="js/loader.js"></script>
     <script src="js/contactUs.js"></script>
+    <script src="js/amicizie.js"></script>
 </head>
 <body class="myBody">
 	<nav class="navbar navbar-dark navbar-expand-sm gradient">
@@ -47,10 +52,50 @@
 					<span>Cognome:</span>
 					<p><c:out value="${cognome}">No name</c:out></p>
 				</div>
-	   	 		<div class="col-sm-9 gradient myBorder">
-	       			<a class="btn btn-primary" role="button" href="send?receiver=${email }">Aggiungi agli amici</a>
-	        		<a class="btn btn-primary" role="button" href="transaction.jsp">Effettua transazione</a>
-			    </div>
+				<c:if test="${status=='active' }">
+					<div class="col-sm-9 gradient myBorder">
+						<a id="transButton" class="btn btn-primary" role="button" href="transaction.jsp">Effettua transazione</a>
+						<a class="btn btn-primary" role="button" href="#" onclick="var id=${number}; deleteFromProfile(id);">Rimuovi dagli amici</a>
+						<a id="messageButton" class="btn btn-primary" role="button" href="#">Invia messaggio</a>
+						
+						
+					</div>
+
+				</c:if>
+				
+				<c:if test="${status =='sended' }">
+					<div class="col-sm-9 gradient myBorder">
+					<p>Richiesta in attesa di essere accettata</p>
+					<a class="btn btn-primary" role="button" href="#" onclick="var id=${number}; deleteFromProfile(id);">Cancella richiesta</a>
+					
+					</div>
+				</c:if>
+				
+				<c:if test="${status =='received' }">
+					<div class="col-sm-9 gradient myBorder">
+					
+					<a class="btn btn-primary" role="button" href="#" onclick="var em='${emailUs}'; var id=${number };  acceptFromProfile(id,em);">Accetta Richiesta</a>
+					<a class="btn btn-primary" role="button" href="#" onclick="var em='${emailUs}'; var id=${number };  rejectFromProfile(id,em);">Rifiuta Richiesta</a>
+					
+					
+					
+					</div>
+				</c:if>
+				
+				
+				<c:if test="${status =='notexist' }">
+					<div class="col-sm-9 gradient myBorder">
+					
+					<a class="btn btn-primary" role="button" href="send?receiver=${emailUs }">Invia richiesta</a>
+					
+					
+					
+					
+					</div>
+				</c:if>
+				
+				
+	   	 		
 		    </div>
 		</div>
 		<div class="lds-dual-ring" id="loader" style="visibility:hidden"></div>
@@ -62,7 +107,6 @@
             </div>
         </div>
     </footer>
-	<script src="bootstrap-4.1.0-dist/js/jquery.min.js"></script>
-    <script src="bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>
+	
 </body>
 </html>

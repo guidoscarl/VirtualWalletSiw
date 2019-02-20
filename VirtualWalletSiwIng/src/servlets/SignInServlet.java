@@ -42,6 +42,7 @@ public class SignInServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		System.out.println("sign get");
 		AmiciziaDao am = DatabaseManager.getInstance().getDaoFactory().getAmiciziaDao();
 		String email = (String)request.getSession().getAttribute("email");
 		ArrayList<Friendship> received = am.getRequest(email);

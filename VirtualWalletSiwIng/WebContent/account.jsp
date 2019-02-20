@@ -100,7 +100,7 @@
 					<c:forEach items="${sended}" var="rec" >
 						<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;">
 							<a id="${rec.id }" href="viewProfile?email=${rec.emailReceiver }">${rec.emailReceiver }</a>
-							<button><i class="ion ion-close-circled" style="color:red"></i></button>
+							<button id="ref${rec.id }" onclick="var id=${rec.id}; deleteRequest(id);"><i class="ion ion-close-circled" style="color:red"></i></button>
 						</div>
 					</c:forEach>
 					

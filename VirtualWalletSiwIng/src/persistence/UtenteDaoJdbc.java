@@ -294,7 +294,7 @@ public class UtenteDaoJdbc implements UtenteDao {
 				String cognome=results.getString("cognome");
 				users.add(new Utente(nome,cognome,email,"",0));
 			}
-			c.close();
+			
 		}
 		catch (Exception e){
 			try {

@@ -39,7 +39,7 @@ public class Reject extends HttpServlet {
 		System.out.println("Sto rifiutando");
 		int id=Integer.parseInt(request.getParameter("id"));
 		System.out.println(id);
-		DatabaseManager.getInstance().getDaoFactory().getAmiciziaDao().rejectRequest(id);;
+		DatabaseManager.getInstance().getDaoFactory().getAmiciziaDao().rejectRequest(id);
 		
 		
 	}
