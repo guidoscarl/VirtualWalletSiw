@@ -35,7 +35,6 @@
                     else
                     	out.print("<li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link active\" href=\"logout\">Disconnetti</a></li>");
                     %>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="en/home.jsp">Switch to english</a></li>
                 </ul>
             </div>
         </div>

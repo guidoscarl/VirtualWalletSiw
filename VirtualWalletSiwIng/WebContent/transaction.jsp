@@ -27,7 +27,6 @@ prefix="c" %>
 				<ul class="nav navbar-nav">
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="home.jsp">Home</a></li>
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="logout">Disconnetti</a></li>
-			        <li class="nav-item" role="presentation"><a class="nav-link active" href="en/transaction.jsp">Switch to English</a></li>
 		        </ul>
 			</div>
 	        <a class="links" href=signin><c:out value="${nome} ${cognome }">No name</c:out>, benvenuto!</a>

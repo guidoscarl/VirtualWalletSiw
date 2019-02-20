@@ -32,7 +32,6 @@
 				<ul class="nav navbar-nav">
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="home.jsp">Home</a></li>
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="logout">Disconnetti</a></li>
-			        <li class="nav-item" role="presentation"><a class="nav-link active" href="en/account.jsp">Switch to English</a></li>
 		        </ul>
 			</div>
 			<div class="searchBar">

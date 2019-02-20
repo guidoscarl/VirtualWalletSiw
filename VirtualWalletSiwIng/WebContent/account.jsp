@@ -33,7 +33,6 @@
 				<ul class="nav navbar-nav">
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="home.jsp">Home</a></li>
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="logout">Disconnetti</a></li>
-			        <li class="nav-item" role="presentation"><a class="nav-link active" href="en/account.jsp">Switch to English</a></li>
 		        </ul>
 			</div>
 			<div class="searchBar">
@@ -61,7 +60,6 @@
 		       		<div class="amount">&#8364;<c:out value="${saldo}">Nessun saldo disponibile</c:out></div>
 	       			<a class="btn btn-primary" role="button" href="viewHistory" onclick="activeLoader();">Visualizza Storico</a>
 	       			<a class="btn btn-primary" role="button" href="recharge.jsp">Ricarica importo</a>
-	        		<a class="btn btn-primary" role="button" href="transaction.jsp">Effettua transazione</a>
 			    </div>
 		    </div>
 		</div>
@@ -73,37 +71,41 @@
 			<div class="row">
 				<div class="friendList">
 					<p style="color:black"><strong>Amici</strong></p>
-					<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;">
-						<a>first friend</a>
-						<button><i class="ion ion-cash" style="color:green"></i></button>
-					</div>
-            		<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;">
-            			<a>second friend</a>
-						<button><i class="ion ion-cash" style="color:green"></i></button>
-					</div>
-            		<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;">
-            			<a>another friend</a>
-						<button><i class="ion ion-cash" style="color:green"></i></button>
+					<div class="friendBlock">
+						<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;">
+							<a>first friend</a>
+							<button><i class="ion ion-cash" style="color:green"></i></button>
+						</div>
+            			<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;">
+            				<a>second friend</a>
+							<button><i class="ion ion-cash" style="color:green"></i></button>
+						</div>
+        	    		<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;">
+            				<a>another friend</a>
+							<button><i class="ion ion-cash" style="color:green"></i></button>
+						</div>
 					</div>
 				</div>
 				<div class="friendList">
 					<p style="color:black"><strong>Ricevute</strong></p>
-					<c:forEach items="${received}" var="rec" >
-						<a id="${rec.id }" href="viewProfile?email=${rec.emailSender }">${rec.emailSender }</a>
-						<button class="friendButton" id="confbutton${rec.id }" style="background-image:url(&quot;Images/accept.png&quot;);" onclick="var id=${rec.id}; accetta(id);"  ></button>
-						<button class="friendButton" id="delbutton${rec.id }" style="background-image:url(&quot;Images/deny.png&quot;);" onclick="var id=${rec.id}; rifiuta(id);"></button>
-					</c:forEach>
-					
+					<div class="friendBlock">
+						<c:forEach items="${received}" var="rec" >
+							<a id="${rec.id }" href="viewProfile?email=${rec.emailSender }">${rec.emailSender }</a>
+							<button class="friendButton" id="confbutton${rec.id }" style="background-image:url(&quot;Images/accept.png&quot;);" onclick="var id=${rec.id}; accetta(id);"  ></button>
+							<button class="friendButton" id="delbutton${rec.id }" style="background-image:url(&quot;Images/deny.png&quot;);" onclick="var id=${rec.id}; rifiuta(id);"></button>
+						</c:forEach>
+					</div>
 				</div>
 				<div class="friendList">
 					<p style="color:black"><strong>Inviate</strong></p>
-					<c:forEach items="${sended}" var="rec" >
-						<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;">
-							<a id="${rec.id }" href="viewProfile?email=${rec.emailReceiver }">${rec.emailReceiver }</a>
-							<button id="ref${rec.id }" onclick="var id=${rec.id}; deleteRequest(id);"><i class="ion ion-close-circled" style="color:red"></i></button>
-						</div>
-					</c:forEach>
-					
+					<div class="friendBlock">
+						<c:forEach items="${sended}" var="rec" >
+							<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;">
+								<a id="${rec.id }" href="viewProfile?email=${rec.emailReceiver }">${rec.emailReceiver }</a>
+								<button id="ref${rec.id }" onclick="var id=${rec.id}; deleteRequest(id);"><i class="ion ion-close-circled" style="color:red"></i></button>
+							</div>
+						</c:forEach>
+					</div>
 				</div>
 			</div>
 		</div>
