@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import models.Transazione;
 import persistence.dao.AmiciziaDao;
+import persistence.dao.MessageDao;
 import persistence.dao.TransazioneDao;
 import persistence.dao.UtenteDao;
 
@@ -45,6 +46,10 @@ public class PostgresDAOFactory {
 	
 	public AmiciziaDao getAmiciziaDao() {
 		return new AmiciziaDAOJdbc(dataSource);
+	}
+	
+	public MessageDao getMessageDao() {
+		return new MessageDaoJdbc(dataSource);
 	}
 
 }

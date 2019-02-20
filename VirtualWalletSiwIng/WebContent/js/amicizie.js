@@ -151,3 +151,25 @@ function acceptFromProfile(id,email){
 	
 }
 
+function sendMessage(sender,receiver){
+	
+	
+	$.MessageBox({
+	    input    : true,
+	    message  : "Invia un messaggio",
+	    buttonDone  : "INVIA",
+	    top:"50%"
+	}).done(function(data, button){
+	    
+	    var value = data.toString();
+		$.ajax({
+			method:"POST",
+			url:"sendMes",
+			data:{send:sender,rec:receiver,val:value},
+			success:function(){
+				$.MessageBox("Messagio inviato");	    
+
+			}
+		});
+	});
+}

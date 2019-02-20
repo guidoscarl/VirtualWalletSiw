@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-message-box@3.0.0/dist/messagebox.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-message-box@3.0.0/dist/messagebox.min.css">
+	
     <script src="js/loader.js"></script>
     <script src="js/contactUs.js"></script>
     <script src="js/amicizie.js"></script>
@@ -47,15 +50,16 @@
 				<div class="col-sm-3 profile-info gradient myBorder">
 					<h1>Profilo di</h1>
 					<span>Nome:</span>
-					<p><c:out value="${nome}">No name</c:out></p>
+					<p><c:out value="${nomeUs}">No name</c:out></p>
 					<span>Cognome:</span>
-					<p><c:out value="${cognome}">No name</c:out></p>
+					<p><c:out value="${cognomeUs}">No name</c:out></p>
 				</div>
 				<c:if test="${status=='active' }">
 					<div class="col-sm-9 gradient myBorder">
 						<a id="transButton" class="btn btn-primary" role="button" href="transaction.jsp">Effettua transazione</a>
 						<a class="btn btn-primary" role="button" href="#" onclick="var id=${number}; deleteFromProfile(id);">Rimuovi dagli amici</a>
-						<a id="messageButton" class="btn btn-primary" role="button" href="#">Invia messaggio</a>
+						<a id="messageButton" class="btn btn-primary" role="button" href="#" 
+							onclick="var sender='${email}'; var receiver='${emailUs }'; sendMessage(sender,receiver);">Invia messaggio</a>
 						
 						
 					</div>

@@ -39,8 +39,8 @@ public class viewProfile extends HttpServlet {
 			String first = (String)request.getSession().getAttribute("email");
 			String second = request.getParameter("email");
 			Utente u = DatabaseManager.getInstance().getDaoFactory().getUtenteDao().getUtenteforTransaction(second);
-			request.setAttribute("nome", u.getNome());
-			request.setAttribute("cognome", u.getCognome());
+			request.setAttribute("nomeUs", u.getNome());
+			request.setAttribute("cognomeUs", u.getCognome());
 			request.setAttribute("emailUs", second);
 			Pair<Integer,String> check = DatabaseManager.getInstance().getDaoFactory().getAmiciziaDao().checkRelation(first, second);
 			System.out.println("stato.."+check.getValue());

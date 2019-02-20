@@ -89,12 +89,10 @@
     <servlet-name>signin</servlet-name>
     <url-pattern>/signin</url-pattern>
   </servlet-mapping>
-  
-   <servlet-mapping>
+  <servlet-mapping>
     <servlet-name>signin</servlet-name>
     <url-pattern>/account</url-pattern>
   </servlet-mapping>
-  
   <servlet-mapping>
     <servlet-name>signin</servlet-name>
     <url-pattern>/en/signin</url-pattern>
@@ -123,8 +121,6 @@
     <servlet-name>sendRequest</servlet-name>
     <url-pattern>/send</url-pattern>
   </servlet-mapping>
-  
-  
   <servlet>
     <servlet-name>acceptRequest</servlet-name>
     <servlet-class>servlets.Accept</servlet-class>
@@ -133,9 +129,6 @@
     <servlet-name>acceptRequest</servlet-name>
     <url-pattern>/accetta</url-pattern>
   </servlet-mapping>
-  
-  
-  
   <servlet>
     <servlet-name>rifiutaRichiesta</servlet-name>
     <servlet-class>servlets.Reject</servlet-class>
@@ -143,5 +136,14 @@
   <servlet-mapping>
     <servlet-name>rifiutaRichiesta</servlet-name>
     <url-pattern>/rifiuta</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>sendMessage</servlet-name>
+    <servlet-class>servlets.SendMessage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>sendMessage</servlet-name>
+    <url-pattern>/sendMes</url-pattern>
   </servlet-mapping>
 </web-app>
