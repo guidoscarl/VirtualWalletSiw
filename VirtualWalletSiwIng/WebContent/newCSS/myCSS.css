@@ -30,6 +30,21 @@
 	font-size:0.75em;
 }
 
+.colDataMail {
+	max-width:100px !important;
+	width:auto !important;
+}
+
+.colUserMail {
+	max-width:200px !important;
+	width:auto !important;
+}
+
+.colMail {
+	max-width:600px !important;
+	width:auto !important;
+}
+
 .portfolio-block {
 	padding: 3.33%;
 	text-align:center;

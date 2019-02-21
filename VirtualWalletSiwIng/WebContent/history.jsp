@@ -28,6 +28,7 @@
 		        </ul>
 			</div>
 			<a class="links" href="signin"><c:out value="${nome} ${cognome }">No name</c:out>, benvenuto!</a>
+			<a href="mailbox.jsp" style="padding-left:1%"><i class="ion ion-email" style="text-size:2rem; color:white"></i></a>
 		</div>
 		<div class="lds-dual-ring" id="loader"  style="visibility:hidden" ></div>
 		

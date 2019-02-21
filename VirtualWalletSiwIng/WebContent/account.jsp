@@ -40,6 +40,7 @@
 				<button type="submit"><i class="fa fa-search"></i></button>
 			</div>
 	        <a class="links" href="signin"><c:out value="${nome} ${cognome}">No name</c:out>, benvenuto!</a>
+	        <a href="mailbox.jsp" style="padding-left:1%"><i class="ion ion-email" style="text-size:2rem; color:white"></i></a>
 		</div>
 	</nav>
 	<ul class="list-group" id="myList"></ul>
