@@ -49,20 +49,19 @@
 		<div class="col-md-12 myBorder">
 			<table>
 				<tr>
-					<th class="col-md-2 ">Data</th>
+					<th class="col-md-2 ">Messaggio</th>
 					<th class="col-md-4 ">Mittente</th>
-					<th class="col-md-6 ">Messaggio</th>
+					<th class="col-md-6 ">Data</th>
 				</tr>
-				<tr>
-					<td class="myBorder ">92/92/92</td>
-					<td class="myBorder ">tizio@mail.com</td>
-					<td class="myBorder ">sara scazzi è ancora viva</td>
-				</tr>
-				<tr>
-					<td class="myBorder ">92/92/92</td>
-					<td class="myBorder ">tizio@mail.com</td>
-					<td class="myBorder ">michele misseri è innocente</td>
-				</tr>
+				
+				<c:forEach items="${messages}" var="mess">
+					<tr>
+						<td class="myBorder ">${mess.value }</td>
+						<td class="myBorder "><a href="viewProfile?email=${mess.sender }">${mess.sender }</a></td>
+						<td class="myBorder ">${mess.date }</td>
+					</tr>
+				</c:forEach>
+				
 			</table>
 		</div>
 	</section>

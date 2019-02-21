@@ -1,9 +1,9 @@
 package servlets;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,16 +14,16 @@ import models.Message;
 import persistence.DatabaseManager;
 
 /**
- * Servlet implementation class SendMessage
+ * Servlet implementation class GetMessage
  */
-@WebServlet("/SendMessage")
-public class SendMessage extends HttpServlet {
+@WebServlet("/GetMessage")
+public class GetMessage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SendMessage() {
+    public GetMessage() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,25 +33,20 @@ public class SendMessage extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		System.out.println("sto ricevendo i messaggi...");
+		String receiver = (String)request.getSession().getAttribute("email");
+		ArrayList<Message> messages = DatabaseManager.getInstance().getDaoFactory().getMessageDao().getMessages(receiver);
+		request.setAttribute("messages", messages);
+		RequestDispatcher rd = request.getRequestDispatcher("mailbox.jsp");
+		rd.forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Invio il messaggio...");
-		String sender = request.getParameter("send");
-		String receiver = request.getParameter("rec");
-		String value = request.getParameter("val");
-		System.out.println(sender+" "+receiver+" "+value);
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");  
-		LocalDateTime now = LocalDateTime.now();
-		String date = dtf.format(now);
-		Message m = new Message(sender,receiver,value,date);
-		DatabaseManager.getInstance().getDaoFactory().getMessageDao().sendMessage(m);
-		
-		
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }

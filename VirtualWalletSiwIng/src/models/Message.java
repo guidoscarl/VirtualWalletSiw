@@ -4,13 +4,21 @@ public class Message {
 	private String sender;
 	private String receiver;
 	private String value;
+	private String date;
 	
 	
-	public Message(String sender, String receiver, String value) {
+	public Message(String sender, String receiver, String value, String date) {
 		
 		this.sender = sender;
 		this.receiver = receiver;
 		this.value = value;
+		this.date=date;
+	}
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
 	}
 	public String getSender() {
 		return sender;
