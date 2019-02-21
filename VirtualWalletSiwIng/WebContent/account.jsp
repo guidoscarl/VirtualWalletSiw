@@ -41,13 +41,10 @@
 			</div>
 	        <a class="links" href="signin"><c:out value="${nome} ${cognome}">No name</c:out>, benvenuto!</a>
 	        <a href="mailBox" style="padding-left:1%"><i class="ion ion-email" style="text-size:2rem; color:white"></i></a>
-	        
+	        <c:if test="${haveMes!=null }">
+				<img src="Images/notific.png" alt="notific" height="13" width="13">
+			</c:if>
 		</div>
-		<c:if test="${haveMes!=null }">
-		<div class="navbar-collapse" id="navcol-2">
-			<img src="Images/notific.png" alt="notific" height="10" width="10">
-		</div>
-		</c:if>
 	</nav>
 	<ul class="list-group" id="myList"></ul>
 	<section class="portfolio-block section-border">

@@ -45,24 +45,18 @@
 	</nav>
 	<ul class="list-group" id="myList"></ul>
 	<section class="portfolio-block section-border">
-		<p>La tua mailbox</p>
-		<div class="col-md-12 myBorder">
-			<table>
-				<tr>
-					<th class="col-md-2 ">Messaggio</th>
-					<th class="col-md-4 ">Mittente</th>
-					<th class="col-md-6 ">Data</th>
-				</tr>
-				
+		<div class="container gradient myBorder">
+			<p style="text-align:center">La tua mailbox</p>
+			<div class="row" style="padding:10px 10px">
+				<div class="col-md-7 col-lg-7"><span>Messaggio</span></div>
+				<div class="col-md-3 col-lg-3"><span>Mittente</span></div>
+				<div class="col-md-2 col-lg-2"><span>Data</span></div>
 				<c:forEach items="${messages}" var="mess">
-					<tr>
-						<td class="myBorder ">${mess.value }</td>
-						<td class="myBorder "><a href="viewProfile?email=${mess.sender }">${mess.sender }</a></td>
-						<td class="myBorder ">${mess.date }</td>
-					</tr>
+					<div class="myBorder col-md-7 col-lg-7"><span style="word-break:break-all">${mess.value }</span></div>
+					<div class="myBorder col-md-3 col-lg-3"><a style="color:white" href="viewProfile?email=${mess.sender }">${mess.sender }</a></div>
+					<div class="myBorder col-md-2 col-lg-2"><span>${mess.date }</span></div>
 				</c:forEach>
-				
-			</table>
+			</div>
 		</div>
 	</section>
 	<footer class="gradient">
