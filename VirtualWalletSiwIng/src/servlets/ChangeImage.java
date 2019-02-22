@@ -7,21 +7,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Utente;
-import persistence.PostgresDAOFactory;
-import persistence.dao.UtenteDao;
+import persistence.DatabaseManager;
 
 /**
- * Servlet implementation class Recharge
+ * Servlet implementation class ChangeImage
  */
-@WebServlet("/Recharge")
-public class Recharge extends HttpServlet {
+@WebServlet("/ChangeImage")
+public class ChangeImage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Recharge() {
+    public ChangeImage() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,27 +36,11 @@ public class Recharge extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("sto cambiando l'immagine");
 		// TODO Auto-generated method stub
-		System.out.println("Servlet ricarica...");
-		PostgresDAOFactory p = new PostgresDAOFactory();
-		UtenteDao dao=p.getUtenteDao();
-		
-		String email = request.getParameter("email");
-		int oldSaldo=Integer.parseInt(request.getParameter("saldo"));
-		int importo=Integer.parseInt(request.getParameter("importo"));
-		System.out.println(email+" "+oldSaldo+" "+importo);
-		
-		int newSaldo=oldSaldo+importo;
-		
-		Utente u = new Utente("a","a",email,"a",newSaldo,"");
-		
-		dao.update(u);
-		request.getSession().setAttribute("saldo", newSaldo);
-		response.getWriter().append("ok");
-		
-		
-		
-		
+		String email=request.getParameter("em");
+		String source=request.getParameter("src");
+		DatabaseManager.getInstance().getDaoFactory().getUtenteDao().setImage(email, source);
 	}
 
 }

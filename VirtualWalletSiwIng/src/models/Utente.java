@@ -6,12 +6,14 @@ public class Utente {
 	private String email;
 	private String pass;
 	private int saldo;
-	public Utente(String nome, String cognome,String email,String pass, int saldo) {
+	private String image;
+	public Utente(String nome, String cognome,String email,String pass, int saldo,String image) {
 		this.nome=nome;
 		this.cognome=cognome;
 		this.email=email;
 		this.pass=pass;
 		this.saldo=saldo;
+		this.image=image;
 	}
 	public int getSaldo() {
 		return saldo;

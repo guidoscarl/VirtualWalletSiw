@@ -63,7 +63,7 @@ public class Transaction extends HttpServlet {
 
 		PostgresDAOFactory p = new PostgresDAOFactory();
 		UtenteDao dao=p.getUtenteDao();
-		Utente mittente=new Utente("a","a",(String)request.getSession().getAttribute("email"),"a",(int)request.getSession().getAttribute("saldo"));
+		Utente mittente=new Utente("a","a",(String)request.getSession().getAttribute("email"),"a",(int)request.getSession().getAttribute("saldo"),"");
 		
 		try {
 			String email = (String)request.getSession().getAttribute("email");

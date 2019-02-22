@@ -61,7 +61,7 @@ public class SignupServlet extends HttpServlet {
 		System.out.println(nome);
 		System.out.println(cognome);
 		
-		Utente u = new Utente(nome,cognome,email,pass,saldo);
+		Utente u = new Utente(nome,cognome,email,pass,saldo,"");
 		
 		PostgresDAOFactory p = new PostgresDAOFactory();
 		UtenteDao dao=p.getUtenteDao();

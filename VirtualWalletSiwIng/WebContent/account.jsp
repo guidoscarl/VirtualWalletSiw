@@ -59,7 +59,14 @@
 					<p style="font-size:1.00vw;"><c:out value="${email}">Null</c:out></p>
 				</div>
 				<div class="col-sm-3 profile-info gradient myBorder">
-					<img src="Images/userprofile.jpg" alt="profile" height="100" width="100"></img>
+					<c:if test="${image=='default' }">
+						<img src="Images/userprofile.jpg" alt="profile" height="100" width="100"></img>
+									
+					</c:if>
+					<c:if test="${image!='default' }">
+						<img src="${image }" alt="profile" height="100" width="100"></img>
+									
+					</c:if>
 					<a style="margin-top:5px" class="btn btn-primary" role="button" href="search.jsp">Cambia la foto con Flickr</a>
 				</div>
 	   	 		<div class="col gradient myBorder">

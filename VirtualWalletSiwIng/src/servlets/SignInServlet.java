@@ -48,6 +48,8 @@ public class SignInServlet extends HttpServlet {
 		ArrayList<Friendship> received = am.getRequest(email);
 		ArrayList<Friendship> sended = am.getSended(email);
 		ArrayList<Friendship> friends = am.getFriends(email);
+		String image = DatabaseManager.getInstance().getDaoFactory().getUtenteDao().getImage(email);
+		request.setAttribute("image", image);
 
 		
 		if(DatabaseManager.getInstance().getDaoFactory().getMessageDao().haveMessage(email)) {

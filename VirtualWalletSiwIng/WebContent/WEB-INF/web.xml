@@ -145,7 +145,6 @@
     <servlet-name>sendMessage</servlet-name>
     <url-pattern>/sendMes</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>message</servlet-name>
     <servlet-class>servlets.GetMessage</servlet-class>
@@ -154,6 +153,4 @@
     <servlet-name>message</servlet-name>
     <url-pattern>/mailBox</url-pattern>
   </servlet-mapping>
-  
-  
 </web-app>

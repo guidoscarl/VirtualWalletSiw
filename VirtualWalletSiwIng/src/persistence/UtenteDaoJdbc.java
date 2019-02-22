@@ -30,8 +30,8 @@ public class UtenteDaoJdbc implements UtenteDao {
 			System.out.println("connessione fallita");
 		}
 		String query = "INSERT INTO public.\"Utente\"(\r\n" + 
-				"	email, nome, cognome, password, saldo)\r\n" + 
-				"	VALUES (?, ?, ?, ?, ?)";
+				"	email, nome, cognome, password, saldo, profileimage)\r\n" + 
+				"	VALUES (?, ?, ?, ?, ?,?)";
 		
 		
 		try {
@@ -43,6 +43,7 @@ public class UtenteDaoJdbc implements UtenteDao {
 			s.setString(3, u.getCognome());
 			s.setString(4, u.getPass());
 			s.setInt(5, u.getSaldo());
+			s.setString(6, "default");
 			s.executeUpdate();
 			System.out.println("ok");
 			connection.close();
@@ -117,7 +118,7 @@ public class UtenteDaoJdbc implements UtenteDao {
 				
 				
 				if(result.next()){
-					u= new Utente(result.getString("nome"),result.getString("cognome"),result.getString("email"),result.getString("password"),result.getInt("saldo"));
+					u= new Utente(result.getString("nome"),result.getString("cognome"),result.getString("email"),result.getString("password"),result.getInt("saldo"),result.getString("profileimage"));
 				}
 				/*else
 					c.close();
@@ -219,7 +220,7 @@ public class UtenteDaoJdbc implements UtenteDao {
 					throw new UsersNotFound();
 				}
 				else {
-					u= new Utente(result.getString("nome"),result.getString("cognome"),result.getString("email"),result.getString("password"),result.getInt("saldo"));
+					u= new Utente(result.getString("nome"),result.getString("cognome"),result.getString("email"),result.getString("password"),result.getInt("saldo"),result.getString("profileimage"));
 				}
 				/*else
 					c.close();
@@ -292,7 +293,7 @@ public class UtenteDaoJdbc implements UtenteDao {
 				String email=results.getString("email");
 				String nome=results.getString("nome");
 				String cognome=results.getString("cognome");
-				users.add(new Utente(nome,cognome,email,"",0));
+				users.add(new Utente(nome,cognome,email,"",0,""));
 			}
 			
 		}
@@ -313,6 +314,78 @@ public class UtenteDaoJdbc implements UtenteDao {
 			}
 		}
 		return users;
+	}
+	@Override
+	public String getImage(String email) {
+		
+		String query="SELECT profileimage\r\n" + 
+				"	FROM public.\"Utente\"\r\n" + 
+				"	WHERE \"email\"=?;";
+		String result="default";
+		Connection c = null;
+		try {
+			c=data.getConnection();
+			PreparedStatement st=c.prepareStatement(query);
+			st.setString(1, email);
+			ResultSet image=st.executeQuery();
+			while(image.next()) {
+				result=image.getString("profileimage");
+			}
+			return result;
+		}
+		catch(Exception e) {
+			try {
+				c.close();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+		finally {
+			try {
+				c.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
+	@Override
+	public void setImage(String email, String source) {
+		// TODO Auto-generated method stub
+		String query="UPDATE public.\"Utente\"\r\n" + 
+				"	SET \"profileimage\"=?\r\n" + 
+				"	WHERE \"email\"=?;";
+		Connection c = null;
+		try {
+			System.out.println("email="+email);
+			System.out.println("src="+source);
+			c=data.getConnection();
+			PreparedStatement st=c.prepareStatement(query);
+			st.setString(1, source);
+			st.setString(2, email);
+			st.executeUpdate();
+			
+		}
+		catch(Exception e) {
+			try {
+				c.close();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+		finally {
+			try {
+				c.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		
 	}
 	
 		

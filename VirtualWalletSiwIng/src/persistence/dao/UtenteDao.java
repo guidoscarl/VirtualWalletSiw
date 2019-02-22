@@ -14,6 +14,8 @@ public interface UtenteDao {
 	Utente getUtenteforTransaction(String email) throws UsersNotFound;
 	boolean existUtente(String email);
 	ArrayList<Utente> getAllUsers();
+	String getImage(String email);
+	void setImage(String email, String source);
 	
 	
 }

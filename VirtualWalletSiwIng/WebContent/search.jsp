@@ -9,12 +9,19 @@
     <title>Ricerca di Virtual Wallet</title>
 	<link rel="stylesheet" href="newCSS/myCSS.css">
     <link rel="stylesheet" href="bootstrap-4.1.0-dist/css/bootstrap.css">
+    <script src="bootstrap-4.1.0-dist/js/jquery.min.js"></script>
+    <script src="bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="bootstrap-4.1.0-dist/fonts/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
     <script src="js/loader.js"></script>
     <script src="js/search.js"></script>
     <script src="js/contactUs.js"></script>
+    <script src="js/searchimage.js"></script>
+    
+    
 </head>
 <body class="myBody">
 	<nav class="navbar navbar-dark navbar-expand-sm gradient">
@@ -43,20 +50,16 @@
 	<section class="portfolio-block">
         <div class="container results" style="border:1px solid black; border-radius:10px">
         	<div style="padding-top:15px">
-				<input type="text" placeholder="Cerca la tua immagine">
-				<button type="submit"><i class="fa fa-search"></i></button>
+				<input id="searched" type="text" placeholder="Cerca la tua immagine">
+				<button type="button"><i class="fa fa-search" onclick="var email='${email}';searchIm(email);"></i></button>
 			</div>
-            <form>
-            	<div class="radio">
-            		<label><input type="radio" name="optradio" checked></input></label>
-            	</div>
-            	<div class="radio">
-            		<label><input type="radio" name="optradio" checked></input></label>
-            	</div>
-            	<div class="radio">
-            		<label><input type="radio" name="optradio" checked></input></label>
-            	</div>
-            </form>
+            <div class="friendList">
+					<p style="color:black"><strong>Risultati</strong></p>
+					<div id="formim"class="friendBlock">
+						
+							
+					</div>
+				</div>
         </div>
     </section>
     <footer class="gradient">
