@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="bootstrap-4.1.0-dist/fonts/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="js/loader.js"></script>
+    <script src="js/search.js"></script>
     <script src="js/contactUs.js"></script>
 </head>
 <body class="myBody">
@@ -30,18 +31,32 @@
 			</div>
 			<div class="searchBar">
 				<input type="text" placeholder="Cerca utenti">
-				<button type="submit"><i class="fa fa-search"></i></button>
 			</div>
 			<a class="links" href="signin"><c:out value="${nome} ${cognome}">No name</c:out>, benvenuto!</a>
+			<a href="mailBox" style="padding-left:1%"><i class="ion ion-email" style="text-size:2rem; color:white"></i></a>
+	        <c:if test="${haveMes!=null }">
+				<img src="Images/notific.png" alt="notific" height="13" width="13">
+			</c:if>
 		</div>
 	</nav>
+	<ul class="list-group" id="myList"></ul>
 	<section class="portfolio-block">
-        <div class="container results">
-            <p style="border-bottom: 1px solid; border-color: #d1d1d1; color:black"><strong>Risultati</strong></p>
-            <!-- Da inserire con le servlet per la ricerca di utenti -->
-            <div style="border-top: 1px solid; border-color: #d1d1d1;"><a>first user found</a></div>
-            <div style="border-top: 1px solid; border-color: #d1d1d1;"><a>second user found</a></div>
-            <div style="border-top: 1px solid; border-color: #d1d1d1;"><a>another user found</a></div>
+        <div class="container results" style="border:1px solid black; border-radius:10px">
+        	<div style="padding-top:15px">
+				<input type="text" placeholder="Cerca la tua immagine">
+				<button type="submit"><i class="fa fa-search"></i></button>
+			</div>
+            <form>
+            	<div class="radio">
+            		<label><input type="radio" name="optradio" checked></input></label>
+            	</div>
+            	<div class="radio">
+            		<label><input type="radio" name="optradio" checked></input></label>
+            	</div>
+            	<div class="radio">
+            		<label><input type="radio" name="optradio" checked></input></label>
+            	</div>
+            </form>
         </div>
     </section>
     <footer class="gradient">

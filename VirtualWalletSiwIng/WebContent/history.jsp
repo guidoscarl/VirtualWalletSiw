@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="bootstrap-4.1.0-dist/fonts/ionicons.min.css">
     <script src="js/loader.js"></script>
+    <script src="js/search.js"></script>
     <script src="js/contactUs.js"></script>
 </head>
 <body class="myBody">
@@ -27,12 +28,18 @@
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="logout">Disconnetti</a></li>
 		        </ul>
 			</div>
+			<div class="searchBar">
+				<input type="text" placeholder="Cerca utenti">
+			</div>
 			<a class="links" href="signin"><c:out value="${nome} ${cognome }">No name</c:out>, benvenuto!</a>
-			<a href="mailbox.jsp" style="padding-left:1%"><i class="ion ion-email" style="text-size:2rem; color:white"></i></a>
+			<a href="mailBox" style="padding-left:1%"><i class="ion ion-email" style="text-size:2rem; color:white"></i></a>
+	        <c:if test="${haveMes!=null }">
+				<img src="Images/notific.png" alt="notific" height="13" width="13">
+			</c:if>
 		</div>
 		<div class="lds-dual-ring" id="loader"  style="visibility:hidden" ></div>
-		
 	</nav>
+	<ul class="list-group" id="myList"></ul>
 	<section class="portfolio-block section-border">
 		<div class="container gradient myBorder">
 			<p>Storico transazioni di <c:out value="${nome} ${cognome}">No name</c:out></p>		

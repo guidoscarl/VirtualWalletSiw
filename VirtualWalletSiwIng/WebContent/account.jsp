@@ -37,7 +37,6 @@
 			</div>
 			<div class="searchBar">
 				<input id="myInput" type="text" placeholder="Cerca utenti" oninput="search();">
-				<button type="submit"><i class="fa fa-search"></i></button>
 			</div>
 	        <a class="links" href="signin"><c:out value="${nome} ${cognome}">No name</c:out>, benvenuto!</a>
 	        <a href="mailBox" style="padding-left:1%"><i class="ion ion-email" style="text-size:2rem; color:white"></i></a>
@@ -59,7 +58,11 @@
 					<span>E-mail:</span>
 					<p style="font-size:1.00vw;"><c:out value="${email}">Null</c:out></p>
 				</div>
-	   	 		<div class="col-sm-9 gradient myBorder">
+				<div class="col-sm-3 profile-info gradient myBorder">
+					<img src="Images/userprofile.jpg" alt="profile" height="100" width="100"></img>
+					<a style="margin-top:5px" class="btn btn-primary" role="button" href="search.jsp">Cambia la foto con Flickr</a>
+				</div>
+	   	 		<div class="col gradient myBorder">
         			<p>Il tuo conto ammonta a:</p>
 		       		<div class="amount">&#8364;<c:out value="${saldo}">Nessun saldo disponibile</c:out></div>
 	       			<a class="btn btn-primary" role="button" href="viewHistory" onclick="activeLoader();">Visualizza Storico</a>

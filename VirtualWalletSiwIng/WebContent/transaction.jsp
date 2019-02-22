@@ -14,6 +14,7 @@ prefix="c" %>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="bootstrap-4.1.0-dist/fonts/ionicons.min.css">
     <script src="js/checkImport.js"></script>
+    <script src="js/search.js"></script>
     <script src="js/contactUs.js"></script>
 </head>
 <body class="myBody">
@@ -29,9 +30,17 @@ prefix="c" %>
 			        <li class="nav-item" role="presentation"><a class="nav-link active" href="logout">Disconnetti</a></li>
 		        </ul>
 			</div>
+			<div class="searchBar">
+				<input type="text" placeholder="Cerca utenti">
+			</div>
 	        <a class="links" href=signin><c:out value="${nome} ${cognome }">No name</c:out>, benvenuto!</a>
+	        <a href="mailBox" style="padding-left:1%"><i class="ion ion-email" style="text-size:2rem; color:white"></i></a>
+	        <c:if test="${haveMes!=null }">
+				<img src="Images/notific.png" alt="notific" height="13" width="13">
+			</c:if>
 		</div>
 	</nav>
+	<ul class="list-group" id="myList"></ul>
 	<section class="portfolio-block">
         <div class="container">
             <div class="heading"><h2>Transazione</h2></div>
@@ -47,8 +56,6 @@ prefix="c" %>
                 	 </c:if>
                 	 <div class="form-group"><label for="email">Email</label><input class="form-control" type="email" name="email" id="email" value="${emailUs }" disabled="disabled" ></div>
                 	  <div class="form-group">
-	                <label >Causale</label>
-	                <textarea style="resize:none; width:100%;" rows="4" placeholder="Inserisci qui la causale della tua transazione"> </textarea>
                 </div>
                 <div class="form-group"><label for="importo">Importo</label><input class="form-control" type="text" name="importo" id="import" oninput="checkImport();" saldo="${saldo }">
                 	<p style="color:red; visibility:hidden;" id="error" >Saldo non sufficiente</p>

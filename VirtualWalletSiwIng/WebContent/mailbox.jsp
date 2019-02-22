@@ -37,10 +37,12 @@
 			</div>
 			<div class="searchBar">
 				<input id="myInput" type="text" placeholder="Cerca utenti" oninput="search();">
-				<button type="submit"><i class="fa fa-search"></i></button>
 			</div>
 	        <a class="links" href="signin"><c:out value="${nome} ${cognome}">No name</c:out>, benvenuto!</a>
-	        <a href="mailbox.jsp" style="padding-left:1%"><i class="ion ion-email" style="text-size:2rem; color:white"></i></a>
+	        <a href="mailBox" style="padding-left:1%"><i class="ion ion-email" style="text-size:2rem; color:white"></i></a>
+	        <c:if test="${haveMes!=null }">
+				<img src="Images/notific.png" alt="notific" height="13" width="13">
+			</c:if>
 		</div>
 	</nav>
 	<ul class="list-group" id="myList"></ul>

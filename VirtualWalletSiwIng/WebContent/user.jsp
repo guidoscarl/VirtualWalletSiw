@@ -19,7 +19,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-message-box@3.0.0/dist/messagebox.min.js"></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-message-box@3.0.0/dist/messagebox.min.css">
-	
+	<script src="js/search.js"></script>
     <script src="js/loader.js"></script>
     <script src="js/contactUs.js"></script>
     <script src="js/amicizie.js"></script>
@@ -39,11 +39,15 @@
 			</div>
 			<div class="searchBar">
 				<input type="text" placeholder="Cerca utenti">
-				<button type="submit"><i class="fa fa-search"></i></button>
 			</div>
 			<a class="links" href="signin"><c:out value="${nome} ${cognome}">No name</c:out>, benvenuto!</a>
+			<a href="mailBox" style="padding-left:1%"><i class="ion ion-email" style="text-size:2rem; color:white"></i></a>
+	        <c:if test="${haveMes!=null }">
+				<img src="Images/notific.png" alt="notific" height="13" width="13">
+			</c:if>
 		</div>
 	</nav>
+	<ul class="list-group" id="myList"></ul>
 	<section class="portfolio-block section-border">
 		<div class="container">
 			<div class="row">
@@ -54,20 +58,20 @@
 					<span>Cognome:</span>
 					<p><c:out value="${cognomeUs}">No name</c:out></p>
 				</div>
+				<div class="col-sm-3 profile-info gradient myBorder">
+					<img src="Images/userprofile.jpg" alt="profile" height="100" width="100"></img>
+				</div>
 				<c:if test="${status=='active' }">
-					<div class="col-sm-9 gradient myBorder">
+					<div class="col gradient myBorder">
 						<a id="transButton" class="btn btn-primary" role="button" href="Transaction?emailUs=${emailUs }&nameUs=${nomeUs}&surnameUs=${cognomeUs}">Effettua transazione</a>
 						<a class="btn btn-primary" role="button" href="#" onclick="var id=${number}; deleteFromProfile(id);">Rimuovi dagli amici</a>
 						<a id="messageButton" class="btn btn-primary" role="button" href="#" 
 							onclick="var sender='${email}'; var receiver='${emailUs }'; sendMessage(sender,receiver);">Invia messaggio</a>
-						
-						
 					</div>
 
 				</c:if>
-				
 				<c:if test="${status =='sended' }">
-					<div class="col-sm-9 gradient myBorder">
+					<div class="col gradient myBorder">
 					<p>Richiesta in attesa di essere accettata</p>
 					<a class="btn btn-primary" role="button" href="#" onclick="var id=${number}; deleteFromProfile(id);">Cancella richiesta</a>
 					
@@ -75,7 +79,7 @@
 				</c:if>
 				
 				<c:if test="${status =='received' }">
-					<div class="col-sm-9 gradient myBorder">
+					<div class="col gradient myBorder">
 					
 					<a class="btn btn-primary" role="button" href="#" onclick="var em='${emailUs}'; var id=${number };  acceptFromProfile(id,em);">Accetta Richiesta</a>
 					<a class="btn btn-primary" role="button" href="#" onclick="var em='${emailUs}'; var id=${number };  rejectFromProfile(id,em);">Rifiuta Richiesta</a>
