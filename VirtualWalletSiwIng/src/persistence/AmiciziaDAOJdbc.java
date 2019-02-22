@@ -236,6 +236,8 @@ public class AmiciziaDAOJdbc implements AmiciziaDao {
 				}
 				else {
 					check="active";
+					
+					
 				}
 				
 			}
