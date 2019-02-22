@@ -37,22 +37,16 @@ prefix="c" %>
             <div class="heading"><h2>Transazione</h2></div>
             <form style="background-color:white" method="post" action="transaction">
                 <!-- Aggiungere identificativi???-->
-                <p style="color:black"><i>Inserisci nella form qui sotto il nome, il cognome e l'e-mail dell'utente destinatario e l'importo con il quale effettuare la transazione.</i></p>
-                <div class="form-group"><label for="name">Nome</label><input class="form-control" type="text" name="name" id="nome"></div>
-                <div class="form-group"><label for="surname">Cognome</label><input class="form-control" type="text" name="surname" id="cognome"></div>
-                <c:choose>
-                	<c:when test="${emailFlamingo != null}">
-   						 <div class="form-group"><label for="email">Email</label><input class="form-control" type="email" name="email" id="email" value="${emailFlamingo }" disabled="disabled" ></div>
-  					</c:when>
-  					
-  					<c:when test="${emailFlamingo == null}">
-   						 <div class="form-group"><label for="email">Email</label><input class="form-control" type="email" name="email" id="email"  ></div>
-  					</c:when>
-                
-                
-                
-                </c:choose>
-                <div class="form-group">
+                <p style="color:black"><i>Inserisci nella form qui sotto l'importo con il quale effettuare la transazione.</i></p>
+                <c:if test="${emailUs!=null }">
+                	<c:if test="${nameUs!=null }">
+                	 <div class="form-group"><label for="name">Nome</label><input class="form-control" type="text" name="name" id="nome" value="${nameUs }" disabled="disabled"></div>
+                	 </c:if>
+                	 <c:if test="${surnameUs!=null }">
+                	 <div class="form-group"><label for="surname">Cognome</label><input class="form-control" type="text" name="surname" id="cognome" value="${surnameUs }" disabled="disabled"></div>
+                	 </c:if>
+                	 <div class="form-group"><label for="email">Email</label><input class="form-control" type="email" name="email" id="email" value="${emailUs }" disabled="disabled" ></div>
+                	  <div class="form-group">
 	                <label >Causale</label>
 	                <textarea style="resize:none; width:100%;" rows="4" placeholder="Inserisci qui la causale della tua transazione"> </textarea>
                 </div>
@@ -61,6 +55,9 @@ prefix="c" %>
                 	<button type="button" class="btn btn-primary btn-block" type="button" style="visibility:hidden" onclick="doRecharge();" id="buttonRC" >Effettua ricarica</button>
                 </div>
 				<div class="button"><button class="btn btn-primary btn-block" type="button" id="buttonTR" onclick="doTransaction();">Effettua transazione</button></div>
+                	
+                </c:if>
+               
         	</form>
         </div>
     </section>

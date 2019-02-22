@@ -180,7 +180,7 @@ public class AmiciziaDAOJdbc implements AmiciziaDao {
 					requests.add(f);
 				}
 			}
-			conn.close();
+			
 		}
 		catch(Exception e) {
 			try {
@@ -256,6 +256,51 @@ public class AmiciziaDAOJdbc implements AmiciziaDao {
 		Pair<Integer, String> pair = new Pair<>(id,check);
 		
 		return pair;
+	}
+
+	@Override
+	public ArrayList<Friendship> getFriends(String sender) {
+		// TODO Auto-generated method stub
+		String query="SELECT \"frstUt\", \"scndUt\", active, id\r\n" + 
+				"	FROM public.friendship\r\n" + 
+				"	WHERE (\"frstUt\"=? or \"scndUt\"=?) and \"active\"=true;";
+		ArrayList<Friendship> friends=new ArrayList<Friendship>();
+		Connection conn = null;
+		try {
+			conn = data.getConnection();
+			PreparedStatement stat = conn.prepareStatement(query);
+			stat.setString(1, sender);
+			stat.setString(2, sender);
+			ResultSet results = stat.executeQuery();
+			while(results.next()) {
+				
+					int id =results.getInt("id");
+					String first =results.getString("frstUt");
+					String second = results.getString("scndUt");
+					String friend = first.equals(sender)?second:first;
+					Friendship f = new Friendship(id, "", "", "",friend);
+					friends.add(f);
+				
+			}
+			
+		}
+		catch(Exception e) {
+			try {
+				conn.close();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+		finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return friends;
 	}
 
 }

@@ -56,7 +56,7 @@
 				</div>
 				<c:if test="${status=='active' }">
 					<div class="col-sm-9 gradient myBorder">
-						<a id="transButton" class="btn btn-primary" role="button" href="transaction.jsp">Effettua transazione</a>
+						<a id="transButton" class="btn btn-primary" role="button" href="Transaction?emailUs=${emailUs }&nameUs=${nomeUs}&surnameUs=${cognomeUs}">Effettua transazione</a>
 						<a class="btn btn-primary" role="button" href="#" onclick="var id=${number}; deleteFromProfile(id);">Rimuovi dagli amici</a>
 						<a id="messageButton" class="btn btn-primary" role="button" href="#" 
 							onclick="var sender='${email}'; var receiver='${emailUs }'; sendMessage(sender,receiver);">Invia messaggio</a>

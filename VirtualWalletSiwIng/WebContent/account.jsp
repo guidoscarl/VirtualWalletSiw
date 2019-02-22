@@ -79,18 +79,14 @@
 				<div class="friendList">
 					<p style="color:black"><strong>Amici</strong></p>
 					<div class="friendBlock">
-						<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;">
-							<a>first friend</a>
-							<button><i class="ion ion-cash" style="color:green"></i></button>
+						<c:forEach items="${friends}" var="fr" >
+							<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;">
+            				<a href="viewProfile?email=${fr.emailReceiver }">${fr.emailReceiver }</a>
+							<button><i class="ion ion-cash" style="color:green" onclick="var receiver='${fr.emailReceiver}'; transaction(receiver);"></i></button>
 						</div>
-            			<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;">
-            				<a>second friend</a>
-							<button><i class="ion ion-cash" style="color:green"></i></button>
-						</div>
-        	    		<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;">
-            				<a>another friend</a>
-							<button><i class="ion ion-cash" style="color:green"></i></button>
-						</div>
+						</c:forEach>
+            			
+        	    		
 					</div>
 				</div>
 				<div class="friendList">

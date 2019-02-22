@@ -12,5 +12,7 @@ public interface AmiciziaDao {
 	public void rejectRequest(int id);
 	public ArrayList<Friendship> getSended(String sender);
 	public Pair<Integer,String> checkRelation(String first, String second );
+	public ArrayList<Friendship> getFriends(String sender);
+
 	
 }

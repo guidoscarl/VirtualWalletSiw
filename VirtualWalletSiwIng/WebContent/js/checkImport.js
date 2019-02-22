@@ -47,6 +47,10 @@ function doTransaction(){
 				$("#error").text("Indirizzo email destinatario non esistente.");
 				$("#error").css("visibility","visible");
 			}
+			else if(data=="notfriend"){
+				$("#error").text("Contatto non presente nella lista amici.");
+				$("#error").css("visibility","visible");
+			}
 		}
 	});
 	}

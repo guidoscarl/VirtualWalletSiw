@@ -43,13 +43,17 @@ public class SearchUsers extends HttpServlet {
 		// TODO Auto-generated method stub
 		System.out.println("sto cercando...");
 		String searched=request.getParameter("searched");
-		System.out.println(searched);
+		String s=searched.toUpperCase();
+		System.out.println(s);
 		UtenteDao ut=DatabaseManager.getInstance().getDaoFactory().getUtenteDao();
 		ArrayList<Utente> users=ut.getAllUsers();
+		
 		String html="";
 		if(!searched.equals(""))
 		for(Utente u:users) {
-			if(u.getNome().contains(searched) || u.getCognome().contains(searched)) {
+			String name =u.getNome().toUpperCase();
+			String surname = u.getCognome().toUpperCase();
+			if(name.contains(s) || surname.contains(s)) {
 				html+="<li class=\"list-group-item\"><a href=\"viewProfile?email="+u.getEmail()+"\">"+u.getNome()+" "+u.getCognome()+"</a></li>";
 			}
 		}

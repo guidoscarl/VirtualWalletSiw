@@ -173,3 +173,9 @@ function sendMessage(sender,receiver){
 		});
 	});
 }
+
+function transaction(receiver){
+	
+	var href="Transaction?emailUs=".concat(receiver);
+	$(location).attr("href",href);
+}

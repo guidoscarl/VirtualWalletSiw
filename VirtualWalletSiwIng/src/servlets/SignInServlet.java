@@ -47,11 +47,15 @@ public class SignInServlet extends HttpServlet {
 		String email = (String)request.getSession().getAttribute("email");
 		ArrayList<Friendship> received = am.getRequest(email);
 		ArrayList<Friendship> sended = am.getSended(email);
+		ArrayList<Friendship> friends = am.getFriends(email);
+
+		
 		if(DatabaseManager.getInstance().getDaoFactory().getMessageDao().haveMessage(email)) {
 			request.setAttribute("haveMes", true);
 		}
 		request.setAttribute("received", received);
 		request.setAttribute("sended", sended);
+		request.setAttribute("friends", friends);
 		
 		for(Friendship f:sended) {
 			System.out.println(f.getEmailReceiver());
