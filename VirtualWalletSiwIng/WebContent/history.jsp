@@ -32,7 +32,7 @@
 				<input id="myInput" type="text" placeholder="Cerca utenti" oninput="search();">
 			</div>
 			<a class="links" href="signin"><c:out value="${nome} ${cognome }">No name</c:out>, benvenuto!</a>
-			<a href="mailBox" style="padding-left:1%"><i class="ion ion-email" style="text-size:2rem; color:white"></i></a>
+			<a href="mailBox" class="mailIcon"><i class="ion ion-email"></i></a>
 	        <c:if test="${haveMes!=null }">
 				<img src="Images/notific.png" alt="notific" height="13" width="13">
 			</c:if>
@@ -49,8 +49,8 @@
 		<div class="container gradient">
 			<div class="row">
 				<div class="col-md-6 myBorder">
-					<p class="section-border" style="color:white; font-size:1.5em;">Effettuate</p>
-					<div class="row" style="padding:10px 10px">
+					<p class="section-border">Effettuate</p>
+					<div class="row historySpacer" >
 						<div class="col-md-2 col-lg-2 colTableEmpty"><span>DATA</span></div>
 						<div class="col-md-2 col-lg-2 colTableEmpty"><span>NOME DESTINATARIO</span></div>
 						<div class="col-md-2 col-lg-2 colTableEmpty"><span>COGNOME DESTINATARIO</span></div>
@@ -66,8 +66,8 @@
 					</div>
 				</div>
 				<div class="col-md-6 myBorder">
-					<p class="section-border" style="color:white; font-size:1.5em;">Ricevute</p>
-					<div class="row" style="padding:10px 10px">
+					<p class="section-border">Ricevute</p>
+					<div class="row historySpacer">
 						<div class="col-md-2 col-lg-2 colTableEmpty"><span>DATA</span></div>
 						<div class="col-md-2 col-lg-2 colTableEmpty"><span>NOME MITTENTE</span></div>
 						<div class="col-md-2 col-lg-2 colTableEmpty"><span>COGNOME MITTENTE</span></div>
@@ -88,7 +88,7 @@
 	<footer class="gradient">
         <div class="container space-padding">
             <div class="links">
-            	<a style="cursor:pointer" onclick="contactUs();">Contact us</a>
+            	<a onclick="contactUs();">Contact us</a>
             </div>
         </div>
     </footer>

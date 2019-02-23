@@ -39,7 +39,7 @@
 				<input id="myInput" type="text" placeholder="Cerca utenti" oninput="search();">
 			</div>
 	        <a class="links" href="signin"><c:out value="${nome} ${cognome}">No name</c:out>, benvenuto!</a>
-	        <a href="mailBox" style="padding-left:1%"><i class="ion ion-email" style="text-size:2rem; color:white"></i></a>
+	        <a href="mailBox" class="mailIcon"><i class="ion ion-email"></i></a>
 	        <c:if test="${haveMes!=null }">
 				<img src="Images/notific.png" alt="notific" height="13" width="13">
 			</c:if>
@@ -48,14 +48,14 @@
 	<ul class="list-group" id="myList"></ul>
 	<section class="portfolio-block section-border">
 		<div class="container gradient myBorder">
-			<p style="text-align:center">La tua mailbox</p>
-			<div class="row" style="padding:10px 10px">
+			<p>La tua mailbox</p>
+			<div class="row historySpacer">
 				<div class="col-md-7 col-lg-7"><span>Messaggio</span></div>
 				<div class="col-md-3 col-lg-3"><span>Mittente</span></div>
 				<div class="col-md-2 col-lg-2"><span>Data</span></div>
 				<c:forEach items="${messages}" var="mess">
 					<div class="myBorder col-md-7 col-lg-7"><span style="word-break:break-all">${mess.value }</span></div>
-					<div class="myBorder col-md-3 col-lg-3"><a style="color:white" href="viewProfile?email=${mess.sender }">${mess.sender }</a></div>
+					<div class="myBorder col-md-3 col-lg-3 links"><a href="viewProfile?email=${mess.sender }">${mess.sender }</a></div>
 					<div class="myBorder col-md-2 col-lg-2"><span>${mess.date }</span></div>
 				</c:forEach>
 			</div>
@@ -64,7 +64,7 @@
 	<footer class="gradient">
         <div class="container space-padding">
             <div class="links">
-            	<a style="cursor:pointer" onclick="contactUs();">Contact us</a>
+            	<a onclick="contactUs();">Contact us</a>
             </div>
         </div>
     </footer>

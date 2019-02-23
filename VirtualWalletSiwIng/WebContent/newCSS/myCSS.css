@@ -4,6 +4,29 @@
 	background-color: #6741D1;
 }
 
+html { 
+	height:100%; 
+}
+
+body {
+	min-height:100%; 
+	padding:0; 
+	margin:0; 
+	position:relative;
+}
+
+body::after{ 
+	content:''; 
+	display:block; 
+	height:100px;
+}
+
+footer{ 
+  position:absolute; 
+  bottom:0; 
+  width:100%; 
+}
+
 @media (min-width: 360px) {
   .container {
     max-width: 337px;
@@ -66,13 +89,6 @@
 	float:right;
 	margin-right:1%;
 }
-
-/*.container.gradient.myBorder > p {
-	color:white;
-	text-align:left;
-	font-size:2.5em;
-	font-weight:300;
-}*/
 
 .avatar{
 	width:150px;
@@ -245,6 +261,12 @@
 	overflow-y:scroll;
 }
 
+.imagesBlock {
+	height:310px;
+	overflow:hidden;
+	overflow-y:scroll;
+}
+
 button.friendButton {
 	height:24px;
 	width:24px;
@@ -277,6 +299,10 @@ button.friendButton {
 
 form > p {
 	color:black !important;
+}
+
+.historySpacer {
+	padding: 10px 10px;
 }
 
 ::-webkit-scrollbar {

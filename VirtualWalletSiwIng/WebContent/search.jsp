@@ -53,7 +53,7 @@
 			<button type="button"><i class="fa fa-search" onclick="var email='${email}';searchIm(email);"></i></button>
             <div class="friendList">
 				<p><strong>Risultati</strong></p>
-				<div id="formim" class="friendBlock"></div>
+				<div id="formim" class="imagesBlock"></div>
 			</div>
         </div>
     </section>

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="bootstrap-4.1.0-dist/fonts/ionicons.min.css">
     <script src="js/checkEmail.js"></script>
     <script src="js/contactUs.js"></script>
-    <script src="js/loader"></script>
+    <script src="js/loader.js"></script>
     <script src="bootstrap-4.1.0-dist/js/jquery.min.js"></script>
     <script src="bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
