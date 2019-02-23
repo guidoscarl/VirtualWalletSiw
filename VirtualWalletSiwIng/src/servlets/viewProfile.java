@@ -46,9 +46,9 @@ public class viewProfile extends HttpServlet {
 			
 			String image=DatabaseManager.getInstance().getDaoFactory().getUtenteDao().getImage(second);
 			Pair<Integer,String> check = DatabaseManager.getInstance().getDaoFactory().getAmiciziaDao().checkRelation(first, second);
-			System.out.println("stato.."+check.getValue());
+			
 			request.setAttribute("status",check.getValue());
-			System.out.println("numero.."+check.getKey());
+			
 			request.setAttribute("imageUs", image);
 			request.setAttribute("number", check.getKey());
 		} catch (UsersNotFound e) {

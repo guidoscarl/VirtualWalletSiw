@@ -212,7 +212,7 @@ public class AmiciziaDAOJdbc implements AmiciziaDao {
 				"	WHERE \"frstUt\"=? and \"scndUt\"=? or \"frstUt\"=? and \"scndUt\"=?;";
 		Connection conn = null;
 		try {
-			System.out.println("Sto eseguendo..");
+			
 			conn = data.getConnection();
 			PreparedStatement stat = conn.prepareStatement(query);
 			stat.setString(1, first);

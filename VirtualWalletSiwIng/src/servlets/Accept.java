@@ -37,9 +37,9 @@ public class Accept extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("entrato in servlet accetta...");
+		
 		int id=Integer.parseInt(request.getParameter("id"));
-		System.out.println(id);
+		
 		DatabaseManager.getInstance().getDaoFactory().getAmiciziaDao().acceptRequest(id);
 	}
 

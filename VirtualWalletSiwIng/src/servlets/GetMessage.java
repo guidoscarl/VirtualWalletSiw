@@ -33,7 +33,7 @@ public class GetMessage extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("sto ricevendo i messaggi...");
+		
 		String receiver = (String)request.getSession().getAttribute("email");
 		ArrayList<Message> messages = DatabaseManager.getInstance().getDaoFactory().getMessageDao().getMessages(receiver);
 		request.setAttribute("messages", messages);

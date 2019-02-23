@@ -27,7 +27,7 @@ public class UtenteDaoJdbc implements UtenteDao {
 			connection = data.getConnection();
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
-			System.out.println("connessione fallita");
+			
 		}
 		String query = "INSERT INTO public.\"Utente\"(\r\n" + 
 				"	email, nome, cognome, password, saldo, profileimage)\r\n" + 
@@ -45,7 +45,7 @@ public class UtenteDaoJdbc implements UtenteDao {
 			s.setInt(5, u.getSaldo());
 			s.setString(6, "default");
 			s.executeUpdate();
-			System.out.println("ok");
+			
 			connection.close();
 			
 		} catch (SQLException e) {
@@ -73,7 +73,7 @@ public class UtenteDaoJdbc implements UtenteDao {
 
 	@Override
 	public void update(Utente u) {
-		System.out.println("ricarica");
+		
 		Connection c=null;
 		try {
 			 c= data.getConnection();
@@ -89,10 +89,13 @@ public class UtenteDaoJdbc implements UtenteDao {
 				s.execute();
 			 }
 			 c.close();
-				
-		} catch (SQLException e) {
+		
+		
+		}
+		
+		catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("errore");
+			
 			try {
 				c.close();
 			} catch (SQLException e1) {
@@ -125,13 +128,14 @@ public class UtenteDaoJdbc implements UtenteDao {
 					throw new UsersNotFound();*/
 			
 				c.close();
-		} catch (SQLException e) {
+		} catch (Exception e) {
+			
 			// TODO Auto-generated catch block
 			try {
 				c.close();
 			} catch (SQLException e1) {
 				// TODO Auto-generated catch block
-				e1.printStackTrace();
+				
 			}
 			
 			
@@ -192,7 +196,7 @@ public class UtenteDaoJdbc implements UtenteDao {
 				
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("errore");
+			
 			try {
 				c.close();
 			} catch (SQLException e1) {
@@ -359,8 +363,7 @@ public class UtenteDaoJdbc implements UtenteDao {
 				"	WHERE \"email\"=?;";
 		Connection c = null;
 		try {
-			System.out.println("email="+email);
-			System.out.println("src="+source);
+			
 			c=data.getConnection();
 			PreparedStatement st=c.prepareStatement(query);
 			st.setString(1, source);

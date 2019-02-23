@@ -42,7 +42,7 @@ public class SignInServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		System.out.println("sign get");
+		
 		AmiciziaDao am = DatabaseManager.getInstance().getDaoFactory().getAmiciziaDao();
 		String email = (String)request.getSession().getAttribute("email");
 		ArrayList<Friendship> received = am.getRequest(email);
@@ -59,9 +59,7 @@ public class SignInServlet extends HttpServlet {
 		request.setAttribute("sended", sended);
 		request.setAttribute("friends", friends);
 		
-		for(Friendship f:sended) {
-			System.out.println(f.getEmailReceiver());
-		}
+		
 		RequestDispatcher rd = request.getRequestDispatcher("account.jsp");
 		rd.forward(request, response);
 		
@@ -72,18 +70,18 @@ public class SignInServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		System.out.println(" servlet ok post");
+		
 		
 		String password=request.getParameter("password");
 		String email=request.getParameter("email");
 		 
 		
-		System.out.println(email+" "+password);
+		
 		
 		UtenteDao dao =DatabaseManager.getInstance().getDaoFactory().getUtenteDao();
-		System.out.println("utente dao creato");
+		
 		HttpSession session=request.getSession();
-		System.out.println("ricevuta la sessione");
+		
 		
 			Utente u =dao.getByPrimaryKey(email, password);
 			String txt;
@@ -98,7 +96,7 @@ public class SignInServlet extends HttpServlet {
 			session.setAttribute("cognome", u.getCognome());
 			session.setAttribute("email", u.getEmail());
 			session.setAttribute("password", u.getPass());
-			System.out.println(u.getSaldo());
+			
 			session.setAttribute("saldo", u.getSaldo());
 			request.setAttribute("saldo",u.getSaldo());
 			session.setAttribute("logged", true);

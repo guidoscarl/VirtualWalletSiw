@@ -41,10 +41,10 @@ public class SearchUsers extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("sto cercando...");
+		
 		String searched=request.getParameter("searched");
 		String s=searched.toUpperCase();
-		System.out.println(s);
+		
 		UtenteDao ut=DatabaseManager.getInstance().getDaoFactory().getUtenteDao();
 		ArrayList<Utente> users=ut.getAllUsers();
 		

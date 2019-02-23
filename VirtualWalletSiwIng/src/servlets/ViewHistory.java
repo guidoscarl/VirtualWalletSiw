@@ -34,7 +34,7 @@ public class ViewHistory extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("STORICO");
+		
 		TransazioneDao transazioneDao=DatabaseManager.getInstance().getDaoFactory().getTransazioneDao();
 		ArrayList<Transazione> transazioniM = transazioneDao.getByEmail((String)request.getSession().getAttribute("email"), TransazioneDao.MITTENTE);
 		ArrayList<Transazione> transazioniD = transazioneDao.getByEmail((String)request.getSession().getAttribute("email"), TransazioneDao.DESTINATARIO);

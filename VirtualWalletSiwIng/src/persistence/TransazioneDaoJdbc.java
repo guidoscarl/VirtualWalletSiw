@@ -72,7 +72,7 @@ public class TransazioneDaoJdbc implements TransazioneDao {
 			try {
 				c=data.getConnection();
 				PreparedStatement statement = c.prepareStatement(query2);
-				System.out.println("email: "+email);
+				
 				statement.setString(1, email);
 				ResultSet results = statement.executeQuery();
 				c.close();

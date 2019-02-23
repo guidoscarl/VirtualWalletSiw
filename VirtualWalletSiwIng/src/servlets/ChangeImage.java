@@ -36,7 +36,7 @@ public class ChangeImage extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("sto cambiando l'immagine");
+		
 		// TODO Auto-generated method stub
 		String email=request.getParameter("em");
 		String source=request.getParameter("src");

@@ -55,12 +55,9 @@ public class Transaction extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("entrato in transazione...");
 		
-		System.out.println("not rest");
-		System.out.println((String)request.getParameter("email"));
-		System.out.println((String)request.getParameter("importo"));
-
+		
+		
 		PostgresDAOFactory p = new PostgresDAOFactory();
 		UtenteDao dao=p.getUtenteDao();
 		Utente mittente=new Utente("a","a",(String)request.getSession().getAttribute("email"),"a",(int)request.getSession().getAttribute("saldo"),"");
@@ -84,7 +81,7 @@ public class Transaction extends HttpServlet {
 			response.getWriter().append("confirm");
 			}
 		} catch (UsersNotFound e) {
-			System.out.println("utente non trovato");
+			
 			response.getWriter().append("failed");
 		}
 		catch (Exception e) {

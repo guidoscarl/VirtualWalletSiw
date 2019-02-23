@@ -30,7 +30,7 @@ public class CheckDate extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("entrato in checkDate");
+		
 		String email =request.getParameter("em");
 		System.out.println(email);
 		

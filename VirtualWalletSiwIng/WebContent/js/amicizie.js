@@ -136,7 +136,7 @@ function rejectFromProfile(id,email){
 
 function acceptFromProfile(id,email){
 	
-	alert("acceptfrompt");
+	
 	var ind ="viewProfile?email=".concat(email);
 	accetta(id);
 	$.confirm({

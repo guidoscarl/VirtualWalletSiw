@@ -39,14 +39,14 @@ public class Recharge extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("Servlet ricarica...");
+		
 		PostgresDAOFactory p = new PostgresDAOFactory();
 		UtenteDao dao=p.getUtenteDao();
 		
 		String email = request.getParameter("email");
 		int oldSaldo=Integer.parseInt(request.getParameter("saldo"));
 		int importo=Integer.parseInt(request.getParameter("importo"));
-		System.out.println(email+" "+oldSaldo+" "+importo);
+		
 		
 		int newSaldo=oldSaldo+importo;
 		

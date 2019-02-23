@@ -40,7 +40,7 @@ public class SendMessage extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Invio il messaggio...");
+		
 		String sender = request.getParameter("send");
 		String receiver = request.getParameter("rec");
 		String value = request.getParameter("val");
