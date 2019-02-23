@@ -38,7 +38,7 @@
 		        </ul>
 			</div>
 			<div class="searchBar">
-				<input type="text" placeholder="Cerca utenti">
+				<input id="myInput" type="text" placeholder="Cerca utenti" oninput="search();">
 			</div>
 			<a class="links" href="signin"><c:out value="${nome} ${cognome}">No name</c:out>, benvenuto!</a>
 			<a href="mailBox" style="padding-left:1%"><i class="ion ion-email" style="text-size:2rem; color:white"></i></a>
@@ -59,7 +59,14 @@
 					<p><c:out value="${cognomeUs}">No name</c:out></p>
 				</div>
 				<div class="col-sm-3 profile-info gradient myBorder">
-					<img src="Images/userprofile.jpg" alt="profile" height="100" width="100"></img>
+					<c:if test="${imageUs=='default' }">
+						<img src="Images/userprofile.jpg" alt="profile" height="100" width="100"></img>
+									
+					</c:if>
+					<c:if test="${imageUs!='default' }">
+						<img src="${imageUs }" alt="profile" height="100" width="100"></img>
+									
+					</c:if>
 				</div>
 				<c:if test="${status=='active' }">
 					<div class="col gradient myBorder">
@@ -93,7 +100,7 @@
 				<c:if test="${status =='notexist' }">
 					<div class="col-sm-9 gradient myBorder">
 					
-					<a class="btn btn-primary" role="button" href="send?receiver=${emailUs }">Invia richiesta</a>
+					<a class="btn btn-primary" role="button" href="#" onclick="var em='${emailUs}'; sendRequest(em);">Invia richiesta</a>
 					
 					
 					

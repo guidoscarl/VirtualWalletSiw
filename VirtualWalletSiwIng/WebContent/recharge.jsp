@@ -31,7 +31,7 @@ prefix="c" %>
 		        </ul>
 			</div>
 			<div class="searchBar">
-				<input type="text" placeholder="Cerca utenti">
+				<input id="myInput" type="text" placeholder="Cerca utenti" oninput="search();">
 			</div>
 			<a class="links" href="signin"><c:out value="${nome} ${cognome }">No name</c:out>, benvenuto!</a>
 			<a href="mailBox" style="padding-left:1%"><i class="ion ion-email" style="text-size:2rem; color:white"></i></a>

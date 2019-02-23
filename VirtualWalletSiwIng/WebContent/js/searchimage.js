@@ -8,7 +8,7 @@ function searchIm(email){
 	success: function (result, status, xhr) {
 	$.each(result.items, function (i, item) {
 	html+="<img src=\""+item.media.m+"\" height=\"300\" width=\"300\">";
-	var but="<button class=\"friendButton\" id=\"confbutton${rec.id }\" style=\"background-image:url(&quot;Images/accept.png&quot;);\" onclick=\"var source='"+item.media.m+"';changeImage('"+email+"',source);\"  ></button>";
+	var but="<button class=\"friendButton\" style=\"background-image:url(&quot;Images/accept.png&quot;);\" onclick=\"var source='"+item.media.m+"';changeImage('"+email+"',source);\"  ></button>";
 	html+=but;
 	if (i === 10) {
 	$("#formim").html(html);

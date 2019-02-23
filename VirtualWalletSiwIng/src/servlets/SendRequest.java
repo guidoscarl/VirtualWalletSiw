@@ -30,13 +30,8 @@ public class SendRequest extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("entrato in servlet send.. \n");
-		AmiciziaDao am =DatabaseManager.getInstance().getDaoFactory().getAmiciziaDao();
-		String userEmail=(String)request.getSession().getAttribute("email");
-		String receiver=request.getParameter("receiver");
-		System.out.println(receiver);
-		am.sendRequest(userEmail, receiver);
-		response.sendRedirect("confirm.html");
+		
+		
 	}
 
 	/**
@@ -44,7 +39,12 @@ public class SendRequest extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		System.out.println("entrato in servlet send.. \n");
+		AmiciziaDao am =DatabaseManager.getInstance().getDaoFactory().getAmiciziaDao();
+		String userEmail=(String)request.getSession().getAttribute("email");
+		String receiver=request.getParameter("receiver");
+		System.out.println(receiver);
+		am.sendRequest(userEmail, receiver);
 	}
 
 }

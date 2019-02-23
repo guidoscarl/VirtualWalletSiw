@@ -33,7 +33,7 @@ function accetta(id){
 }
 
 function rifiuta(id){
-	alert("rifiuta");
+	
 	var number=id;
 	$.ajax({
 		method:"POST",
@@ -178,4 +178,28 @@ function transaction(receiver){
 	
 	var href="Transaction?emailUs=".concat(receiver);
 	$(location).attr("href",href);
+}
+
+function sendRequest(receiver){
+	
+	var rec=receiver;
+	var ind ="viewProfile?email=".concat(rec);
+	$.ajax({
+		method:"POST",
+		url:"send",
+		data:{receiver:rec},
+		success:function(data){
+			
+			$.confirm({
+			    title: 'Richiesta inviata',
+			    content: 'Richiesta di amicizia inviata correttamente',
+			    buttons: {
+			        home: function () {
+			        	$(location).attr("href",ind);
+			        },
+			    }
+			});
+			
+		}
+	});
 }
