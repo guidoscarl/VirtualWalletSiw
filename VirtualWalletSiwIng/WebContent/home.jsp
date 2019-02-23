@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 
@@ -28,12 +29,13 @@
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav">
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="home.jsp">Home</a></li>
-                    <% 
-                    if(session.getAttribute("logged")==null)
-                    	out.print("<li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link active\" href=\"sign-in.html\">Accedi</a></li>");
-                    else
-                    	out.print("<li class=\"nav-item\" role=\"presentation\"><a class=\"nav-link active\" href=\"logout\">Disconnetti</a></li>");
-                    %>
+                   <c:if test="${logged==null }">
+                   		<li class="nav-item" role="presentation"><a class="nav-link active" href="sign-in.html">Accedi</a></li>
+                   </c:if>
+                    
+                    <c:if test="${logged!=null }">
+                    	<li class="nav-item" role="presentation"><a class="nav-link active" href="logout">Disconnetti</a></li>
+                    </c:if>
                 </ul>
             </div>
         </div>
@@ -43,12 +45,16 @@
 	        <div class="avatar"></div>
 	        <div>
 	        	<p>Il portafoglio virtuale <strong>Virtual Wallet</strong> permetterà senza problemi acquisti e transazioni tra utenti e siti web che approvano il nostro progetto! </p>
-	        	<%
-                		if(session.getAttribute("logged")==null)
-                			out.print("<a class=\"btn btn-primary myRoundButton\" role=\"button\" href=\"sign-up\">Iscriviti</a>");
-                		else
-                			out.print("<a class=\"btn btn-primary myRoundButton\" role=\"button\" href=\"signin\">Il mio profilo</a>");
-				%>
+	        	
+	        	  	<c:if test="${logged==null }">
+           				<a class="btn btn-primary myRoundButton" role="button" href="sign-up">Iscriviti</a>
+           			</c:if>
+           			 <c:if test="${logged!=null }">
+                    	<a class="btn btn-primary myRoundButton" role="button" href="signin">Il mio profilo</a>
+                    </c:if>
+                		
+                			
+				
 	        </div>
 	    </div>
 	</section>

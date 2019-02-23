@@ -44,7 +44,6 @@ public class SendMessage extends HttpServlet {
 		String sender = request.getParameter("send");
 		String receiver = request.getParameter("rec");
 		String value = request.getParameter("val");
-		System.out.println(sender+" "+receiver+" "+value);
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");  
 		LocalDateTime now = LocalDateTime.now();
 		String date = dtf.format(now);

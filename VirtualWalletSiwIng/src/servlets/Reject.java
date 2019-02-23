@@ -38,7 +38,6 @@ public class Reject extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int id=Integer.parseInt(request.getParameter("id"));
-		System.out.println(id);
 		DatabaseManager.getInstance().getDaoFactory().getAmiciziaDao().rejectRequest(id);
 		
 		
