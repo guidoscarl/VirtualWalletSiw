@@ -23,6 +23,12 @@
     <script src="js/contactUs.js"></script>
 </head>
 <body class="myBody">
+<c:if test="${active==false }">
+		<h2>Attiva il tuo account prima di accedere</h2>
+	</c:if>
+		
+	<c:if test="${active==true }">
+	
 	<nav class="navbar navbar-dark navbar-expand-sm gradient">
 		<div class="container">
 			<span class="navbar-brand">Virtual Wallet</span>
@@ -125,5 +131,6 @@
             </div>
         </div>
     </footer>
+    </c:if>
 </body>
 </html>

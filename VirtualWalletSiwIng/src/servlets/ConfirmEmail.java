@@ -1,27 +1,27 @@
 package servlets;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Utente;
-import persistence.PostgresDAOFactory;
-import persistence.dao.UtenteDao;
+import persistence.DatabaseManager;
 
 /**
- * Servlet implementation class Recharge
+ * Servlet implementation class ConfirmEmail
  */
-@WebServlet("/Recharge")
-public class Recharge extends HttpServlet {
+@WebServlet("/ConfirmEmail")
+public class ConfirmEmail extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Recharge() {
+    public ConfirmEmail() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,7 +31,10 @@ public class Recharge extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String email = request.getParameter("email");
+		DatabaseManager.getInstance().getDaoFactory().getUtenteDao().activeProfile(email);
+		RequestDispatcher rd = request.getRequestDispatcher("emailconfirmed.html");
+		rd.forward(request, response);
 	}
 
 	/**
@@ -39,26 +42,7 @@ public class Recharge extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		PostgresDAOFactory p = new PostgresDAOFactory();
-		UtenteDao dao=p.getUtenteDao();
-		
-		String email = request.getParameter("email");
-		int oldSaldo=Integer.parseInt(request.getParameter("saldo"));
-		int importo=Integer.parseInt(request.getParameter("importo"));
-		
-		
-		int newSaldo=oldSaldo+importo;
-		
-		Utente u = new Utente("a","a",email,"a",newSaldo,"",true);
-		
-		dao.update(u);
-		request.getSession().setAttribute("saldo", newSaldo);
-		response.getWriter().append("ok");
-		
-		
-		
-		
+		doGet(request, response);
 	}
 
 }

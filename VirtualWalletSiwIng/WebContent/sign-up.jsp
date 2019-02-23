@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="bootstrap-4.1.0-dist/fonts/ionicons.min.css">
     <script src="js/checkEmail.js"></script>
     <script src="js/contactUs.js"></script>
+    <script src="js/loader"></script>
     <script src="bootstrap-4.1.0-dist/js/jquery.min.js"></script>
     <script src="bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
@@ -48,8 +49,10 @@
                 </div>
         		<div class="form-group"><label for="born-date">Data di nascita</label><input class="form-control" type="date" id="born-date"></div>
         		<div class="form-group"><p  class="errorMessage" style="visibility:hidden;" id="control"></p></div>
-				<div class="button"><button class="btn btn-primary btn-block" type="button" id="button" onclick="signUp();">Registrati</button></div>
+				<div class="button"><button class="btn btn-primary btn-block" type="button" id="button" onclick="activeLoader();signUp();">Registrati</button></div>
         	</form>
+        	<div class="lds-dual-ring" id="loader" style="visibility:hidden"></div>
+        	
         </div>
     </section>
     <footer class="gradient">

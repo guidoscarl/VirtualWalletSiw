@@ -7,13 +7,21 @@ public class Utente {
 	private String pass;
 	private int saldo;
 	private String image;
-	public Utente(String nome, String cognome,String email,String pass, int saldo,String image) {
+	private boolean active;
+	public boolean isActive() {
+		return active;
+	}
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+	public Utente(String nome, String cognome,String email,String pass, int saldo,String image,boolean active) {
 		this.nome=nome;
 		this.cognome=cognome;
 		this.email=email;
 		this.pass=pass;
 		this.saldo=saldo;
 		this.image=image;
+		this.active=active;
 	}
 	public int getSaldo() {
 		return saldo;

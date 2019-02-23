@@ -8,6 +8,14 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Properties;
+
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 import Excepions.EmailAlreadyUsed;
 import Excepions.UsersNotFound;
@@ -16,6 +24,9 @@ import persistence.dao.UtenteDao;
 
 public class UtenteDaoJdbc implements UtenteDao {
 	private DataSource data;
+	static Properties mailServerProperties;
+	static Session getMailSession;
+	static MimeMessage generateMailMessage;
 	public UtenteDaoJdbc(DataSource d) {
 		data=d;
 	}
@@ -30,8 +41,8 @@ public class UtenteDaoJdbc implements UtenteDao {
 			
 		}
 		String query = "INSERT INTO public.\"Utente\"(\r\n" + 
-				"	email, nome, cognome, password, saldo, profileimage)\r\n" + 
-				"	VALUES (?, ?, ?, ?, ?,?)";
+				"	email, nome, cognome, password, saldo, profileimage, active)\r\n" + 
+				"	VALUES (?, ?, ?, ?, ?,?,?)";
 		
 		
 		try {
@@ -44,10 +55,11 @@ public class UtenteDaoJdbc implements UtenteDao {
 			s.setString(4, u.getPass());
 			s.setInt(5, u.getSaldo());
 			s.setString(6, "default");
+			s.setBoolean(7, false);
 			s.executeUpdate();
 			
 			connection.close();
-			
+			sendConfermEmail(u.getEmail());
 		} catch (SQLException e) {
 			try {
 				connection.close();
@@ -121,7 +133,7 @@ public class UtenteDaoJdbc implements UtenteDao {
 				
 				
 				if(result.next()){
-					u= new Utente(result.getString("nome"),result.getString("cognome"),result.getString("email"),result.getString("password"),result.getInt("saldo"),result.getString("profileimage"));
+					u= new Utente(result.getString("nome"),result.getString("cognome"),result.getString("email"),result.getString("password"),result.getInt("saldo"),result.getString("profileimage"),result.getBoolean("active"));
 				}
 				/*else
 					c.close();
@@ -224,7 +236,7 @@ public class UtenteDaoJdbc implements UtenteDao {
 					throw new UsersNotFound();
 				}
 				else {
-					u= new Utente(result.getString("nome"),result.getString("cognome"),result.getString("email"),result.getString("password"),result.getInt("saldo"),result.getString("profileimage"));
+					u= new Utente(result.getString("nome"),result.getString("cognome"),result.getString("email"),result.getString("password"),result.getInt("saldo"),result.getString("profileimage"),true);
 				}
 				/*else
 					c.close();
@@ -297,7 +309,7 @@ public class UtenteDaoJdbc implements UtenteDao {
 				String email=results.getString("email");
 				String nome=results.getString("nome");
 				String cognome=results.getString("cognome");
-				users.add(new Utente(nome,cognome,email,"",0,""));
+				users.add(new Utente(nome,cognome,email,"",0,"",true));
 			}
 			
 		}
@@ -388,6 +400,75 @@ public class UtenteDaoJdbc implements UtenteDao {
 			}
 		}
 		
+		
+	}
+	
+	void sendConfermEmail(String email) {
+		
+		
+		mailServerProperties = System.getProperties();
+		mailServerProperties.put("mail.smtp.port", "587");
+		mailServerProperties.put("mail.smtp.auth", "true");
+		mailServerProperties.put("mail.smtp.starttls.enable", "true");
+		
+ 
+		// Step2
+		System.out.println("\n\n 2nd ===> get Mail Session..");
+		getMailSession = Session.getDefaultInstance(mailServerProperties, null);
+		generateMailMessage = new MimeMessage(getMailSession);
+		try {
+			generateMailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
+			generateMailMessage.setSubject("Attiva il tuo conto Virtual Wallet");
+			String emailBody = "Grazie per aver creato il tuo conto Virtual Wallet." +"<a href=\"http://localhost:8080/VirtualWalletSiwIng/ConfirmEmail?email="+email+"\">clicca qui per confermare il tuo account.</a>"+ "<br><br> Regards, <br>Crunchify Admin";
+			generateMailMessage.setContent(emailBody, "text/html");
+			
+			 
+			// Step3
+			
+			Transport transport = getMailSession.getTransport("smtp");
+	 
+			// Enter your correct gmail UserID and Password
+			// if you have 2FA enabled then provide App Specific Password
+			transport.connect("smtp.gmail.com", "virtualwalletconf", "virtual-wallet1");
+			transport.sendMessage(generateMailMessage, generateMailMessage.getAllRecipients());
+			transport.close();
+		} catch (MessagingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+	}
+	@Override
+	public void activeProfile(String email) {
+		Connection c =null;
+		String query="UPDATE public.\"Utente\"\r\n" + 
+				"	SET active=true\r\n" + 
+				"	WHERE \"email\"=?;";
+		try {
+			c=data.getConnection();
+			PreparedStatement st = c.prepareStatement(query);
+			st.setString(1, email);
+			st.executeUpdate();
+		}
+		catch(Exception e){
+			try {
+				c.close();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				
+			}
+		}
+		finally {
+			try {
+				c.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		
 	}
 	

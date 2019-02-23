@@ -16,6 +16,7 @@ public interface UtenteDao {
 	ArrayList<Utente> getAllUsers();
 	String getImage(String email);
 	void setImage(String email, String source);
+	void activeProfile(String email);
 	
 	
 }

@@ -100,6 +100,7 @@ public class SignInServlet extends HttpServlet {
 			session.setAttribute("saldo", u.getSaldo());
 			request.setAttribute("saldo",u.getSaldo());
 			session.setAttribute("logged", true);
+			session.setAttribute("active", u.isActive());
 			JSONObject g = new JSONObject();
 			g.append("saldo", u.getSaldo());
 			g.append("email", u.getEmail());
