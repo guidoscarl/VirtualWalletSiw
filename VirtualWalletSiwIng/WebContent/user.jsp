@@ -41,7 +41,7 @@
 				<input id="myInput" type="text" placeholder="Cerca utenti" oninput="search();">
 			</div>
 			<a class="links" href="signin"><c:out value="${nome} ${cognome}">No name</c:out>, benvenuto!</a>
-			<a href="mailBox" style="padding-left:1%"><i class="ion ion-email" style="text-size:2rem; color:white"></i></a>
+			<a href="mailBox" class="mailIcon"><i class="ion ion-email"></i></a>
 	        <c:if test="${haveMes!=null }">
 				<img src="Images/notific.png" alt="notific" height="13" width="13">
 			</c:if>
@@ -61,11 +61,9 @@
 				<div class="col-sm-3 profile-info gradient myBorder">
 					<c:if test="${imageUs=='default' }">
 						<img src="Images/userprofile.jpg" alt="profile" height="100" width="100"></img>
-									
 					</c:if>
 					<c:if test="${imageUs!='default' }">
 						<img src="${imageUs }" alt="profile" height="100" width="100"></img>
-									
 					</c:if>
 				</div>
 				<c:if test="${status=='active' }">
@@ -75,41 +73,24 @@
 						<a id="messageButton" class="btn btn-primary" role="button" href="#" 
 							onclick="var sender='${email}'; var receiver='${emailUs }'; sendMessage(sender,receiver);">Invia messaggio</a>
 					</div>
-
 				</c:if>
 				<c:if test="${status =='sended' }">
 					<div class="col gradient myBorder">
-					<p>Richiesta in attesa di essere accettata</p>
-					<a class="btn btn-primary" role="button" href="#" onclick="var id=${number}; deleteFromProfile(id);">Cancella richiesta</a>
-					
+						<p>Richiesta in attesa di essere accettata</p>
+						<a class="btn btn-primary" role="button" href="#" onclick="var id=${number}; deleteFromProfile(id);">Cancella richiesta</a>
 					</div>
 				</c:if>
-				
 				<c:if test="${status =='received' }">
 					<div class="col gradient myBorder">
-					
-					<a class="btn btn-primary" role="button" href="#" onclick="var em='${emailUs}'; var id=${number };  acceptFromProfile(id,em);">Accetta Richiesta</a>
-					<a class="btn btn-primary" role="button" href="#" onclick="var em='${emailUs}'; var id=${number };  rejectFromProfile(id,em);">Rifiuta Richiesta</a>
-					
-					
-					
+						<a class="btn btn-primary" role="button" href="#" onclick="var em='${emailUs}'; var id=${number };  acceptFromProfile(id,em);">Accetta Richiesta</a>
+						<a class="btn btn-primary" role="button" href="#" onclick="var em='${emailUs}'; var id=${number };  rejectFromProfile(id,em);">Rifiuta Richiesta</a>
 					</div>
 				</c:if>
-				
-				
 				<c:if test="${status =='notexist' }">
-					<div class="col-sm-9 gradient myBorder">
-					
-					<a class="btn btn-primary" role="button" href="#" onclick="var em='${emailUs}'; sendRequest(em);">Invia richiesta</a>
-					
-					
-					
-					
+					<div class="col gradient myBorder">
+						<a class="btn btn-primary" role="button" href="#" onclick="var em='${emailUs}'; sendRequest(em);">Invia richiesta</a>
 					</div>
 				</c:if>
-				
-				
-	   	 		
 		    </div>
 		</div>
 		<div class="lds-dual-ring" id="loader" style="visibility:hidden"></div>
@@ -117,10 +98,9 @@
 	<footer class="gradient">
         <div class="container space-padding">
             <div class="links">
-            	<a style="cursor:pointer" onclick="contactUs();">Contact us</a>
+            	<a onclick="contactUs();">Contact us</a>
             </div>
         </div>
     </footer>
-	
 </body>
 </html>

@@ -34,7 +34,7 @@ prefix="c" %>
 				<input id="myInput" type="text" placeholder="Cerca utenti" oninput="search();">
 			</div>
 			<a class="links" href="signin"><c:out value="${nome} ${cognome }">No name</c:out>, benvenuto!</a>
-			<a href="mailBox" style="padding-left:1%"><i class="ion ion-email" style="text-size:2rem; color:white"></i></a>
+			<a href="mailBox" class="mailIcon"><i class="ion ion-email"></i></a>
 	        <c:if test="${haveMes!=null }">
 				<img src="Images/notific.png" alt="notific" height="13" width="13">
 			</c:if>
@@ -45,15 +45,13 @@ prefix="c" %>
         <div class="container">
             <div class="heading"><h2>Ricarica</h2></div>
             <form style="background-color:white" method="post" action="recharge" >
-                <!-- Tenere per la registrazione di un nuovo account <div class="form-group"><label for="subject">Subject</label><select class="form-control" id="subject"><option value="" selected="">Choose Subject</option><option value="1">Subject 1</option><option value="2">Subject 2</option><option value="3">Subject 3</option></select></div> -->
-                <!-- Aggiungere identificativi???-->
-                <p style="color:black"><i>Inserisci nella form qui sotto la tua e-mail e la tua password per verificare i tuoi dati e l'importo da ricaricare</i></p>
+                <p><i>Inserisci nella form qui sotto la tua e-mail e la tua password per verificare i tuoi dati e l'importo da ricaricare</i></p>
                 <div class="form-group"><label for="email">Email</label><input class="form-control" type="email" name="email" id="email" email="${email }"></div>
                 <div class="form-group"><label for="password">Password</label><input class="form-control" type="password" name="password" id="password" password="${password }" saldo="${saldo }"></div>
                 <div class="form-group"><label for="name">Importo</label><input class="form-control" type="text" name="importo" id="importo"></div>
 				<div class="button"><button class="btn btn-primary btn-block" type="button" onclick="makeRecharge();">Ricarica</button></div>
 				<div class="form-group">
-        			<p style="color:red;font-size:1.20vw;visibility:hidden;" id="error">Nome utente o password sbagliati.</p>
+        			<p class="errorMessage" style="visibility:hidden;" id="error">Nome utente o password sbagliati.</p>
         		</div>
         	</form>
         </div>
@@ -61,7 +59,7 @@ prefix="c" %>
     <footer class="gradient">
         <div class="container space-padding">
             <div class="links">
-            	<a style="cursor:pointer" onclick="contactUs();">Contact us</a>
+            	<a onclick="contactUs();">Contact us</a>
             </div>
         </div>
     </footer>

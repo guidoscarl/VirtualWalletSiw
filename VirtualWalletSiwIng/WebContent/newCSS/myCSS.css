@@ -10,12 +10,17 @@
   }
 }
 
+.btn.btn-primary.myRoundButton {
+	border-radius:50px;
+}
+
 .gradient {
 	background:linear-gradient(120deg,#7f70f5,#0ea0ff);
 	color:#fff
 }
 
-.container h2 {
+.container h1 {
+	text-align:center;
 	color:white;
 }
 
@@ -77,7 +82,20 @@
 	margin:auto;
 	border-radius:100%;
 	margin-bottom:3.33%;
-	margin-top:3.33%
+	margin-top:3.33%;
+	background-image:url("../Images/test.jpg");
+}
+
+.confirm{
+	width:150px;
+	height:150px;
+	background-size:cover;
+	background-repeat:no-repeat;
+	margin:auto;
+	border-radius:100%;
+	margin-bottom:3.33%;
+	margin-top:3.33%;
+	background-image:url("../Images/checkImage.png");
 }
 
 .grid {
@@ -133,12 +151,12 @@
 	background-color:white;
 }
 
-.links, .social-icons {
+.links {
 	text-align:center;	
 	color:white;
 }
 
-.links a, .social-icons a{
+.links a{
 	color:white;
 }
 
@@ -146,6 +164,7 @@
 	color:white;
 	text-decoration:none;
 	opacity:0.6;
+	cursor:pointer;
 }
 
 .links a:hover {
@@ -173,6 +192,8 @@
 .results {
 	background-color:white;
 	border-radius:10px;
+	border:1px solid black;
+	padding-top:15px;
 }
 
 .lds-dual-ring {
@@ -195,7 +216,6 @@
 .errorMessage {
 	color:red !important;
 	font-size:1.20vw !important;
-	visibility:hidden;
 }
 
 .friendList {
@@ -206,6 +226,10 @@
 	margin-left:auto;
 	margin-right:auto;
 	margin-top:10px;
+}
+
+.friendList > p {
+	color:black;
 }
 
 .friend {
@@ -229,6 +253,14 @@ button.friendButton {
 	margin-top:1%;
 }
 
+.accept {
+	background-image:url("../Images/accept.png");
+}
+
+.deny {
+	background-image:url("../Images/deny.png");
+}
+
 .list-group {
 	overflow:hidden; 
 	overflow-y:scroll;
@@ -236,6 +268,15 @@ button.friendButton {
 	height:auto; 
 	margin-left:1%;
 	margin-right:1%;
+}
+
+.mailIcon {
+	padding-left:1%;
+	color:white;
+}
+
+form > p {
+	color:black !important;
 }
 
 ::-webkit-scrollbar {

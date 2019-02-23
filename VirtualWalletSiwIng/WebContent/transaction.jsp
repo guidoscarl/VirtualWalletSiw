@@ -34,7 +34,7 @@ prefix="c" %>
 				<input id="myInput" type="text" placeholder="Cerca utenti" oninput="search();">
 			</div>
 	        <a class="links" href=signin><c:out value="${nome} ${cognome }">No name</c:out>, benvenuto!</a>
-	        <a href="mailBox" style="padding-left:1%"><i class="ion ion-email" style="text-size:2rem; color:white"></i></a>
+	        <a href="mailBox" class="mailIcon"><i class="ion ion-email"></i></a>
 	        <c:if test="${haveMes!=null }">
 				<img src="Images/notific.png" alt="notific" height="13" width="13">
 			</c:if>
@@ -45,33 +45,29 @@ prefix="c" %>
         <div class="container">
             <div class="heading"><h2>Transazione</h2></div>
             <form style="background-color:white" method="post" action="transaction">
-                <!-- Aggiungere identificativi???-->
-                <p style="color:black"><i>Inserisci nella form qui sotto l'importo con il quale effettuare la transazione.</i></p>
+                <p><i>Inserisci nella form qui sotto l'importo con il quale effettuare la transazione.</i></p>
                 <c:if test="${emailUs!=null }">
                 	<c:if test="${nameUs!=null }">
-                	 <div class="form-group"><label for="name">Nome</label><input class="form-control" type="text" name="name" id="nome" value="${nameUs }" disabled="disabled"></div>
-                	 </c:if>
-                	 <c:if test="${surnameUs!=null }">
-                	 <div class="form-group"><label for="surname">Cognome</label><input class="form-control" type="text" name="surname" id="cognome" value="${surnameUs }" disabled="disabled"></div>
-                	 </c:if>
-                	 <div class="form-group"><label for="email">Email</label><input class="form-control" type="email" name="email" id="email" value="${emailUs }" disabled="disabled" ></div>
-                	  <div class="form-group">
-                </div>
-                <div class="form-group"><label for="importo">Importo</label><input class="form-control" type="text" name="importo" id="import" oninput="checkImport();" saldo="${saldo }">
-                	<p style="color:red; visibility:hidden;" id="error" >Saldo non sufficiente</p>
-                	<button type="button" class="btn btn-primary btn-block" type="button" style="visibility:hidden" onclick="doRecharge();" id="buttonRC" >Effettua ricarica</button>
-                </div>
-				<div class="button"><button class="btn btn-primary btn-block" type="button" id="buttonTR" onclick="doTransaction();">Effettua transazione</button></div>
-                	
+                		<div class="form-group"><label for="name">Nome</label><input class="form-control" type="text" name="name" id="nome" value="${nameUs }" disabled="disabled"></div>
+                	</c:if>
+                	<c:if test="${surnameUs!=null }">
+                		<div class="form-group"><label for="surname">Cognome</label><input class="form-control" type="text" name="surname" id="cognome" value="${surnameUs }" disabled="disabled"></div>
+                	</c:if>
+                	<div class="form-group"><label for="email">Email</label><input class="form-control" type="email" name="email" id="email" value="${emailUs }" disabled="disabled" ></div>
+					<div class="form-group"></div>
+	                <div class="form-group"><label for="importo">Importo</label><input class="form-control" type="text" name="importo" id="import" oninput="checkImport();" saldo="${saldo }">
+	                	<p class="errorMessage" style="visibility:hidden;" id="error" >Saldo non sufficiente</p>
+	                	<button type="button" class="btn btn-primary btn-block" type="button" style="visibility:hidden" onclick="doRecharge();" id="buttonRC" >Effettua ricarica</button>
+	                </div>
+					<div class="button"><button class="btn btn-primary btn-block" type="button" id="buttonTR" onclick="doTransaction();">Effettua transazione</button></div>
                 </c:if>
-               
         	</form>
         </div>
     </section>
     <footer class="gradient">
         <div class="container space-padding">
             <div class="links">
-            	<a style="cursor:pointer" onclick="contactUs();">Contact us</a>
+            	<a onclick="contactUs();">Contact us</a>
             </div>
         </div>
     </footer>

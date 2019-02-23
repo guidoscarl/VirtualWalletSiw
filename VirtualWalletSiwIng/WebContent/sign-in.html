@@ -15,7 +15,6 @@
     <script src="bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
-    
 </head>
 
 <body class="myBody">
@@ -24,7 +23,6 @@
         	<span class="navbar-brand">Virtual Wallet</span>
         	<button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
         		<span style="color:white;">Naviga nel sito!</span>
-        		<!-- <span class="navbar-toggler-icon"></span> -->
         	</button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav">
@@ -37,19 +35,16 @@
         <div class="container">
             <h2>Accedi</h2>
             <form style="background-color:white" method="post" action="SignInServlet">
-                <!-- Tenere per la registrazione di un nuovo account <div class="form-group"><label for="subject">Subject</label><select class="form-control" id="subject"><option value="" selected="">Choose Subject</option><option value="1">Subject 1</option><option value="2">Subject 2</option><option value="3">Subject 3</option></select></div> -->
                 <div class="form-group"><label for="email">Email</label><input class="form-control" type="email" name = "email" placeholder="User Name" id="email"></div>
                 <div class="form-group"><label for="password">Password</label><input class="form-control" type="password" name = "password" placeholder="Password" id="password"></div>
         		<div class="form-group">
             		<div class="form-row">
-<!--                     <div class="col-md-6"><label for="hire-date">Date</label><input class="form-control datepicker" type="text" id="hire-date" date-format="MM-DD-YYYY"></div> -->
             			<div class="col-md-6" style="margin-bottom:1%"><button  class="btn btn-primary btn-block" type="button" onclick="login();">Accedi</button></div>
 						<div class="col-md-6"><a class="btn btn-primary btn-block" role="button" href="sign-up.jsp">Non hai un account? Registrati!</a></div>
-						
             		</div>
         		</div>
         		<div class="form-group">
-        			<p style="color:red;font-size:1.20vw;visibility:hidden;" id="error">Nome utente o password sbagliati.</p>
+        			<p class="errorMessage" style="visibility:hidden;" id="error">Nome utente o password sbagliati.</p>
         		</div>
         	</form>
         </div>

@@ -39,7 +39,7 @@
 				<input id="myInput" type="text" placeholder="Cerca utenti" oninput="search();">
 			</div>
 	        <a class="links" href="signin"><c:out value="${nome} ${cognome}">No name</c:out>, benvenuto!</a>
-	        <a href="mailBox" style="padding-left:1%"><i class="ion ion-email" style="text-size:2rem; color:white"></i></a>
+	        <a href="mailBox" class="mailIcon"><i class="ion ion-email"></i></a>
 	        <c:if test="${haveMes!=null }">
 				<img src="Images/notific.png" alt="notific" height="13" width="13">
 			</c:if>
@@ -56,16 +56,14 @@
 					<span>Cognome:</span>
 					<p><c:out value="${cognome}">Null</c:out></p>
 					<span>E-mail:</span>
-					<p style="font-size:1.00vw;"><c:out value="${email}">Null</c:out></p>
+					<p><c:out value="${email}">Null</c:out></p>
 				</div>
 				<div class="col-sm-3 profile-info gradient myBorder">
 					<c:if test="${image=='default' }">
 						<img src="Images/userprofile.jpg" alt="profile" height="100" width="100"></img>
-									
 					</c:if>
 					<c:if test="${image!='default' }">
 						<img src="${image }" alt="profile" height="100" width="100"></img>
-									
 					</c:if>
 					<a style="margin-top:5px" class="btn btn-primary" role="button" href="search.jsp">Cambia la foto con Flickr</a>
 				</div>
@@ -84,33 +82,33 @@
 		<div class="container">
 			<div class="row">
 				<div class="friendList">
-					<p style="color:black"><strong>Amici</strong></p>
+					<p><strong>Amici</strong></p>
 					<div class="friendBlock">
 						<c:forEach items="${friends}" var="fr" >
-							<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;">
-            				<a href="viewProfile?email=${fr.emailReceiver }">${fr.emailReceiver }</a>
-							<button><i class="ion ion-cash" style="color:green" onclick="var receiver='${fr.emailReceiver}'; transaction(receiver);"></i></button>
-						</div>
+							<div class="friend">
+            					<a href="viewProfile?email=${fr.emailReceiver }">${fr.emailReceiver }</a>
+								<button><i class="ion ion-cash" style="color:green" onclick="var receiver='${fr.emailReceiver}'; transaction(receiver);"></i></button>
+							</div>
 						</c:forEach>
-            			
-        	    		
 					</div>
 				</div>
 				<div class="friendList">
-					<p style="color:black"><strong>Ricevute</strong></p>
+					<p><strong>Ricevute</strong></p>
 					<div class="friendBlock">
 						<c:forEach items="${received}" var="rec" >
-							<a id="${rec.id }" href="viewProfile?email=${rec.emailSender }">${rec.emailSender }</a>
-							<button class="friendButton" id="confbutton${rec.id }" style="background-image:url(&quot;Images/accept.png&quot;);" onclick="var id=${rec.id}; accetta(id);"  ></button>
-							<button class="friendButton" id="delbutton${rec.id }" style="background-image:url(&quot;Images/deny.png&quot;);" onclick="var id=${rec.id}; rifiuta(id);"></button>
+							<div class="friend">
+								<a id="${rec.id }" href="viewProfile?email=${rec.emailSender }">${rec.emailSender }</a>
+								<button class="friendButton accept" id="confbutton${rec.id }" onclick="var id=${rec.id}; accetta(id);"  ></button>
+								<button class="friendButton deny" id="delbutton${rec.id }" onclick="var id=${rec.id}; rifiuta(id);"></button>
+							</div>
 						</c:forEach>
 					</div>
 				</div>
 				<div class="friendList">
-					<p style="color:black"><strong>Inviate</strong></p>
+					<p><strong>Inviate</strong></p>
 					<div class="friendBlock">
 						<c:forEach items="${sended}" var="rec" >
-							<div class="friend" style="border-top: 1px solid; border-color: #d1d1d1;">
+							<div class="friend">
 								<a id="${rec.id }" href="viewProfile?email=${rec.emailReceiver }">${rec.emailReceiver }</a>
 								<button id="ref${rec.id }" onclick="var id=${rec.id}; deleteRequest(id);"><i class="ion ion-close-circled" style="color:red"></i></button>
 							</div>
@@ -123,7 +121,7 @@
 	<footer class="gradient">
         <div class="container space-padding">
             <div class="links">
-            	<a style="cursor:pointer" onclick="contactUs();">Contact us</a>
+            	<a onclick="contactUs();">Contact us</a>
             </div>
         </div>
     </footer>

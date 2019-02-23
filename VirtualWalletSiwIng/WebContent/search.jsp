@@ -40,7 +40,7 @@
 				<input id="myInput" type="text" placeholder="Cerca utenti" oninput="search();">
 			</div>
 			<a class="links" href="signin"><c:out value="${nome} ${cognome}">No name</c:out>, benvenuto!</a>
-			<a href="mailBox" style="padding-left:1%"><i class="ion ion-email" style="text-size:2rem; color:white"></i></a>
+			<a href="mailBox" class="mailIcon"><i class="ion ion-email"></i></a>
 	        <c:if test="${haveMes!=null }">
 				<img src="Images/notific.png" alt="notific" height="13" width="13">
 			</c:if>
@@ -48,24 +48,19 @@
 	</nav>
 	<ul class="list-group" id="myList"></ul>
 	<section class="portfolio-block">
-        <div class="container results" style="border:1px solid black; border-radius:10px">
-        	<div style="padding-top:15px">
-				<input id="searched" type="text" placeholder="Cerca la tua immagine">
-				<button type="button"><i class="fa fa-search" onclick="var email='${email}';searchIm(email);"></i></button>
-			</div>
+        <div class="container results">
+			<input id="searched" type="text" placeholder="Cerca la tua immagine">
+			<button type="button"><i class="fa fa-search" onclick="var email='${email}';searchIm(email);"></i></button>
             <div class="friendList">
-					<p style="color:black"><strong>Risultati</strong></p>
-					<div id="formim"class="friendBlock">
-						
-							
-					</div>
-				</div>
+				<p><strong>Risultati</strong></p>
+				<div id="formim" class="friendBlock"></div>
+			</div>
         </div>
     </section>
     <footer class="gradient">
         <div class="container space-padding">
             <div class="links">
-            	<a style="cursor:pointer" onclick="contactUs();">Contact us</a>
+            	<a onclick="contactUs();">Contact us</a>
             </div>
         </div>
     </footer>
