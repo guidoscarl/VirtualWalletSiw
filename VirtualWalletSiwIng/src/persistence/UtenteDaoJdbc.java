@@ -419,7 +419,7 @@ public class UtenteDaoJdbc implements UtenteDao {
 		try {
 			generateMailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
 			generateMailMessage.setSubject("Attiva il tuo conto Virtual Wallet");
-			String emailBody = "Grazie per aver creato il tuo conto Virtual Wallet." +"<a href=\"http://localhost:8080/VirtualWalletSiwIng/ConfirmEmail?email="+email+"\">clicca qui per confermare il tuo account.</a>"+ "<br><br> Regards, <br>Crunchify Admin";
+			String emailBody = "Grazie per aver creato il tuo conto Virtual Wallet." +"<a href=\"http://localhost:8080/VirtualWalletSiwIng/ConfirmEmail?email="+email+"\">clicca qui per confermare il tuo account.</a>"+ "<br><br> Buona giornata, <br>Virtual Wallet staff";
 			generateMailMessage.setContent(emailBody, "text/html");
 			
 			 
