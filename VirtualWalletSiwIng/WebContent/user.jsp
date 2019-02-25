@@ -92,9 +92,37 @@
 					</div>
 				</c:if>
 		    </div>
+		    
 		</div>
 		<div class="lds-dual-ring" id="loader" style="visibility:hidden"></div>
 	</section>
+	<section >
+	    <div class="container">
+	    <div id="carouselExampleControls" class="carousel slide space-padding" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="Images/transazioni.png" alt="First slide">
+       
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100"src="Images/Interagisci.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100"  src="Images/ricarica.jpg" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+	        
+	    </div>
+	    </section>
 	<footer class="gradient">
         <div class="container space-padding">
             <div class="links">

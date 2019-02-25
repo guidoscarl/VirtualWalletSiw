@@ -58,19 +58,19 @@
 	        </div>
 	    </div>
 	</section>
-	<section class="section-border">
+	<section >
 	    <div class="container">
 	    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="Images/exchange.jpg" alt="First slide">
+      <img class="d-block w-100" src="Images/transazioni.png" alt="First slide">
        
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100"src="Images/transaction.jpg" alt="Second slide">
+      <img class="d-block w-100"src="Images/Interagisci.jpg" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100"  src="Images/chart.jpg" alt="Third slide">
+      <img class="d-block w-100"  src="Images/ricarica.jpg" alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -84,7 +84,8 @@
 </div>
 	        
 	    </div>
-	</section>
+	    </section>
+	
 	<section class="section-border">
 	    <div class="container space-padding">
 	        <h1 class="space-padding">Custodisci i tuoi risparmi in totale sicurezza!</h1>
