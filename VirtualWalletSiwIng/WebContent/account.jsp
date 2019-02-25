@@ -69,7 +69,7 @@
 						<img src="Images/userprofile.jpg" alt="profile" height="100" width="100"></img>
 					</c:if>
 					<c:if test="${image!='default' }">
-						<img src="${image }" alt="profile" height="100" width="100"></img>
+						<img src="${image }" alt="profile" height="200" width="200"></img>
 					</c:if>
 					<a style="margin-top:5px" class="btn btn-primary" role="button" href="search.jsp">Cambia la foto con Flickr</a>
 				</div>

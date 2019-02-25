@@ -63,7 +63,7 @@
 						<img src="Images/userprofile.jpg" alt="profile" height="100" width="100"></img>
 					</c:if>
 					<c:if test="${imageUs!='default' }">
-						<img src="${imageUs }" alt="profile" height="100" width="100"></img>
+						<img src="${imageUs }" alt="profile" height="200" width="200"></img>
 					</c:if>
 				</div>
 				<c:if test="${status=='active' }">

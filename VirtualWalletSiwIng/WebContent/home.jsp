@@ -41,7 +41,7 @@
         </div>
     </nav>
 	<section class="portfolio-block">
-	    <div class="container myBorder">
+	    <div class="container ">
 	        <div class="avatar"></div>
 	        <div>
 	        	<p>Il portafoglio virtuale <strong>Virtual Wallet</strong> permetterà senza problemi acquisti e transazioni tra utenti e siti web che approvano il nostro progetto! </p>
