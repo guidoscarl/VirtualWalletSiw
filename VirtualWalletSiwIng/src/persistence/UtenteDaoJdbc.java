@@ -413,7 +413,6 @@ public class UtenteDaoJdbc implements UtenteDao {
 		
  
 		// Step2
-		System.out.println("\n\n 2nd ===> get Mail Session..");
 		getMailSession = Session.getDefaultInstance(mailServerProperties, null);
 		generateMailMessage = new MimeMessage(getMailSession);
 		try {

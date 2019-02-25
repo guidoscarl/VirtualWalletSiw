@@ -56,7 +56,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-3 profile-info gradient myBorder">
-					<h1>Info utente</h1>
+					<h1>I miei dati:</h1>
 					<span>Nome:</span>
 					<p><c:out value="${nome}">Null</c:out></p>
 					<span>Cognome:</span>
