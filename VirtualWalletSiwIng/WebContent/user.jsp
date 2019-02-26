@@ -52,11 +52,23 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-3 profile-info gradient myBorder">
-					<h1>Profilo di</h1>
-					<span>Nome:</span>
-					<p><c:out value="${nomeUs}">No name</c:out></p>
-					<span>Cognome:</span>
-					<p><c:out value="${cognomeUs}">No name</c:out></p>
+					
+					
+					
+					
+					<div id="f2_container">
+						<div id="f1_card" class="shadow">
+						  <div class="front face">
+						   	<h1>I suoi dati</h1>
+						  </div>
+						  <div class="back face center">
+						     	<span>Nome:</span>
+								<p><c:out value="${nomeUs}">No name</c:out></p>
+								<span>Cognome:</span>
+								<p><c:out value="${cognomeUs}">No name</c:out></p>
+						  </div>
+						</div>
+					</div>
 				</div>
 				<div class="col-sm-3 profile-info gradient myBorder">
 					<c:if test="${imageUs=='default' }">
@@ -70,9 +82,9 @@
 					<div class="col gradient myBorder">
 						<a id="transButton" class="btn btn-primary" role="button" href="Transaction?emailUs=${emailUs }&nameUs=${nomeUs}&surnameUs=${cognomeUs}">Effettua transazione</a>
 						<a class="btn btn-primary" role="button" href="#" onclick="var id=${number}; deleteFromProfile(id);">Rimuovi dagli amici</a>
-						<a id="messageButton" class="btn btn-primary" role="button" href="#" 
-							onclick="var sender='${email}'; var receiver='${emailUs }'; sendMessage(sender,receiver);">Invia messaggio</a>
+						
 					</div>
+					
 				</c:if>
 				<c:if test="${status =='sended' }">
 					<div class="col gradient myBorder">
@@ -95,6 +107,18 @@
 		    
 		</div>
 		<div class="lds-dual-ring" id="loader" style="visibility:hidden"></div>
+		<c:if test="${status=='active' }">
+		<div id="f3_container">
+						<div id="f1_card" class="shadow">
+						  <div class="front face">
+						   	<img src="Images/contatta.jpg" width="300" height="100">
+						  </div>
+						  <div class="back face center">
+						    <a id="messageButton" class="btn btn-primary" role="button" href="#" onclick="var sender='${email}'; var receiver='${emailUs }'; sendMessage(sender,receiver);">Invia messaggio</a>
+						  </div>
+						</div>
+					</div>
+		</c:if>
 	</section>
 	<section >
 	    <div class="container">

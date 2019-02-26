@@ -56,6 +56,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-3 profile-info gradient myBorder">
+				
 					<h1>I miei dati:</h1>
 					<span>Nome:</span>
 					<p><c:out value="${nome}">Null</c:out></p>
@@ -63,6 +64,9 @@
 					<p><c:out value="${cognome}">Null</c:out></p>
 					<span>E-mail:</span>
 					<p><c:out value="${email}">Null</c:out></p>
+					
+					
+					
 				</div>
 				<div class="col-sm-3 profile-info gradient myBorder">
 					<c:if test="${image=='default' }">
