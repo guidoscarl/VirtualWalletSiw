@@ -91,37 +91,50 @@
 	        <h1 class="space-padding">Custodisci i tuoi risparmi in totale sicurezza!</h1>
 	        <div class="row">
 	            <div class="col-md-4">
-	                <div class="card custom-card">
-	                    <div class="card-body">
-	                        <div class="card-header custom-card"><h3>Conserva</h3></div>
-	                        <div class="card-body custom-card">
-	                        	<p class="card-text custom-card">Custodisci il tuo denaro! Nessuno potrà toccarlo se non te.</p>
-	                        </div>
-	                  	</div>
-	                </div>
+					<div id="f1_container">
+						<div id="f1_card" class="shadow">
+						  <div class="front face">
+						    <img src="Images/conserva.jpg" width="300px" height="250px">
+						  </div>
+						  <div class="back face center">
+						     	<h1>Custodisci il tuo denaro!</h1> 
+					      		<p>Tieni sempre aggiornato il tuo saldo con pochi click.</p> 
+						  </div>
+						</div>
+					</div>
+	                
 	            </div>
 	            <div class="col-md-4">
-	                <div class="card">
-	                    <div class="card-body">
-	                        <div class="card-header"><h3>Trasferisci</h3></div>
-	                        <div class="card-body">
-	                        	<p class="card-text">Trasferisci il tuo denaro a chi preferisci. Amici o parenti potranno riceverlo.</p>
-	                        </div>
-	                  	</div>
-	                </div>
+					<div id="f1_container">
+						<div id="f1_card" class="shadow">
+						  <div class="front face">
+						    <img src="Images/sicurezza.jpg" width="300px" height="250px">
+						  </div>
+						  <div class="back face center">
+						     	<h1>Non avrai problemi!</h1> 
+					      		<p>È tutto in totale sicurezza! Solo tu potrai accedere al tuo portafoglio.</p>  
+						  </div>
+						</div>
+					</div>
+	                
 	            </div>
-	            <div class="col-md-4">
-	                <div class="card">
-	                    <div class="card-body">
-	                        <div class="card-header"><h3>Totale sicurezza!</h3></div>
-	                        <div class="card-body">
-	                        	<p class="card-text">È tutto in totale sicurezza! Solo tu potrai accedere al tuo portafoglio.</p>
-	                        </div>
-	                  	</div>
-	                </div>
+	               
+					<div id="f1_container">
+						<div id="f1_card" class="shadow">
+						  <div class="front face">
+						    <img src="Images/trasferisci.jpg" width="300px" height="250px">
+						  </div>
+						  <div class="back face center">
+						     	<h1>Trasferisci!</h1> 
+					      		<p>Trasferisci il tuo denaro a chi preferisci. Scambiare denaro con gli amici non è mai stato così semplice.</p> 
+						  </div>
+						</div>
+					</div>
+					
 	            </div>
+	           
 	        </div>
-	    </div>
+	    
 	</section>
     <footer class="gradient">
         <div class="container space-padding">
