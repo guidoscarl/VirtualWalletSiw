@@ -52,15 +52,15 @@
 					<p class="section-border">Effettuate</p>
 					<div class="row historySpacer" >
 						<div class="col-md-2 col-lg-2 colTableEmpty"><span>DATA</span></div>
-						<div class="col-md-2 col-lg-2 colTableEmpty"><span>NOME DESTINATARIO</span></div>
-						<div class="col-md-2 col-lg-2 colTableEmpty"><span>COGNOME DESTINATARIO</span></div>
-						<div class="col-md-4 col-lg-4 colTableEmpty"><span>E-MAIL DESTINATARIO</span></div>
+						<div class="col-md-2 col-lg-2 colTableEmpty"><span>NOME </span></div>
+						<div class="col-md-2 col-lg-2 colTableEmpty"><span>COGNOME </span></div>
+						<div class="col-md-4 col-lg-4 colTableEmpty"><span>E-MAIL </span></div>
 						<div class="col-md-2 col-lg-2 colTableEmpty"><span>IMPORTO</span></div>
 						<c:forEach items="${transazioniM}" var="trans" >
 							<div class="col-md-2 col-lg-2 colTableTransaction myBorder"><span>${trans.data }</span></div>
 							<div class="col-md-2 col-lg-2 colTableTransaction myBorder"><span>${trans.nomeDestinatario }</span></div>
 							<div class="col-md-2 col-lg-2 colTableTransaction myBorder"><span>${trans.cognomeDestinatario }</span></div>
-							<div class="col-md-4 col-lg-4 colTableTransaction myBorder"><span>${trans.email }</span></div>
+							<div class="col-md-4 col-lg-4 colTableTransaction myBorder"><span><a href="viewProfile?email=${trans.email }">${trans.email }</a></span></div>
 							<div class="col-md-2 col-lg-2 colTableTransaction myBorder" style="color:red">-${trans.importo}€</div>
 						</c:forEach>
 					</div>
@@ -69,15 +69,15 @@
 					<p class="section-border">Ricevute</p>
 					<div class="row historySpacer">
 						<div class="col-md-2 col-lg-2 colTableEmpty"><span>DATA</span></div>
-						<div class="col-md-2 col-lg-2 colTableEmpty"><span>NOME MITTENTE</span></div>
-						<div class="col-md-2 col-lg-2 colTableEmpty"><span>COGNOME MITTENTE</span></div>
-						<div class="col-md-4 col-lg-4 colTableEmpty"><span>E-MAIL MITTENTE</span></div>
+						<div class="col-md-2 col-lg-2 colTableEmpty"><span>NOME </span></div>
+						<div class="col-md-2 col-lg-2 colTableEmpty"><span>COGNOME </span></div>
+						<div class="col-md-4 col-lg-4 colTableEmpty"><span>E-MAIL </span></div>
 						<div class="col-md-2 col-lg-2 colTableEmpty"><span>IMPORTO</span></div>
 						<c:forEach items="${transazioniD}" var="trans" >
 							<div class="col-md-2 col-lg-2 colTableTransaction myBorder"><span>${trans.data }</span></div>
 							<div class="col-md-2 col-lg-2 colTableTransaction myBorder"><span>${trans.nomeMittente}</span></div>
 							<div class="col-md-2 col-lg-2 colTableTransaction myBorder"><span>${trans.cognomeMittente}</span></div>
-							<div class="col-md-4 col-lg-4 colTableTransaction myBorder"><span>${trans.email }</span></div>
+							<div class="col-md-4 col-lg-4 colTableTransaction myBorder"><span><a href="viewProfile?email=${trans.email }">${trans.email }</a></span></div>
 							<div class="col-md-2 col-lg-2 colTableTransaction myBorder" style="color:green">+${trans.importo}€</div>
 						</c:forEach>
 					</div>
