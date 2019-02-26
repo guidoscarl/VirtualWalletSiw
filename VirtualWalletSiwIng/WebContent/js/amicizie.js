@@ -154,11 +154,13 @@ function acceptFromProfile(id,email){
 function sendMessage(sender,receiver){
 	
 	
+	
+	
 	$.MessageBox({
 	    input    : true,
 	    message  : "Invia un messaggio",
 	    buttonDone  : "INVIA",
-	    top:"50%"
+	    top:"30%"
 	}).done(function(data, button){
 	    
 	    var value = data.toString();
@@ -167,7 +169,8 @@ function sendMessage(sender,receiver){
 			url:"sendMes",
 			data:{send:sender,rec:receiver,val:value},
 			success:function(){
-				$.MessageBox("Messagio inviato");	    
+				$.MessageBox("Messagio inviato");
+				
 
 			}
 		});
