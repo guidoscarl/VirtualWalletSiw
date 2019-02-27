@@ -112,6 +112,7 @@
 						<div id="f1_card" class="shadow">
 						  <div class="front face">
 						   	<img src="Images/contatta.jpg" width="300" height="100">
+						   	
 						  </div>
 						  <div class="back face center">
 						    <a id="messageButton" class="btn btn-primary" role="button" href="#" onclick="var sender='${email}'; var receiver='${emailUs }'; sendMessage(sender,receiver);">Invia messaggio</a>
