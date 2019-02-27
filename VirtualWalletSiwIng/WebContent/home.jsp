@@ -16,6 +16,8 @@
     <script src="bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>
     <script src="js/contactUs.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="Images/favicon.ico">
+    
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 </head>
 

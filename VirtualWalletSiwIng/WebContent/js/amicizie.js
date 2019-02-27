@@ -197,7 +197,7 @@ function sendRequest(receiver){
 			    title: 'Richiesta inviata',
 			    content: 'Richiesta di amicizia inviata correttamente',
 			    buttons: {
-			        home: function () {
+			        ok: function () {
 			        	$(location).attr("href",ind);
 			        },
 			    }

@@ -9,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profilo Utente</title>
 	<link rel="stylesheet" href="newCSS/myCSS.css">
+	<link rel="shortcut icon" type="image/x-icon" href="Images/favicon.ico">
+	
     <link rel="stylesheet" href="bootstrap-4.1.0-dist/css/bootstrap.css">
     <script src="bootstrap-4.1.0-dist/js/jquery.min.js"></script>
     <script src="bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>

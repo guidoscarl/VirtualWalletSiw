@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="bootstrap-4.1.0-dist/css/bootstrap.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="bootstrap-4.1.0-dist/fonts/ionicons.min.css">
+        <link rel="shortcut icon" type="image/x-icon" href="Images/favicon.ico">
+    
     <script src="js/loader.js"></script>
     <script src="js/search.js"></script>
     <script src="js/contactUs.js"></script>
