@@ -72,7 +72,7 @@
 				</div>
 				<div class="col-sm-3 profile-info gradient myBorder">
 					<c:if test="${imageUs=='default' }">
-						<img src="Images/userprofile.jpg" alt="profile" height="100" width="100"></img>
+						<img src="Images/userprofile.jpg"  alt="profile" height="100" width="100"></img>
 					</c:if>
 					<c:if test="${imageUs!='default' }">
 						<img src="${imageUs }" alt="profile" height="200" width="200"></img>
@@ -111,7 +111,7 @@
 		<div id="f3_container">
 						<div id="f1_card" class="shadow">
 						  <div class="front face">
-						   	<img src="Images/contatta.jpg" width="300" height="100">
+						   	<img src="Images/contatta.jpg" class="card-flip-image" width="300" height="100">
 						   	
 						  </div>
 						  <div class="back face center">

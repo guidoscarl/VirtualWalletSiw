@@ -94,7 +94,7 @@
 					<div id="f1_container">
 						<div id="f1_card" class="shadow">
 						  <div class="front face">
-						    <img src="Images/conserva.jpg" width="300px" height="250px">
+						    <img src="Images/conserva.jpg" class="card-flip-image" width="300px" height="250px">
 						  </div>
 						  <div class="back face center">
 						     	<h1>Custodisci il tuo denaro!</h1> 
@@ -108,7 +108,7 @@
 					<div id="f1_container">
 						<div id="f1_card" class="shadow">
 						  <div class="front face">
-						    <img src="Images/sicurezza.jpg" width="300px" height="250px">
+						    <img src="Images/sicurezza.jpg" class="card-flip-image" width="300px" height="250px">
 						  </div>
 						  <div class="back face center">
 						     	<h1>Non avrai problemi!</h1> 
@@ -122,7 +122,7 @@
 					<div id="f1_container">
 						<div id="f1_card" class="shadow">
 						  <div class="front face">
-						    <img src="Images/trasferisci.jpg" width="300px" height="250px">
+						    <img src="Images/trasferisci.jpg" class="card-flip-image" width="300px" height="250px">
 						  </div>
 						  <div class="back face center">
 						     	<h1>Trasferisci!</h1> 
