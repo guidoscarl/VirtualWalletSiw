@@ -21,7 +21,11 @@ PER SEMPLICITA', QUALUNQUE TRANSAZIONE O RICARICA E' DA INTENDERSI CON NUMERI IN
 Account disponibili:
 email - pw
 guidoscarlato@gmail.com		guido
+
 gianfrancosapia@gmail.com	gianfranco
+
 giovannizarola@gmail.com	giovanni
+
 paolofalvo@gmail.com		paolo
+
 gianfryx.97@gmail.com		gian
