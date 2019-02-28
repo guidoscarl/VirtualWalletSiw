@@ -1,4 +1,10 @@
 function makeRecharge(){
+	var email=$("#email").val();
+	var pass=$("#password").val();
+	var importoo=$("#importo").val();
+	var sessionEmail=$("#email").attr("email");
+	var sessionPass=$("#password").attr("password");
+	var saldoo=$("#password").attr("saldo");
 	$.ajax({
 			method:"post",
 			url:"recharge",
