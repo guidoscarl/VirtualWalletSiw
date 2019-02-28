@@ -37,7 +37,7 @@
 			<div class="searchBar">
 				<input id="myInput" type="text" placeholder="Cerca utenti" oninput="search();">
 			</div>
-			<a class="links" href="signin"><c:out value="${nome} ${cognome }">No name</c:out>, benvenuto!</a>
+			<a class="links" href="account"><c:out value="${nome} ${cognome }">No name</c:out>, benvenuto!</a>
 			<a href="mailBox" class="mailIcon"><i class="ion ion-email"></i></a>
 	        <c:if test="${haveMes!=null }">
 				<img src="Images/notific.png" alt="notific" height="13" width="13">
