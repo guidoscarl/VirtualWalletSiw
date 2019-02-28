@@ -10,6 +10,10 @@ prefix="c" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile - Transazione</title>
 	<link rel="stylesheet" href="newCSS/myCSS.css">
+	<script src="bootstrap-4.1.0-dist/js/jquery.min.js"></script>
+    <script src="bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
     <link rel="stylesheet" href="bootstrap-4.1.0-dist/css/bootstrap.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="bootstrap-4.1.0-dist/fonts/ionicons.min.css">
@@ -73,7 +77,6 @@ prefix="c" %>
             </div>
         </div>
     </footer>
-    <script src="bootstrap-4.1.0-dist/js/jquery.min.js"></script>
-    <script src="bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>
+    
 </body>
 </html>
