@@ -51,10 +51,12 @@ public class SearchUsers extends HttpServlet {
 		String html="";
 		if(!searched.equals(""))
 		for(Utente u:users) {
+			if(!u.getEmail().equals((String)request.getSession().getAttribute("email"))) {
 			String name =u.getNome().toUpperCase();
 			String surname = u.getCognome().toUpperCase();
 			if(name.contains(s) || surname.contains(s)) {
 				html+="<li class=\"list-group-item\"><a href=\"viewProfile?email="+u.getEmail()+"\">"+u.getNome()+" "+u.getCognome()+"</a></li>";
+			}
 			}
 		}
 		response.getWriter().append(html);
